@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>Welcome to Jekyll! – SymphonyCMS</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link media="screen" href="/symphony-2/css/codemirror.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.docs.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="/symphony-2/js/jquery.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/modernizr.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/codemirror.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.grid.js"></script>
+    </head>
+    <body>
+        <aside id="network">
+
+  <!-- Main navigation -->
+  <header class="network-toolbar collapsed">
+    <div class="field">
+      <h1 class="network-logo column one">
+        <a href="/docs/about.xml">Symphony CMS</a>
+      </h1>
+      <nav class="network-nav column">
+        <a href="/docs/examples/community.xml">Community</a>
+        <a href="/docs/examples/documentation.xml" >Documentation</a>
+        <a href="/docs/examples/extensions.xml">Extensions</a>
+        <a href="/docs/examples/ninjas.xml">Ninjas</a>
+        <a href="/docs/examples/xpathr.xml">xPathr</a>
+      </nav>
+      <div id="user" class="network-user">
+        <a href="http://getsymphony.com/get-involved/member/Allen/">
+          <img src="img/user.png" width="35" height="35" alt="Allen Chang" />
+        </a>
+        <p>
+          <a href="http://getsymphony.com/get-involved/currently-online/" class="network-visitors">15</a>
+          <xsl:text> + </xsl:text>
+          <a class="network-username">Allen Chang</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- User profile -->
+  <div class="field network-profile">
+    <form>
+
+      <!-- Gravatar -->
+      <div class="network-gravatar column one">
+        <img src="img/user.png" width="174" height="174" alt="Allen Chang" />
+        <p>Change your avatar at <a href="http://gravatar.com">Gravatar</a>.</p>
+      </div>
+
+      <!-- Information -->
+      <fieldset class="column one large-two">
+        <label for="profile-username" class="restricted">Username</label>
+        <input id="profile-username" type="text" name="fields[username]" value="Allen" readonly="readonly" />
+        <label for="profile-name">Name</label>
+        <input id="profile-name" type="text" name="fields[name]" value="Allen Chang" />
+        <label for="profile-email-address">Email (Private)</label>
+        <input id="profile-email-address" type="text" name="fields[email-address]" value="team@getsymphony.com" />
+        <label for="profile-city">Location</label>
+        <input id="profile-city" type="text" name="fields[location]" value="Symphony Land" />
+      </fieldset>
+      <fieldset class="column two small-one">
+        <label for="profile-website">Website</label>
+        <input id="profile-website" type="text" name="fields[website]" value="http://getsymphony.com" />
+        <label for="profile-bio">Bio</label>
+        <textarea rows="7" name="fields[bio]">Cras mattis consectetur purus sit amet fermentum.</textarea>
+        <div class="profile-controls">
+          <button id="submit-profile" class="button-save" type="submit" name="action[members-edit]">Save Profile</button>
+          <a class="button-cancel" href="../../member/Nils/">Cancel</a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Site switcher -->
+  <div class="field network-drawer">
+
+    <!-- Symphony ressources -->
+    <div class="column three medium-two">
+      <h2>About Symphony</h2>
+      <p>Symphony is an open source content management system for your websites and webapps. It makes complex things simple.</p>
+      <div class="get-symphony">
+        <a href="https://github.com/symphonycms/symphony-2">Get Symphony 2.3.0</a>
+        <a href="https://github.com/symphonycms/symphony-2" class="icon-fork">Fork<span class="medium-hide"> on Github</span></a>
+        <a href="https://github.com/symphonycms/symphony-2/archive/master.zip" class="icon-download"><span class="medium-hide">Download </span>ZIP</a>
+      </div>
+    </div>
+
+    <!-- Symphony in other languages -->
+    <div class="column one small-two">
+      <h2>Regions</h2>
+      <ul>
+        <li>
+          <a href="#">Germany</a>
+        </li>
+        <li>
+          <a href="#">Italy</a>
+        </li>
+        <li>
+          <a href="#">Romania</a>
+        </li>
+        <li>
+          <a href="#">United Kingdom</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Symphony ressources -->
+    <div class="column one">
+      <h2>Services</h2>
+      <ul>
+        <li>
+          <a href="#">Github</a>
+        </li>
+        <li>
+          <a href="#">Twitter</a>
+        </li>
+        <li>
+          <a href="#">Vimeo</a>
+        </li>
+        <li>
+          <a href="#">Flickr</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+        <div id="site">
+            <header class="site-header centered">
+    <h1>
+        <span>Symphony</span> Documentation
+    </h1>
+    <nav>
+        <a href="about.xml">About</a>
+        <a href="layouts.xml">Layouts</a>
+        <a href="snippets.xml">Snippets</a>
+        <a href="styles.xml">Styles</a>
+        <a href="scripts.xml">Scripts</a>
+        <a href="examples.xml">Examples</a>
+    </nav>
+</header>
+
+            <div class="field">
+  <h2>Welcome to Jekyll!</h2>
+  <p class="meta">14 Apr 2014</p>
+
+  <div class="post">
+    <p>You&#39;ll find this post in your <code>_posts</code> directory - edit this post and re-build (or run with the <code>-w</code> switch) to see your changes!
+To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">)</span>
+<span class="c1">#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</span></code></pre></div>
+
+<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/mojombo/jekyll">Jekyll&#39;s GitHub repo</a>.</p>
+
+  </div>
+</div>
+
+        </div>
+
+        <footer id="footer">
+  <div class="field">
+
+    <!-- Community -->
+    <p class="footer-community">
+      <strong>&#169; 2010–2012 The Symphony Community</strong>
+      <a href="http://getsymphony.com">International Site</a> · <a href="http://twitter.com/symphonycms">Twitter</a>
+    </p>
+
+    <!-- Developer links -->
+    <p class="footer-links">
+      <strong>Plan, Play and Practice</strong>
+      <a href="https://github.com/symphonycms/symphony-2/blob/master/README.markdown">Requirements</a> · <a href="https://github.com/symphonycms/symphony-2/blob/master/LICENCE">MIT Licence</a> · <a href="http://github.com/symphonycms">Github</a>
+    </p>
+
+    <!-- Factory artwork -->
+    <p class="footer-factory">
+      <em>Conducting sites since 2004</em>
+      <a href="http://getsymphony.com">Symphony Community</a>
+    </p>
+  </div>
+</footer>
+    </body>
+</html>

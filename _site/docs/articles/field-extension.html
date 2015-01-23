@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>Field Extension – SymphonyCMS</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link media="screen" href="/symphony-2/css/codemirror.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.docs.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="/symphony-2/js/jquery.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/modernizr.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/codemirror.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.grid.js"></script>
+    </head>
+    <body>
+        <aside id="network">
+
+  <!-- Main navigation -->
+  <header class="network-toolbar collapsed">
+    <div class="field">
+      <h1 class="network-logo column one">
+        <a href="/docs/about.xml">Symphony CMS</a>
+      </h1>
+      <nav class="network-nav column">
+        <a href="/docs/examples/community.xml">Community</a>
+        <a href="/docs/examples/documentation.xml"  class="active">Documentation</a>
+        <a href="/docs/examples/extensions.xml">Extensions</a>
+        <a href="/docs/examples/ninjas.xml">Ninjas</a>
+        <a href="/docs/examples/xpathr.xml">xPathr</a>
+      </nav>
+      <div id="user" class="network-user">
+        <a href="http://getsymphony.com/get-involved/member/Allen/">
+          <img src="img/user.png" width="35" height="35" alt="Allen Chang" />
+        </a>
+        <p>
+          <a href="http://getsymphony.com/get-involved/currently-online/" class="network-visitors">15</a>
+          <xsl:text> + </xsl:text>
+          <a class="network-username">Allen Chang</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- User profile -->
+  <div class="field network-profile">
+    <form>
+
+      <!-- Gravatar -->
+      <div class="network-gravatar column one">
+        <img src="img/user.png" width="174" height="174" alt="Allen Chang" />
+        <p>Change your avatar at <a href="http://gravatar.com">Gravatar</a>.</p>
+      </div>
+
+      <!-- Information -->
+      <fieldset class="column one large-two">
+        <label for="profile-username" class="restricted">Username</label>
+        <input id="profile-username" type="text" name="fields[username]" value="Allen" readonly="readonly" />
+        <label for="profile-name">Name</label>
+        <input id="profile-name" type="text" name="fields[name]" value="Allen Chang" />
+        <label for="profile-email-address">Email (Private)</label>
+        <input id="profile-email-address" type="text" name="fields[email-address]" value="team@getsymphony.com" />
+        <label for="profile-city">Location</label>
+        <input id="profile-city" type="text" name="fields[location]" value="Symphony Land" />
+      </fieldset>
+      <fieldset class="column two small-one">
+        <label for="profile-website">Website</label>
+        <input id="profile-website" type="text" name="fields[website]" value="http://getsymphony.com" />
+        <label for="profile-bio">Bio</label>
+        <textarea rows="7" name="fields[bio]">Cras mattis consectetur purus sit amet fermentum.</textarea>
+        <div class="profile-controls">
+          <button id="submit-profile" class="button-save" type="submit" name="action[members-edit]">Save Profile</button>
+          <a class="button-cancel" href="../../member/Nils/">Cancel</a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Site switcher -->
+  <div class="field network-drawer">
+
+    <!-- Symphony ressources -->
+    <div class="column three medium-two">
+      <h2>About Symphony</h2>
+      <p>Symphony is an open source content management system for your websites and webapps. It makes complex things simple.</p>
+      <div class="get-symphony">
+        <a href="https://github.com/symphonycms/symphony-2">Get Symphony 2.3.0</a>
+        <a href="https://github.com/symphonycms/symphony-2" class="icon-fork">Fork<span class="medium-hide"> on Github</span></a>
+        <a href="https://github.com/symphonycms/symphony-2/archive/master.zip" class="icon-download"><span class="medium-hide">Download </span>ZIP</a>
+      </div>
+    </div>
+
+    <!-- Symphony in other languages -->
+    <div class="column one small-two">
+      <h2>Regions</h2>
+      <ul>
+        <li>
+          <a href="#">Germany</a>
+        </li>
+        <li>
+          <a href="#">Italy</a>
+        </li>
+        <li>
+          <a href="#">Romania</a>
+        </li>
+        <li>
+          <a href="#">United Kingdom</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Symphony ressources -->
+    <div class="column one">
+      <h2>Services</h2>
+      <ul>
+        <li>
+          <a href="#">Github</a>
+        </li>
+        <li>
+          <a href="#">Twitter</a>
+        </li>
+        <li>
+          <a href="#">Vimeo</a>
+        </li>
+        <li>
+          <a href="#">Flickr</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+        <div id="site">
+            <header class="site-header centered">
+    <h1>
+        <span>Symphony</span> Documentation
+    </h1>
+    <nav>
+        <a href="about.xml">About</a>
+        <a href="layouts.xml">Layouts</a>
+        <a href="snippets.xml">Snippets</a>
+        <a href="styles.xml">Styles</a>
+        <a href="scripts.xml">Scripts</a>
+        <a href="examples.xml">Examples</a>
+    </nav>
+</header>
+
+            <div class="field">
+  <div class="column sidebar infobox">
+    
+      <h3>Articles</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/articles/field-extension.html"
+               class="active">Field Extension</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/getting-git-for-symphony-development.html"
+              >Getting Git for Symphony Development</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/combining-symphony-with-nginx.html"
+              >Combining Symphony with Nginx</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Book</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/book/symphony-book.html"
+              >Symphony Start to Finish</a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-01.html"
+                      >Why You Need Symphony</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-02.html"
+                      >Symphony in Action</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-03.html"
+                      >Getting Started</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-04.html"
+                      >Symphony Anatomy</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-05.html"
+                      >Content</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-06.html"
+                      >Front-end</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-07.html"
+                      >Data Flow</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-08.html"
+                      >Templating</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-09.html"
+                      >System Management</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-10.html"
+                      >Planning Symphony Projects</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-11.html"
+                      >Adaptive Techniques</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Concepts</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/concepts/xslt-transformation.html"
+              >XSLT Transformation</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Guides</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/guides/javascript-styleguide.html"
+              >JavaScript Style Guide</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Tutorials</h3>
+      <ul class="sidebar-links">
+        
+      </ul>
+    
+      <h3>Working</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow.html"
+              >A Symphony Workflow</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow-command-list.html"
+              >A Symphony Workflow - Terminal Command List</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/installing-on-mac-osx.html"
+              >Installing Symphony on your Mac (OS X >= 10.5)</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-view-on-static-pages.html"
+              >A view on static pages</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/understanding-xslt.html"
+              >Understanding XSLT</a>
+            
+          </li>
+        
+      </ul>
+    
+  </div>
+  <div class="column content">
+      <h2>An Overview</h2>
+
+<p>Symphony extension development has always been seen with an aura of &#39;dark arts&#39; surrounding it, and now that Symphony 2.2 is on our doorstep, it&#39;s a great time to take some steps to demystify this art. The purpose of this walkthrough is to provide an insight into how I built my <a href="http://github.com/brendo/field_metakeys">Meta Keys</a> extension. For those who haven&#39;t used it, the Meta Keys field allows a user to save key/value information against an Entry, without having to follow a defined schema. This walkthrough assumes you have an understanding of Symphony concepts and feel comfortable writing PHP.</p>
+
+<h2>Getting Started</h2>
+
+<h3>Directory Structure</h3>
+
+<p><a href="http://www.flickr.com/photos/bloodbone/5423332863/"><img src="http://farm6.static.flickr.com/5298/5423332863_2218f68335.jpg" alt="Extension Directory Structure"></a></p>
+
+<p>The basis of any Symphony extension requires a certain directory structure to enable your extension to be discovered, and loaded by the Extension Manager. This absolute minimum for an extension is a folder, <code>field_metakeys</code>, with a single <code>extension.driver.php</code> file inside it. As this is a Field extension, I have then created a new <code>fields</code> directory containing a single file, <code>field.metakeys.php</code> in my extension root. All fields in Symphony live in <code>fields</code> folders and follow a <code>field.{handle}.php</code> convention. Naming conventions are everywhere in Symphony and some others that you may be familiar with is <code>events</code> and <code>event.{handle}.php</code>, or <code>data-sources</code> and <code>data.{handle}.php</code>. These all serve as a way for the Symphony Managers to load objects from the filesystem.</p>
+
+<h2><code>extension.driver.php</code></h2>
+
+<p>The extension driver contains your extension class that extends the Symphony base <code>Extension</code> class. It is vital that the name of your class starts with <code>extension_</code> followed by <strong>the same handle as your extension directory</strong>. So in Meta Key&#39;s case, this results in <a href="https://github.com/brendo/field_metakeys/blob/master/extension.driver.php#L3"><code>extension_field_metakeys</code></a>. The <a href="https://github.com/symphonycms/symphony-2/blob/integration/symphony/lib/toolkit/class.extension.php">base <code>extension</code> class</a> is probably the best place to start to get an idea of what functions your extension driver should contain. </p>
+
+<p>Generally, <a href="https://github.com/symphonycms/symphony-2/blob/integration/symphony/lib/toolkit/class.extension.php#L121-138"><code>about()</code></a> is the first to be implemented and as the PHPDoc comments suggest, the purpose is to provide meta data about your extension such as the name, version, release data and author information. Symphony 2.2 allows you to provide multiple authors in your <code>about()</code> function by having an array of Author arrays. The <a href="http://symphony-cms.com/download/extensions/">Symphony website</a> allows Extensions to be searched by particular types, so it has become a bit of a pseudo convention for developers to create a comma separated list of these types for their <a href="https://github.com/brendo/field_metakeys/blob/master/extension.driver.php#L9">extension</a>.</p>
+
+<p><a href="http://www.flickr.com/photos/bloodbone/5423935812/"><img src="http://farm6.static.flickr.com/5252/5423935812_c6738295af.jpg" alt="About Definition"></a></p>
+
+<h3>Installation</h3>
+
+<p>The next functions of your <code>extension.driver.php</code> relate to the installation, updating and removal of your extension. For a Field extension, the installation function allows you to create a table schema to store any additional Symphony settings for your Field. There is a set of default Symphony settings, which are stored in the <code>tbl_fields</code> table that all Fields will inherit (such as &#39;required&#39;, &#39;show_column&#39; etc.), but you may wish to provide some additional settings for your Field. These settings can be customised by a developer when they create an instance of your Field in the Section Editor. </p>
+
+<p>Your settings table should follow the convention of a Field extension, <code>tbl_fields_{field-handle}</code> with the minimum columns of <code>id</code> and <code>field_id</code>. As a developer adds instances of your Field to their Symphony installation, a new row is created in this table for that instance of your extension (<code>field_id</code>) which allows a developer to add your extension to many sections, all with slightly different configurations. Remember, this table only stores setting information, as any entry data is stored in a separate table created by the Field&#39;s &#39;createTable()` function, but I&#39;ll get to that later. </p>
+
+<p><a href="http://www.flickr.com/photos/bloodbone/5423382169/"><img src="http://farm6.static.flickr.com/5299/5423382169_d1487602f0.jpg" alt="Example Installation Query"></a></p>
+
+<p>The <code>uninstall</code> function needs to do the opposite to the <code>install</code> function, so in this case, drop the table that was just created. Finally, the <code>update</code> function can be used to help migrate your extension as you release new versions. Meta Keys is young so at the moment this just returns <code>true</code> as it has no migration to perform.</p>
+
+<p>The Meta Keys installation (and uninstallation) queries are wrapped in a <code>try/catch</code> block, so that if anything happens, Meta Keys can report the error to the user through a Symphony <a href="https://github.com/symphonycms/symphony-2/blob/integration/symphony/lib/toolkit/class.alert.php"><code>PageAlert</code></a>.</p>
+
+<p>You may notice the prefix <code>tbl_</code> on the table definition&#39;s. This prefix is an alias (or pseudonym) which is replaced by your actual database’s table prefix at runtime which allows Symphony to live on the same database as another application (even another Symphony install!)</p>
+
+<h3>Assets</h3>
+
+<p>Meta Keys requires some custom Javascript and CSS so I&#39;ve also created an <code>assets</code> directory in the extension folder. I only have two assets for Meta Keys, <code>field_metakeys.publish.js</code> and <code>field_metakeys.publish.css</code>, which follow another <a href="http://symphony-cms.com/discuss/blog/entry/a-guide-to-javascript-for-symphony-22/">Symphony naming convention</a>. This naming convention is purely aesthetics, but it an important one and can help developers when debugging their own extensions and looking for any potential conflicts.</p>
+
+<h2><code>field.metakeys.php</code></h2>
+
+<p>Now for the fun part, defining your Field! I like to break up my extensions field into some logical sections to keep maintenance easy and makes the code readable, even if I&#39;m lazy and omit comments. For Meta Keys, I&#39;ve used Setup, Utilities, Settings, Input, Output and Filtering as my sections, but your free to use whatever you like.</p>
+
+<p>Similar to the extension driver, your Field class will extend the base <code>Field</code> class and requires a <a href="https://github.com/brendo/field_metakeys/blob/master/fields/field.metakeys.php#L5"><code>field{handle}</code> naming convention</a>. This convention allows Symphony to load Meta Keys from the filesystem using the <code>FieldManager</code>.</p>
+
+<h3>Setup</h3>
+
+<h4><code>__construct()</code></h4>
+
+<p>The <a href="https://github.com/brendo/field_metakeys/blob/master/fields/field.metakeys.php#L7-15"><code>__construct()</code></a> function is your first chance to add some default settings, using the <code>set()</code> function of the Field class. I&#39;ve set Meta Keys to (by default) not be required (but it has the ability to be), not be shown in the entries table and to default to the sidebar of Entry forms. The values from the <code>set()</code> function are stored in <code>tbl_fields_metakeys</code>, which we created in the <code>install()</code> function in the extension driver, and is executed when a developer enables your extension.</p>
+
+<h4><code>createTable()</code></h4>
+
+<p>The <code>createTable()</code> function is executed when a new instance of your Field is added to a Section and it is responsible for creating the entry data tables for the Field. The table name for the entry data should be <code>tbl_entries_data_%d</code>, where <code>%d</code> will be the id (<code>field_id</code>) of the current Field instance.</p>
+
+<p>This table schema will hold the data that a user enters from the Entry creation page, and the only required columns are <code>id</code> and <code>entry_id</code>. You may like to take some time add a Field to a Section and inspect what happens in the <code>tbl_fields</code> table. It&#39;s important that you understand the distinction between your settings table, and the entry data table. Looking at the Field&#39;s <a href="https://github.com/symphonycms/symphony-2/blob/integration/symphony/lib/toolkit/class.field.php#1066-1083">default <code>createTable()</code> function</a> may also prove useful.</p>
+
+<p>After defining your entry table schema, it&#39;s commonplace to list some functions that act as feature toggles for your Field. For MetaKeys, I&#39;ve said that it <code>canFilter()</code> and <code>allowDatasourceParamOutput()</code>, but I&#39;ve turned off <code>prePopulate</code>. A complete listing of these &#39;features&#39; can be found by reading through the <a href="https://github.com/symphonycms/symphony-2/blob/integration/symphony/lib/toolkit/class.field.php#165-309"><code>Field</code> class</a>. For example, you may wish to turn off Sorting for your Field (<code>isSortable()</code>), or not allow it to be Grouped (<code>allowDatasourceOutputGrouping</code>) or may it unique, aka, one Field per section (<code>mustBeUnique()</code>).</p>
+
+<h3>Settings</h3>
+
+<h4><code>displaySettingsPanel()</code></h4>
+
+<p>The Section Editor allows a user to customise your Field for their use in a Section. To do this, you can provide your own HTML through the <code>displaySettingsPanel()</code> function. It is recommended to call <code>parent::displaySettingsPanel()</code> first, which will build a wrapper for you to add your HTML in. Symphony abstracts HTML using the [<code>XMLElement</code>]((https://github.com/symphonycms/symphony-2/blob/integration/symphony/lib/toolkit/class.xmlelement.php) class, which mimics PHP&#39;s DOMDocument functionality to a degree. The Symphony <a href="https://github.com/symphonycms/symphony-2/blob/integration/symphony/lib/toolkit/class.widget.php"><code>Widget</code></a> class provides a set of convenience functions to allow you to build common HTML elements rapidly. </p>
+
+<p>Symphony has some <a href="http://symphony-cms.com/discuss/blog/entry/a-guide-to-css-and-layout-changes-in-symphony-22/">CSS conventions</a> that allows your extensions to look as native as possible. Meta Keys makes use of one of the most common conventions, the two column layout using the <code>group</code> class, eg. <code>&lt;div class=&#39;group&#39;&gt;</code> wrapper around two block DOM elements. There is also no need to replicate the logic to build some common setting interfaces, with functions such as <code>appendRequiredCheckbox()</code>, <code>appendShowColumnCheckbox()</code> and <code>buildValidationSelect()</code> all available to use. You can access the default settings of your Field by using <code>$this-&gt;get({setting-name})</code>. This is especially important for when a developer will come to edit your Field in the Section Editor, as it will prepopulate the field values with the current settings.</p>
+
+<p>Meta Keys doesn&#39;t do anything unusual in the settings panel but add an additional input field so that a user can specify some default keys that will populate the Field on new entry creation, and provide a validator so that developers can ensure keys/values are entered that match a particular format. Because these setting&#39;s are specific to Meta Keys, it will not be stored in the <code>tbl_fields</code> table, and instead will be in my Field&#39;s own settings table, <code>tbl_field_metakeys</code>. These default keys are saved in the <code>default_keys</code> column, with the validator rule saved in <code>validator</code>.</p>
+
+<h4><code>commit()</code></h4>
+
+<p>Following <code>displaySettingsPanel()</code> is the <code>commit()</code> function, which is responsible for saving the field settings in the Database. Any core Symphony settings will be saved as a new row in the <code>tbl_fields</code> table by simply calling the parent commit function, <code>parent::commit()</code>. If this is successful, you can use the rest of the <code>commit()</code> function to save the custom settings into your settings table, in this case, <code>tbl_fields_metakeys</code>. The <code>field_id</code> of your Field instance is generated from the <code>auto_increment</code> index in the <code>tbl_fields</code> table, and is accessible via <code>$this-&gt;get(&#39;id&#39;)</code> after the parent <code>commit()</code> function is called.</p>
+
+<h3>Input</h3>
+
+<p>Now that you&#39;ve allowed your Field to be added to a Section, you may want to experiment and have a look at the database tables to see the above functions in action. The next focus should be allowing a user to add data into your Field, and how your field is rendered in the Entry Creation form. Enter <code>displayPublishPanel()</code>..</p>
+
+<h4><code>displayPublishPanel()</code></h4>
+
+<p>This function requires you to build out form elements using <code>XMLElement</code>. The first parameter of <code>displayPublishPanel()</code> is a <code>XMLElement</code> wrapper, which by default is <code>&lt;div class=&#39;field field-{field-handle}&gt;</code>. If the field is marked as required, a <code>required</code> class is also added. The <code>field-handle</code> is the handlized version of the <code>$field-&gt;name</code> (which we set in the Field constructor ;)), which is available via <code>$this-&gt;handle()</code>. These classes allow you to apply CSS only to your field, and not every field in the section. Additional parameters passed to the function include an associative array of the entry <code>$data</code>, an <code>$error</code> (that have occurred while trying to save), <code>$prefix</code> and <code>$postfix</code> (which I have no idea about, it seems to stem from early editions of Symphony and is commonly left as <code>null</code> these days) and in the instance of an Edit Entry form, the current <code>$entry_id</code>.</p>
+
+<p>You may want to have a browse over the <a href="https://github.com/brendo/field_metakeys/blob/master/fields/field.metakeys.php#L157-197">Meta Keys <code>displayPublishPanel()</code> function</a> to get a quick idea of how to interact with <code>XMLElement</code> and the <code>Widget</code> class. Something to note here is the use of <code>$this-&gt;get(&#39;element_name&#39;)</code> which provides a handlized version of the Label of your field (set by the Developer when they added it to the Section) and is used so the form knows what field the data is meant for. You can see this in action in my utility <a href="https://github.com/brendo/field_metakeys/blob/master/fields/field.metakeys.php#L66-85"><code>buildPair()</code> function</a></p>
+
+<p>To inject the custom CSS and JS for Meta Keys, the <code>displayPublishPanel()</code> function calls the <a href="https://github.com/brendo/field_metakeys/blob/master/extension.driver.php#L69"><code>appendAssets()</code> function</a>, which is defined as a static utility function in the <code>extension.driver.php</code> file. Something to note here is the use of the <code>$duplicate</code> parameter with the <code>addScriptToHead()</code> and <code>addStylesheetToHead()</code> functions. By setting this to <code>false</code>, this will prevent Meta Key&#39;s assets from being injected into the head for every instance of the field in the current section. You may want to note the explicit check for the presence of the <code>Administration</code> class, and that <code>$Page</code> is an instance of the <code>HTMLPage</code> class before trying to append the resources to the page. We can only add Javascript and CSS in the Administration context (and it&#39;s only possible in this context as the <code>addScriptToHead()</code> and <code>addStylesheetToHead()</code> functions don&#39;t exist in the Frontend context), hence the check. This is check ensures your function will not throw an error if it is called in the <code>Frontend</code> context (Section Schemas does this to generate a representation of your Field for use on Frontend fields). </p>
+
+<h4><code>checkFieldPostData()</code></h4>
+
+<p>Once you have displayed your interface, the next thing you&#39;ll want to do is check any data that the user tries to save using <code>checkFieldPostData()</code>. This function is given an associative array of the data for this field instance only, so essentially <code>$_POST[&#39;fields&#39;][$this-&gt;get(&#39;element_name&#39;)</code>, to perform validation logic on. If the data passed is correct, this function should return <code>Field::OK</code>, otherwise there is a selection of Field constants that can be returned, which will slightly affect the error message returned. The most common are <code>Field::__MISSING_FIELDS__</code> or <code>Field::__INVALID_FIELDS__</code>. Check the <a href="https://github.com/symphonycms/symphony-2/blob/integration/symphony/lib/toolkit/class.field.php#15-58">Field class</a> for further error constants that you can use. Meta Keys checks to see if the current instance is required, that data has been received, and if any validator rules have been set before returning Field status.</p>
+
+<h4><code>processRawFieldData()</code></h4>
+
+<p>Should the data be ok, <code>processRawFieldData()</code> gives you the chance to map the <code>$_POST</code> data to the Field&#39;s database table, (<code>tbl_entries_data_%d</code>). While this function is pretty self explanatory, the <code>$simulate</code> parameter often is a point of confusion for developers. The idea behind this parameter is to allow your function to &#39;almost&#39; save the raw data, but not make any lasting changes (ie. doesn&#39;t commit the data to the database). Meta Keys doesn&#39;t need to simulate anything (and the majority of fields don&#39;t), so the parameter is just ignored within the function. The expected result from this function is an associative array, with the key&#39;s being the table columns described in the <code>Field-&gt;createTable()</code> function. Should your field like Meta Keys need to add multiple rows, you can use a multidimensional array, with numerical indexes as shown below.</p>
+
+<p><a href="http://www.flickr.com/photos/bloodbone/5423557575/"><img src="http://farm6.static.flickr.com/5300/5423557575_426a4afe0a.jpg" alt="processRawFieldData"></a></p>
+
+<h4><code>getExampleFormMarkup()</code></h4>
+
+<p>The last function for this block, <code>getExampleFormMarkup()</code> is a way for you to provide some documentation about how the markup for Frontend forms should be created if a user wants an Event to populate your field. You can add anything in here, using the <code>XMLElement</code> class, which will be shown to a user when they save their Event in the backend.</p>
+
+<h3>Output</h3>
+
+<p>So the user has saved some data for your extension, now it&#39;s up to you to format it so that it can be useful on the Frontend of the site!</p>
+
+<h4><code>fetchIncludableElements()</code></h4>
+
+<p>Some field extensions can offer multiple ways for the data to be formatted in a datasource. This concept is known as &#39;output modes&#39;, and is usually shown by <code>Field Name : {mode}</code>. The <code>fetchIncludableElements()</code> function allows your extension to show the different modes that is has to offer. Meta Keys offers two modes for output, so this function returns an array of <code>$this-&gt;get(&#39;element-name&#39;)</code> and <code>$this-&gt;get(&#39;element-name&#39;): named-keys</code>.</p>
+
+<p><a href="http://www.flickr.com/photos/bloodbone/5424213638/"><img src="http://farm6.static.flickr.com/5299/5424213638_8db5311caf.jpg" alt="Included Elements"></a></p>
+
+<h4><code>appendFormattedElement()</code></h4>
+
+<p>The <code>appendFormattedElement()</code> is called every time your Field is included in a Datasource and is executed on the Frontend. It is given a <code>$wrapper</code> parameter, which is an XMLElement for this datasource, the <code>$data</code> for this datasource, a boolean <code>$encode</code> parameter, the <code>$mode</code> and the current <code>$entry_id</code>. It&#39;s important to note that <code>$data</code> contains data for a single entry, and that this function is called <code>x</code> times for the number of entries in the datasource. The <code>$mode</code> parameter will be the string after the <code>:</code> from <code>fetchIncludableElements()</code>. In the case where your Field only provides one output mode, this will be <code>null</code>. Meta Keys uses the <code>$mode</code> parameter to switch between the two output modes. Below is an example of the two output modes that Meta Keys provides.</p>
+
+<p><a href="http://www.flickr.com/photos/bloodbone/5423612695/"><img src="http://farm6.static.flickr.com/5012/5423612695_8f5c4bd6db.jpg" alt="Two Output Modes"></a></p>
+
+<h4><code>getParameterPoolValue()</code></h4>
+
+<p>Almost there! <code>getParameterPoolValue()</code> allows you to format your entry specifically for use as a Datasource Output param. It is given an array of data for the entire datasource as an associative array that represents your table schema (from the entry table, <code>tbl_entries_data_%d</code>). At this stage, Meta Keys is just going to output the keys that are used in entry. The only real thing to note here is that a string must be returned.</p>
+
+<p><a href="http://www.flickr.com/photos/bloodbone/5423654631/"><img src="http://farm6.static.flickr.com/5060/5423654631_73f7830968.jpg" alt="Example array for getParameterPoolValue"></a></p>
+
+<h4><code>prepareTableValue()</code></h4>
+
+<p><code>prepareTableValue()</code> is used in the Symphony backend context only. The result of this function is what will be displayed on the entries table should your field be shown (Show Column in the Section Editor). Meta Keys makes use of <code>parent::prepareTableValue()</code> to do most of the heavy lifting here. This function differs from <code>getParameterPoolValue()</code> in that the <code>$data</code> array is for one entry, not every entry otherwise the same logic applies in that a string of data needs to be created to be passed onto the parent function. The parent function makes use of Symphonys <code>cell_truncation_length</code> value in the <code>config.php</code>, which extracts a certain number of characters from your value. By default, Symphony installs with this is set to 75. </p>
+
+<p>The <code>$link</code> parameter will contain an <code>XMLElement</code> wrapper, which allows a user to edit the current entry, should your Field be the first visible column in the entries table, otherwise it will default to null.</p>
+
+<h3>Filtering</h3>
+
+<p>The final function in the Meta Keys field class is <code>buildDSRetrivalSQL()</code> and this one is responsible for generating the SQL to filter the entries for a datasource. The <code>$data</code> parameter is an array of the filters for your Field. Meta Keys allows developers to filter the field with a couple of prefixes, <code>value:</code> and <code>key-equals</code>, so the logic looks for the filters to start with either of these, before falling back to a generic filter SQL. For Meta Keys, the <code>value</code> prefix allows a developer to filter by the value of a Key, ie. <code>value: red</code> will get any entries where one of the Meta Keys contains the value &#39;red&#39;. <code>key-equals</code> is more specific, allowing a developer to specify that Key and the Value that should be filtered on, ie. <code>key-equals: colour=red</code>. No prefix just falls back to looking for any <code>key</code> that is <code>red</code>.</p>
+
+<p>To build the SQL required, this function is given <code>$joins</code> and <code>$where</code> parameters by reference, which allow you to add on your SQL. The goal of this SQL is to return the entry id&#39;s of that match all the datasource filters, so your join will be on <code>tbl_entries</code>, which has been prefixed to <code>e</code>.</p>
+
+<p><code>
+    $joins .= &quot;
+        LEFT JOIN
+            <code>tbl_entries_data_{$field_id}</code> AS t{$field<em>id}</em>{$this-&gt;<em>key}
+        ON
+            (e.id = t{$field</em>id}<em>{$this-&gt;</em>key}.entry_id)
+    &quot;;
+</code></p>
+
+<p>Your SQL should take into account the fact that there maybe multiple filters on this field, so using <code>$this-&gt;_key</code> will allow a new table alias to be created everytime this occurs. <code>$this-&gt;key</code> is a integer, and is generally incremented each time the <code>buildDSRetrivalSQL()</code> function is called. Should you wish to sanitize the filters, and you should, the Field class provides the <code>cleanValue()</code> function to do that :)</p>
+
+<h2>Additional Notes</h2>
+
+<h3>Github Repository naming</h3>
+
+<p>Occasionally, people will run into some problems when cloning extensions from github because the repository is named slightly differently to the extension&#39;s directory. If your github repository is named differently to your extension directory, a default clone will checkout the repo name, which will cause the extension to not be loaded, and the user to have to manually rename the directory to match the extension driver&#39;s class. This is necessary because Symphony loads some objects from the filesystem which relys on the following naming conventions:</p>
+
+<ul>
+<li>Repo: <strong>field_metakeys</strong></li>
+<li>Folder: <strong>field_metakeys</strong></li>
+<li>Extension Driver: extension<em>**field</em>metakeys**</li>
+</ul>
+
+<h3>Why don&#39;t I use <code>Symphony::Engine()</code>?</h3>
+
+<p>Symphony 2.2 introduces <code>Symphony::Engine()</code>, which automatically provides an instance of the currently available context, whether that be Frontend or Administration. In the <code>appendAssets()</code> function, one might considered updating their code to use this new accessor, however in this situation, it is not possible to inject CSS and JS into the Frontend of a Symphony installation (imagine if that happened?!), so extension developers should always check explicitly for the Administration instance. <a href="http://symphony-cms.com/discuss/blog/entry/a-guide-to-accessor-changes-in-symphony-22/">This article</a> provides some detailed information about some accessor changes in Symphony 2.2.</p>
+
+<h3>How to access the Symphony Database?</h3>
+
+<p>The correct way for any extension to access the Symphony Database instance is through the accessor <code>Symphony::Database()</code>. It has been like this since Symphony 2.0.6.</p>
+
+<h2>That&#39;s it!</h2>
+
+<p>That&#39;s it for Meta Keys, I hope that&#39;s helped clean up some confusion and unravel a bit of mystery of Symphony Fields and extensions. There are still many functions left for you to discover that Meta Keys doesn&#39;t need, such as Sorting and Grouping, but I&#39;ll leave that as an exercise for you :) The Symphony 2.2 codebase is now fully documented using the PHPDoc syntax, so by all means, go forth, discover and learn!</p>
+
+  </div>
+</div>
+
+        </div>
+
+        <footer id="footer">
+  <div class="field">
+
+    <!-- Community -->
+    <p class="footer-community">
+      <strong>&#169; 2010–2012 The Symphony Community</strong>
+      <a href="http://getsymphony.com">International Site</a> · <a href="http://twitter.com/symphonycms">Twitter</a>
+    </p>
+
+    <!-- Developer links -->
+    <p class="footer-links">
+      <strong>Plan, Play and Practice</strong>
+      <a href="https://github.com/symphonycms/symphony-2/blob/master/README.markdown">Requirements</a> · <a href="https://github.com/symphonycms/symphony-2/blob/master/LICENCE">MIT Licence</a> · <a href="http://github.com/symphonycms">Github</a>
+    </p>
+
+    <!-- Factory artwork -->
+    <p class="footer-factory">
+      <em>Conducting sites since 2004</em>
+      <a href="http://getsymphony.com">Symphony Community</a>
+    </p>
+  </div>
+</footer>
+    </body>
+</html>

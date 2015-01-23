@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>Installing Symphony on your Mac (OS X >= 10.5) – SymphonyCMS</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link media="screen" href="/symphony-2/css/codemirror.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.docs.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="/symphony-2/js/jquery.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/modernizr.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/codemirror.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.grid.js"></script>
+    </head>
+    <body>
+        <aside id="network">
+
+  <!-- Main navigation -->
+  <header class="network-toolbar collapsed">
+    <div class="field">
+      <h1 class="network-logo column one">
+        <a href="/docs/about.xml">Symphony CMS</a>
+      </h1>
+      <nav class="network-nav column">
+        <a href="/docs/examples/community.xml">Community</a>
+        <a href="/docs/examples/documentation.xml"  class="active">Documentation</a>
+        <a href="/docs/examples/extensions.xml">Extensions</a>
+        <a href="/docs/examples/ninjas.xml">Ninjas</a>
+        <a href="/docs/examples/xpathr.xml">xPathr</a>
+      </nav>
+      <div id="user" class="network-user">
+        <a href="http://getsymphony.com/get-involved/member/Allen/">
+          <img src="img/user.png" width="35" height="35" alt="Allen Chang" />
+        </a>
+        <p>
+          <a href="http://getsymphony.com/get-involved/currently-online/" class="network-visitors">15</a>
+          <xsl:text> + </xsl:text>
+          <a class="network-username">Allen Chang</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- User profile -->
+  <div class="field network-profile">
+    <form>
+
+      <!-- Gravatar -->
+      <div class="network-gravatar column one">
+        <img src="img/user.png" width="174" height="174" alt="Allen Chang" />
+        <p>Change your avatar at <a href="http://gravatar.com">Gravatar</a>.</p>
+      </div>
+
+      <!-- Information -->
+      <fieldset class="column one large-two">
+        <label for="profile-username" class="restricted">Username</label>
+        <input id="profile-username" type="text" name="fields[username]" value="Allen" readonly="readonly" />
+        <label for="profile-name">Name</label>
+        <input id="profile-name" type="text" name="fields[name]" value="Allen Chang" />
+        <label for="profile-email-address">Email (Private)</label>
+        <input id="profile-email-address" type="text" name="fields[email-address]" value="team@getsymphony.com" />
+        <label for="profile-city">Location</label>
+        <input id="profile-city" type="text" name="fields[location]" value="Symphony Land" />
+      </fieldset>
+      <fieldset class="column two small-one">
+        <label for="profile-website">Website</label>
+        <input id="profile-website" type="text" name="fields[website]" value="http://getsymphony.com" />
+        <label for="profile-bio">Bio</label>
+        <textarea rows="7" name="fields[bio]">Cras mattis consectetur purus sit amet fermentum.</textarea>
+        <div class="profile-controls">
+          <button id="submit-profile" class="button-save" type="submit" name="action[members-edit]">Save Profile</button>
+          <a class="button-cancel" href="../../member/Nils/">Cancel</a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Site switcher -->
+  <div class="field network-drawer">
+
+    <!-- Symphony ressources -->
+    <div class="column three medium-two">
+      <h2>About Symphony</h2>
+      <p>Symphony is an open source content management system for your websites and webapps. It makes complex things simple.</p>
+      <div class="get-symphony">
+        <a href="https://github.com/symphonycms/symphony-2">Get Symphony 2.3.0</a>
+        <a href="https://github.com/symphonycms/symphony-2" class="icon-fork">Fork<span class="medium-hide"> on Github</span></a>
+        <a href="https://github.com/symphonycms/symphony-2/archive/master.zip" class="icon-download"><span class="medium-hide">Download </span>ZIP</a>
+      </div>
+    </div>
+
+    <!-- Symphony in other languages -->
+    <div class="column one small-two">
+      <h2>Regions</h2>
+      <ul>
+        <li>
+          <a href="#">Germany</a>
+        </li>
+        <li>
+          <a href="#">Italy</a>
+        </li>
+        <li>
+          <a href="#">Romania</a>
+        </li>
+        <li>
+          <a href="#">United Kingdom</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Symphony ressources -->
+    <div class="column one">
+      <h2>Services</h2>
+      <ul>
+        <li>
+          <a href="#">Github</a>
+        </li>
+        <li>
+          <a href="#">Twitter</a>
+        </li>
+        <li>
+          <a href="#">Vimeo</a>
+        </li>
+        <li>
+          <a href="#">Flickr</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+        <div id="site">
+            <header class="site-header centered">
+    <h1>
+        <span>Symphony</span> Documentation
+    </h1>
+    <nav>
+        <a href="about.xml">About</a>
+        <a href="layouts.xml">Layouts</a>
+        <a href="snippets.xml">Snippets</a>
+        <a href="styles.xml">Styles</a>
+        <a href="scripts.xml">Scripts</a>
+        <a href="examples.xml">Examples</a>
+    </nav>
+</header>
+
+            <div class="field">
+  <div class="column sidebar infobox">
+    
+      <h3>Articles</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/articles/field-extension.html"
+              >Field Extension</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/getting-git-for-symphony-development.html"
+              >Getting Git for Symphony Development</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/combining-symphony-with-nginx.html"
+              >Combining Symphony with Nginx</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Book</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/book/symphony-book.html"
+              >Symphony Start to Finish</a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-01.html"
+                      >Why You Need Symphony</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-02.html"
+                      >Symphony in Action</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-03.html"
+                      >Getting Started</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-04.html"
+                      >Symphony Anatomy</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-05.html"
+                      >Content</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-06.html"
+                      >Front-end</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-07.html"
+                      >Data Flow</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-08.html"
+                      >Templating</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-09.html"
+                      >System Management</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-10.html"
+                      >Planning Symphony Projects</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-11.html"
+                      >Adaptive Techniques</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Concepts</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/concepts/xslt-transformation.html"
+              >XSLT Transformation</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Guides</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/guides/javascript-styleguide.html"
+              >JavaScript Style Guide</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Tutorials</h3>
+      <ul class="sidebar-links">
+        
+      </ul>
+    
+      <h3>Working</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow.html"
+              >A Symphony Workflow</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow-command-list.html"
+              >A Symphony Workflow - Terminal Command List</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/installing-on-mac-osx.html"
+               class="active">Installing Symphony on your Mac (OS X >= 10.5)</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-view-on-static-pages.html"
+              >A view on static pages</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/understanding-xslt.html"
+              >Understanding XSLT</a>
+            
+          </li>
+        
+      </ul>
+    
+  </div>
+  <div class="column content">
+      <h2>META</h2>
+
+<ul>
+<li>Doc Version: 1</li>
+<li>Author: John Porter</li>
+<li>Applies to: 2.x</li>
+<li>Based on: 2.x</li>
+<li><a href="">Production URL</a></li>
+</ul>
+
+<h1>Installing Symphony on your Mac (OS X &gt;= 10.5)</h1>
+
+<p>This article will take you through the simple steps to setting up Symphony on your shiny Mac. We&#39;ll be looking at three setups; MAMP, MAMP Pro, and Apache/MySQL that comes on your Mac. Also, if you&#39;re using MAMP, you&#39;re in for an easy ride setting up Symphony, and a slightly more advanced easy ride on MAMP Pro.</p>
+
+<p>There are differing opinions on whether MAMP/MAMP Pro is a better route to take over the shipped Apache/MySQL setup on Mac, but it is my setup of chioce as it saves headaches. That is my opinion though, it&#39;s up to you which route you choose to go down, so we&#39;ve got instructions for both</p>
+
+<h2>MAMP &amp; MAMP Pro</h2>
+
+<p>So, to begin with it&#39;s advisable to switch off the apache setup that shipped with your Mac. You can do this under the System Preferences &gt; Sharing panel, just de-select Web Sharing if it is selected.</p>
+
+<p>With MAMP and MAMP Pro, you have two options available in the way of ports. You can use the MAMP ports (8888 and 8889), or you can set your server to use default ports (80 and 3306). These tutorials will assume the default port option.</p>
+
+<h3>MAMP</h3>
+
+<p>Setting up on MAMP couldn&#39;t be simpler. All you have to do is follow these few steps.</p>
+
+<ol>
+<li><p>Create a utf-8 MySQL database using phpMyAdmin that has been installed with MAMP, taking note of the database name, username and password too.</p></li>
+<li><p>Unzip the Symphony download and move the contents of the unzipped folder to <code>/Applications/MAMP/httpdocs</code></p></li>
+<li><p>In your browser, go to <code>http://localhost/</code></p></li>
+</ol>
+
+<p>This will begin the installer, so just follow all the steps, and Symphony will do all the hard work for you!</p>
+
+<p>Once you&#39;ve done this, you will be able to access your site at http://localhost/ and the admin at http://localhost/symphony/</p>
+
+<h3>MAMP Pro</h3>
+
+<p>Setting up on MAMP Pro is also pretty straight forward. With MAMP Pro, you have many more options available to you, which we&#39;re not going to go into here.</p>
+
+<ol>
+<li><p>Just like with MAMP, Create a utf-8 MySQL database using phpMyAdmin that has been installed with MAMP, taking note of the database name, username and password too.</p></li>
+<li><p>With MAMP Pro, you are at your leisure to set your document root (where your website files sit) to anywhere you want, so unzip the Symphony download and move the contents of the unzipped folder to the location you choose.</p></li>
+<li><p>In MAMP Pro&#39;s dashboard, go to the &#39;hosts&#39; tab on the top left of the panel.</p></li>
+<li><p>Click the little plus button at the bottom toadd a new host, and you will be greeted with a blank form on the right.</p></li>
+<li><p>Fill in the server name, and disk location, use the folder to look this up using a dialog window.</p></li>
+<li><p>Don&#39;t worry for now about any of the other advanced options available to you, they&#39;re out of scope for this article.</p></li>
+<li><p>Click the APply button at the bottom to restart the Apache and MySQL instances, and add your new host to the server.</p></li>
+<li><p>In your browser, go to the url you entered in the Server Name box in step 5.</p></li>
+</ol>
+
+<p>For instance, if you added the server name <code>symphony-install</code> then your site will be available at <code>http://symphony-install/</code> and after installation, the admin will be available at <code>http://symphony-install/symphony/</code>.</p>
+
+<p>Pretty simple eh?</p>
+
+<h2>Apache &amp; MySQL default</h2>
+
+  </div>
+</div>
+
+        </div>
+
+        <footer id="footer">
+  <div class="field">
+
+    <!-- Community -->
+    <p class="footer-community">
+      <strong>&#169; 2010–2012 The Symphony Community</strong>
+      <a href="http://getsymphony.com">International Site</a> · <a href="http://twitter.com/symphonycms">Twitter</a>
+    </p>
+
+    <!-- Developer links -->
+    <p class="footer-links">
+      <strong>Plan, Play and Practice</strong>
+      <a href="https://github.com/symphonycms/symphony-2/blob/master/README.markdown">Requirements</a> · <a href="https://github.com/symphonycms/symphony-2/blob/master/LICENCE">MIT Licence</a> · <a href="http://github.com/symphonycms">Github</a>
+    </p>
+
+    <!-- Factory artwork -->
+    <p class="footer-factory">
+      <em>Conducting sites since 2004</em>
+      <a href="http://getsymphony.com">Symphony Community</a>
+    </p>
+  </div>
+</footer>
+    </body>
+</html>

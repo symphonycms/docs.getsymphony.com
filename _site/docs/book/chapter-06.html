@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>Front-end – SymphonyCMS</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link media="screen" href="/symphony-2/css/codemirror.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.docs.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="/symphony-2/js/jquery.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/modernizr.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/codemirror.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.grid.js"></script>
+    </head>
+    <body>
+        <aside id="network">
+
+  <!-- Main navigation -->
+  <header class="network-toolbar collapsed">
+    <div class="field">
+      <h1 class="network-logo column one">
+        <a href="/docs/about.xml">Symphony CMS</a>
+      </h1>
+      <nav class="network-nav column">
+        <a href="/docs/examples/community.xml">Community</a>
+        <a href="/docs/examples/documentation.xml"  class="active">Documentation</a>
+        <a href="/docs/examples/extensions.xml">Extensions</a>
+        <a href="/docs/examples/ninjas.xml">Ninjas</a>
+        <a href="/docs/examples/xpathr.xml">xPathr</a>
+      </nav>
+      <div id="user" class="network-user">
+        <a href="http://getsymphony.com/get-involved/member/Allen/">
+          <img src="img/user.png" width="35" height="35" alt="Allen Chang" />
+        </a>
+        <p>
+          <a href="http://getsymphony.com/get-involved/currently-online/" class="network-visitors">15</a>
+          <xsl:text> + </xsl:text>
+          <a class="network-username">Allen Chang</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- User profile -->
+  <div class="field network-profile">
+    <form>
+
+      <!-- Gravatar -->
+      <div class="network-gravatar column one">
+        <img src="img/user.png" width="174" height="174" alt="Allen Chang" />
+        <p>Change your avatar at <a href="http://gravatar.com">Gravatar</a>.</p>
+      </div>
+
+      <!-- Information -->
+      <fieldset class="column one large-two">
+        <label for="profile-username" class="restricted">Username</label>
+        <input id="profile-username" type="text" name="fields[username]" value="Allen" readonly="readonly" />
+        <label for="profile-name">Name</label>
+        <input id="profile-name" type="text" name="fields[name]" value="Allen Chang" />
+        <label for="profile-email-address">Email (Private)</label>
+        <input id="profile-email-address" type="text" name="fields[email-address]" value="team@getsymphony.com" />
+        <label for="profile-city">Location</label>
+        <input id="profile-city" type="text" name="fields[location]" value="Symphony Land" />
+      </fieldset>
+      <fieldset class="column two small-one">
+        <label for="profile-website">Website</label>
+        <input id="profile-website" type="text" name="fields[website]" value="http://getsymphony.com" />
+        <label for="profile-bio">Bio</label>
+        <textarea rows="7" name="fields[bio]">Cras mattis consectetur purus sit amet fermentum.</textarea>
+        <div class="profile-controls">
+          <button id="submit-profile" class="button-save" type="submit" name="action[members-edit]">Save Profile</button>
+          <a class="button-cancel" href="../../member/Nils/">Cancel</a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Site switcher -->
+  <div class="field network-drawer">
+
+    <!-- Symphony ressources -->
+    <div class="column three medium-two">
+      <h2>About Symphony</h2>
+      <p>Symphony is an open source content management system for your websites and webapps. It makes complex things simple.</p>
+      <div class="get-symphony">
+        <a href="https://github.com/symphonycms/symphony-2">Get Symphony 2.3.0</a>
+        <a href="https://github.com/symphonycms/symphony-2" class="icon-fork">Fork<span class="medium-hide"> on Github</span></a>
+        <a href="https://github.com/symphonycms/symphony-2/archive/master.zip" class="icon-download"><span class="medium-hide">Download </span>ZIP</a>
+      </div>
+    </div>
+
+    <!-- Symphony in other languages -->
+    <div class="column one small-two">
+      <h2>Regions</h2>
+      <ul>
+        <li>
+          <a href="#">Germany</a>
+        </li>
+        <li>
+          <a href="#">Italy</a>
+        </li>
+        <li>
+          <a href="#">Romania</a>
+        </li>
+        <li>
+          <a href="#">United Kingdom</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Symphony ressources -->
+    <div class="column one">
+      <h2>Services</h2>
+      <ul>
+        <li>
+          <a href="#">Github</a>
+        </li>
+        <li>
+          <a href="#">Twitter</a>
+        </li>
+        <li>
+          <a href="#">Vimeo</a>
+        </li>
+        <li>
+          <a href="#">Flickr</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+        <div id="site">
+            <header class="site-header centered">
+    <h1>
+        <span>Symphony</span> Documentation
+    </h1>
+    <nav>
+        <a href="about.xml">About</a>
+        <a href="layouts.xml">Layouts</a>
+        <a href="snippets.xml">Snippets</a>
+        <a href="styles.xml">Styles</a>
+        <a href="scripts.xml">Scripts</a>
+        <a href="examples.xml">Examples</a>
+    </nav>
+</header>
+
+            <div class="field">
+  <div class="column sidebar infobox">
+    
+      <h3>Articles</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/articles/field-extension.html"
+              >Field Extension</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/getting-git-for-symphony-development.html"
+              >Getting Git for Symphony Development</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/combining-symphony-with-nginx.html"
+              >Combining Symphony with Nginx</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Book</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/book/symphony-book.html"
+              >Symphony Start to Finish</a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-01.html"
+                      >Why You Need Symphony</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-02.html"
+                      >Symphony in Action</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-03.html"
+                      >Getting Started</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-04.html"
+                      >Symphony Anatomy</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-05.html"
+                      >Content</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-06.html"
+                       class="active">Front-end</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-07.html"
+                      >Data Flow</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-08.html"
+                      >Templating</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-09.html"
+                      >System Management</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-10.html"
+                      >Planning Symphony Projects</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-11.html"
+                      >Adaptive Techniques</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Concepts</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/concepts/xslt-transformation.html"
+              >XSLT Transformation</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Guides</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/guides/javascript-styleguide.html"
+              >JavaScript Style Guide</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Tutorials</h3>
+      <ul class="sidebar-links">
+        
+      </ul>
+    
+      <h3>Working</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow.html"
+              >A Symphony Workflow</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow-command-list.html"
+              >A Symphony Workflow - Terminal Command List</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/installing-on-mac-osx.html"
+              >Installing Symphony on your Mac (OS X >= 10.5)</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-view-on-static-pages.html"
+              >A view on static pages</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/understanding-xslt.html"
+              >Understanding XSLT</a>
+            
+          </li>
+        
+      </ul>
+    
+  </div>
+  <div class="column content">
+      <h1>Chapter 6: Front-end</h1>
+
+<h2>What’s in This Chapter</h2>
+
+<ul>
+<li>About front-end architecture</li>
+<li>Understanding Symphony’s front end</li>
+<li>Working with Symphony’s front end</li>
+</ul>
+
+<p>Now that you’ve got your content modeled, the next step is to begin thinking about your blog’s front end—you know, the part that everyone sees. What interfaces do you want to provide for your visitors? Where will these interfaces live? How do you want their URLs to be structured?</p>
+
+<p>Front ends come in all kinds of shapes and sizes, from traditional websites that mimic page-based architectures to applications with modular, responsive interfaces or even specialized setups like APIs. With so many possibilities, it’d be incredibly limiting for a system to predetermine how your front end should be structured.</p>
+
+<p>Thankfully, Symphony doesn’t. That task is left entirely up to you. This means, though, that the blog you’ve been building doesn’t even have a front end yet. (Just like there was no content structure at all until you defined one in Chapter 5). Don’t believe me? Try pointing your browser to it: http://yoursite.com/.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 6-1  [f0601.png]
+</code></pre></div>
+<p>The error message you see there (Figure 6-1) is thrown because you haven’t yet created any interfaces, so Symphony doesn’t know how you want it to handle requests. Until there are structures in place defining where and how people should be able to access your site, Symphony will simply shrug its shoulders like this and say “sorry.”</p>
+
+<p>The next step in building your blog, then, is to start mapping these structures out, developing what we’ll call a front-end architecture. We’ll begin by talking about what front-end architecture looks like and what it entails. Then I’ll explain how a Symphony front end works, and we’ll review all the important concepts you need to know before you get started.</p>
+
+<p>After that, all that’s left is to do the work. You’ll see that the process of building out a front end is actually pretty simple once you know what you’re doing. By the time we finish this chapter, you’ll be well on your way to mastering the art of front-end architecture, and your blog will be beginning to take visible, tangible shape.</p>
+
+<p>To get you oriented, let’s start with another quick exercise:</p>
+
+<ol>
+<li>Navigate to Blueprints &gt; Views</li>
+<li>Click the green “Create New” button</li>
+<li>You’ll see the view editor (Figure 6-2). Enter Home as the title, and / (a forward slash) as the handle. For now, leave the rest of the fields blank.</li>
+<li><p>Click “Create View”</p>
+
+<p>Figure 6-2  [f0602.png]</p></li>
+</ol>
+
+<p>Now, if you return to your front end, you’ll see that the error is gone. By creating this view, you’ve defined the first point of interface for your blog, one that sits at the root (/) of your site. The view is just displaying some simple placeholder content right now (Figure 6-3), because you haven’t written its template yet (something we’ll take care of in Chapter 8). But it’s a start. </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 6-3  [f0603.png]
+</code></pre></div>
+<p>Before we press on, let’s take a moment to assess the task at hand.</p>
+
+<h2>What is Front-End Architecture?</h2>
+
+<p>As I pointed out above, Symphony doesn’t make any assumptions about how and where you want to deliver content to your users. All of these decisions are left entirely up to you, which means that your site doesn’t have any front end interfaces at all until you build them. It’s the classic Symphony trade-off: complete freedom and flexibility for a little bit of extra work.</p>
+
+<p>So what does developing a front-end architecture entail? Let’s start with a real-world example.</p>
+
+<p>Imagine for a moment that you’ve been asked to help design and build a new museum. The fundamental content questions have already been sorted—what collections the museum will house, what kinds of exhibitions it’ll host, how its holdings will be stored. What you’ve been asked to do is to sit down with the architect and begin planning a physical layout for the museum—its great halls and exhibit rooms, its entrances and exits, its restrooms, ticket counters, fire escapes, and so on. In short, your task is to define how and where the museum’s visitors will be able to view its content and accomplish important tasks. </p>
+
+<p>Websites and web applications require the same sort of planning. They need to determine where various kinds of content will be on display, where visitors will go when they need more information, what happens when people get lost, etc. Their front ends require an architecture—a logic for handling visitors and their requests, and a structure for organizing and facilitating interactions.</p>
+
+<p>At its core, developing a front-end architecture involves three interrelated tasks:</p>
+
+<ul>
+<li>Identifying the interfaces that you’ll make available to your visitors</li>
+<li>Figuring out how those interfaces will be organized</li>
+<li>Deciding what interactions each interface will need to facilitate</li>
+</ul>
+
+<p>In a simple, page-based architecture, each page corresponds to one URL and one set of contents, so mapping out a front end is no more difficult than organizing a bunch of files into folders. In Symphony, however, things are a bit different. A single view can power dozens or even hundreds of pages and URLs. </p>
+
+<p>It’s a far more powerful and flexible approach, and though it’s slightly more challenging conceptually, in the end developing the architecture is almost as easy. You just have to know how it all works.</p>
+
+<h2>Understanding Symphony’s Front End</h2>
+
+<p>When you visit a Symphony site, every page that gets loaded in your browser is the result of a transaction: you submit a request to the server, and Symphony formulates a response. I explained roughly how all this works back in Chapter 4, but it bears elaborating here. </p>
+
+<p>Views are the engines of a Symphony front end, fielding requests and orchestrating the system’s responses. Every view has resources attached to it—data sources for fetching content and/or events for processing interactions (we’ll cover both in the next chapter). When a view is called, these resources get executed, and they return XML content to the view. The view then uses its template to transform that content into a digestible response. Figure 6-4 illustrates the basic process:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 6-4  [f0604.png]
+</code></pre></div>
+<p>Put very simply, each view constitutes a point of interface between a site and its visitors.</p>
+
+<p>What makes views so powerful is that their URLs can have dynamic parts, or parameters. These get passed through to the resources and the template, meaning everything that a view needs to take care of, from content retrieval to presentation, can be dynamic and almost infinitely extensible.</p>
+
+<p>Here’s a simple example. Let’s say you’re building an online children’s store. You create a view called “Shop,” available at the URL handle shop, and configure it to accept three parameters in its URL: department, age group, and gender. So if someone were to visit http://yoursite.com/shop/toys/toddlers/girls, all three parameters would be set:</p>
+
+<ul>
+<li>department = toys</li>
+<li>age-group = toddlers</li>
+<li>gender = girls</li>
+</ul>
+
+<p>A data source attached to this view could fetch products from your catalog using these dynamic values to filter the results. Assuming your Products section has the appropriate fields, the above URL would return products from the “toys” department, in the “toddlers” age group, targeted for “girls.” </p>
+
+<p>Imagine the breadth of possible variations:</p>
+
+<ul>
+<li>http://yoursite.com/shop/clothing/</li>
+<li>http://yoursite.com/shop/clothing/infants/</li>
+<li>http://yoursite.com/shop/books/</li>
+<li>http://yoursite.com/shop/books/adolescents/boys</li>
+</ul>
+
+<p>… and so on, ad infinitum.</p>
+
+<p>You could use these values in your templates, too, allowing you to adjust your shop’s theme for different departments, age groups, or genders. </p>
+
+<p>In short, you could power an entire shop interface with this single view!</p>
+
+<p>As powerful as views are, you needn’t be intimidated. Planning your blog’s front-end architecture actually isn’t all that daunting a task. Once I’ve reviewed a few important concepts, you’ll see so for yourself.</p>
+
+<h3>Views</h3>
+
+<p>Views are points of interface for a website. Everything your visitors can do, from browsing content to submitting forms, is powered by a view. A view can be as simple as a old-fashioned static page, or robust enough to power a dynamic web application interface.</p>
+
+<p>Views define a website’s URL schema. Every view has a URL handle and is able to accept URL parameters. These two attributes, along with the ability to nest views hierarchically (we’ll discuss this below), mean views give you full control over even the most intricate URL structures.</p>
+
+<p>Views are the context in which data exchange and templating take place. This will be important to remember over the next two chapters. When you’re planning interactions or sketching out your presentation layer, the contextual information (like parameters and event output) and the content that will be available to you are both determined by the view.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>Those familiar with MVC architecture might find all this a bit confusing, because from an MVC perspective, Symphony’s views would actually be part of the controller layer rather than the view layer. If you’re accustomed to a framework like Ruby on Rails and tend to think in MVC terms, it’ll help you to know that Symphony’s views combine the functions of a classic MVC controller with a web framework’s URL routing system.</p>
+
+<p>You can manage the views you’ve created at Blueprints &gt; Views.</p>
+</blockquote>
+
+<h3>View Types</h3>
+
+<p>There are circumstances in which you want some views to behave differently than others. For this reason, Symphony allows for different types of views.</p>
+
+<p>View types define special behaviors and handling options. For example, there is a view type that restricts access to authenticated users, and one that designates a view to handle 404 errors. View types give you an added measure of control over not only the structure but also the behavior of your front end interfaces. What’s more, view types can be provided by extensions, making Symphony’s front end endlessly flexible.</p>
+
+<h3>URL Parameters</h3>
+
+<p>URL parameters allow views to accept dynamic values in their URL. These values can then be used by the view (and its resources and templates) as it orchestrates the system’s response.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>Views are able to use values passed via a URL’s query string as well. This makes it possible to work with optional values that shouldn’t affect a URL’s basic structure, for instance:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://yoursite.com/shop?sort=price&amp;order=asc&amp;limit=50
+</code></pre></div></blockquote>
+
+<p>This URL would set three query string parameters—price, order, and limit—which could then be used just like a URL parameter. Rather than having the view define these explicitly, though, they can be tacked on to the URL on an ad-hoc basis.</p>
+
+<h3>View Resources</h3>
+
+<p>View resources enable a view to deliver content or process interactions. There are two types of view resources:</p>
+
+<ul>
+<li>Data sources deliver content to a view, either from within the system or from an external source. As we’ve seen, the view is a dynamic environment, and data sources can inherit this dynamism (for instance by filtering their results using a URL parameter).</li>
+<li>Events process interactions. Most commonly, they allow data submitted to a view (via a web form, for instance) to be saved into the system. Commenting and contact forms are good examples of this sort of behavior.</li>
+</ul>
+
+<p>We’ll discuss data sources and events in greater depth in Chapter 7.</p>
+
+<h3>Planning Your Blog’s Front End</h3>
+
+<p>Now that you have a good sense of how Symphony will run your front end, we can go ahead and plan the interfaces you’ll need for your blog. This should be fairly easy because, for the most part, blogs have developed a pretty standard format.</p>
+
+<p>For each interface we plan, we’ll need to answer a handful of questions: </p>
+
+<ul>
+<li>Where will it live?</li>
+<li>What content will it need to provide?</li>
+<li>Will it need to process any interactions?</li>
+<li>What parameters will it need to accept?</li>
+</ul>
+
+<p>In the interest of keeping things simple, your blog will be powered by just three interfaces: a home view, a view for reading individual posts, and an archive.</p>
+
+<p>We got a head start on the first of these earlier. Your Home view is going to live at the root (/) of your site. Like most blogs’ home pages, it’ll just display a stream of your most recent posts. The wrinkle is that we’re going to allow it to be filtered by category. So we’ll add a URL parameter for category.</p>
+
+<p>The Posts view, a dedicated interface for reading individual posts, will have a handle of /posts, and since we’ll need to fetch each post by its title, should have a single URL parameter for title. That’ll give us nice, friendly URLs like http://yoursite.com/posts/how-to-become-a-luchador. This view will also need to process comments, something we’ll take up in the following chapter.</p>
+
+<p>The Archive view will provide an interface for browsing through your blog’s history. It’ll be located at /archive, and will fetch posts based on their publish date. That means it’ll need to accept parameters for year and month (allowing for URLs like http://yoursite.com/archive/2010 or http://yoursite.com/archive/2011/01).</p>
+
+<p>We could add a few more interfaces, but let’s leave it at this for now. </p>
+
+<p>Bear in mind, this is only one of many, many possible front-end architectures we could have whipped up for your blog. You might already be thinking of ways you’d want to improve things, or additional interfaces you’d want to offer. But since our goal here is just to familiarize you with the system and illustrate some important concepts, you’ll have to be patient for the time being. You can always go back and adjust things later if you like.</p>
+
+<p>With this plan in place, scaffolding your front end is going to be a walk in the park. Let’s get started.</p>
+
+<h2>Working with Symphony’s Front End</h2>
+
+<p>There are two ways to manage views: using the admin interface (under Blueprints &gt; Views), or by working with the files directly (in workspace/views). </p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>Like sections, views’ configurations and templates are stored as files in your workspace. Each view gets a dedicated folder, which is named using the view’s handle. The hierarchy of these folders mirrors the hierarchy of the views themselves.</p>
+</blockquote>
+
+<p>Inside the view’s folder are two files: an XML file containing the its configuration, and an XSL file containing its template. We’ll discuss templates in Chapter 8, but here’s a peek at a (slightly simplified) sample view configuration:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;view&gt;
+  &lt;title&gt;Inventory&lt;/title&gt;
+  &lt;content-type&gt;text/html;charset=utf-8&lt;/content-type&gt;
+  &lt;url-parameters&gt;
+    &lt;item&gt;department&lt;/item&gt;
+  &lt;/url-parameters&gt;
+  &lt;data-sources&gt;
+    &lt;item&gt;inventory-items&lt;/item&gt;
+  &lt;/data-sources&gt;
+  &lt;events&gt;
+    &lt;item&gt;update-inventory&lt;/item&gt;
+  &lt;/events&gt;
+  &lt;types&gt;
+    &lt;item&gt;admin&lt;/item&gt;
+  &lt;/types&gt;
+&lt;/view&gt;
+</code></pre></div>
+<p>Using the file system to manage views can be efficient, especially when you’re doing large-scale restructuring, but you don’t get the same combination of ease-of-use and fine-grained control as you would with the admin interface.</p>
+
+<h3>Creating and Editing Views</h3>
+
+<p>Let’s start by revisiting your Home view and taking a closer look at the view editor.</p>
+
+<ol>
+<li>Navigate to Blueprints &gt; Views</li>
+<li>Click “Home”</li>
+</ol>
+
+<p>The one adjustment we need to make here is to add the URL parameter for category filtering:</p>
+
+<ol>
+<li>In URL Parameters, enter category</li>
+<li>Click “Save Changes”</li>
+</ol>
+
+<p>Your view should now look like Figure 6-5:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 6-5  [f0605.png]
+</code></pre></div>
+<p>The view editor, as you can see, is organized into three parts: “Essentials,” where you identify the view and its type; “URL Settings,” where you define the various properties that will determine the view’s URL(s); and “Resources,” where you can attach data sources and events to the view. Let’s take a closer look at each field:</p>
+
+<ul>
+<li>Title is a simple, human-readable title for the view—something like “Home,” “About,” or “Browse Products”</li>
+<li>View Type allows you to select a type for the view. By default the system provides four view types:
+
+<ul>
+<li>“Normal” views have no special behaviors or conditions associated with them.</li>
+<li>“Admin” views can only be accessed by users who are logged in to the system.</li>
+<li>A “403” view (you should only specify one) is used when a visitor requests a forbidden URL.</li>
+<li>A “404” view is used when a visitor requests a non-existent URL.</li>
+</ul></li>
+<li>Handle is the primary URL identifier for a view. If no handle is specified during view creation, one is automatically generated using the view’s title.</li>
+<li>Parent allows you to nest views hierarchically. The view’s URL will then include its parent’s handle: http://yoursite.com/parent-handle/handle.</li>
+<li>URL Parameters allows you to define one or more parameters that can be accepted by the view. Parameters are slash-delimited: parameter1/parameter2.</li>
+<li>Data Sources allows you to attach data sources to deliver content to a view.</li>
+<li>Events allows you to attach events to a view for processing interactions.</li>
+</ul>
+
+<p>Let’s quickly create the two remaining views. First, your Posts view:</p>
+
+<ol>
+<li>Navigate to Blueprints &gt; Views</li>
+<li>Click “Create New”</li>
+<li>For title, enter Posts</li>
+<li>For handle, enter posts</li>
+<li>For URL parameters, enter title</li>
+<li>Click “Save Changes”</li>
+</ol>
+
+<p>Now the archive view:</p>
+
+<ol>
+<li>In the notification bar, click “Create another”</li>
+<li>For title, enter Archive</li>
+<li>For handle, enter archive</li>
+<li>For URL parameters, enter year/month</li>
+<li>Click “Save Changes”</li>
+</ol>
+
+<p>Just like that, you’ve defined the three interfaces that are going to power your blog. Of course, we’ve got a ways to go before they’ll actually do anything useful, but the structure is already in place. Didn’t I tell you it was going to be easy?</p>
+
+<p>In fact, it’s been a bit too easy, so we’ll make this slightly more interesting. Let’s say, as very often happens when you’re working on a web project, that you’ve changed your mind about something. You’ve decided that you want your posts’ URLs to include the category in which you’ve placed them. So instead of, say:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://yoursite.com/posts/choosing-a-stripper
+</code></pre></div>
+<p>You want:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://yoursite.com/painting-tips/posts/choosing-a-stripper
+</code></pre></div>
+<p>Seems like a sound decision. Let’s go ahead and implement it.</p>
+
+<h3>Crafting a URL Schema</h3>
+
+<p>It’s beyond the scope of this book to discuss what makes a good URL schema, and really, it depends on the site. But whatever your needs it’s important that you understand the formula that goes into determining a view’s URL, so let’s quickly review that now.</p>
+
+<p>If you don’t specify a parent, your view will be located directly at the site’s root:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://yoursite.com/handle
+</code></pre></div>
+<p>Any parameters your view accepts can be tacked on to the end of that URL:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://yoursite.com/handle/parameter1/parameter2
+</code></pre></div>
+<p>When your view does have a parent, naturally its URL nests beneath that of the parent:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://yoursite.com/parent-handle/handle
+</code></pre></div>
+<p>And if the parent accepts parameters, you can nest behind those too:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://yoursite.com/parent-handle/parent-parameter/handle
+</code></pre></div>
+<p>If the parent itself has a parent, the same rules apply. I’m going to assume that, by now, you can use your powers of deduction to figure out what those URLs would look like, so let’s move on.</p>
+
+<h3>Organizing Views</h3>
+
+<p>With all of that in mind, let’s make that change we talked about above. There are two ways to nest views: using the parent field in the view editor, or by physically nesting the view directories in the file system. The latter is less flexible (you can’t nest behind a parent view’s parameters without opening and editing the view configuration), but it’s useful nonetheless, so we’ll look briefly at both methods:</p>
+
+<ol>
+<li>Using a file browser, or if necessary the command line, browse to the location on your server or computer where you installed Symphony.</li>
+<li>Descend down into the workspace/ directory, and then into views/. You’ll see directories there for each of the views you’ve created.</li>
+<li><p>Move the posts/ directory into the home/ directory, so that the directory hierarchy looks like Figure 6-6:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"> Figure 6-6 [f0606.png]
+</code></pre></div></li>
+</ol>
+
+<p>That’s it. Your Posts view is now nested beneath your Home view. Symphony instantly recognizes the change:</p>
+
+<ol>
+<li>Back in the admin interface, navigate to Blueprints &gt; Views</li>
+</ol>
+
+<p>You’ll see that the views index now reflects the change you made in the file system, and Posts is nested beneath Home. Neat, huh?</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 6-7  [f0607.png]
+</code></pre></div>
+<p>But we’re not finished yet. Remember, the whole point was to nest our Posts view behind the Home view’s category parameter, and that’s a level of control we can only get using the admin interface:</p>
+
+<ol>
+<li>Click “Posts”</li>
+<li>The parent dropdown now lists all the views you’ve created, along with various permutations including their parameters (Figure 6-7). Select “/:category”</li>
+<li><p>Click “Save Changes”</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 6-8  [f0608.png]
+</code></pre></div></li>
+</ol>
+
+<p>As you can see, the parent dropdown gives you the ability to choose very precisely where you want to nest a view, whether directly beneath the parent page or beneath one or more of its parameters. When you’re building complex websites or web applications, this kind of flexibility can come in very handy.</p>
+
+<p>Also, the fact that views can be so easily rearranged, updated, and reorganized means that when you’re developing with Symphony it’s absolutely trivial to experiment with different architectures, tweaking and adjusting until you’ve got it just right. </p>
+
+<h2>Summary</h2>
+
+<p>And with that, you’re finished architecting your blog’s front end.</p>
+
+<p>As with content modeling, I’ve tried to demonstrate here that front-end architecture really isn’t all that difficult once you understand what it entails. If you’re a seasoned developer, of course, most of this was elementary to you, but if not, I hope you’re beginning to feel empowered. This is serious web development work you’re doing, the sort that many systems try to hide from their users. Symphony not only hands you the reins, it actually makes the task easy and enjoyable.</p>
+
+<p>In this chapter, we talked about what it means to develop a front-end architecture, and we reviewed how exactly a Symphony front end works. We then thoroughly dissected views and their various properties and accoutrements. Finally, we planned a structure for your blog’s front end and then built it, fairly quickly and unceremoniously, in just a handful of steps.</p>
+
+<p>Though we restrained from doing anything too complex, I hope you’ve gotten a sense of how powerful views really are. They give you the ability to craft almost any kind of front end you can imagine. Just how this is so might not be entirely clear yet, but as we pull everything together over the next two chapters, I think you’ll begin to see for yourself.</p>
+
+  </div>
+</div>
+
+        </div>
+
+        <footer id="footer">
+  <div class="field">
+
+    <!-- Community -->
+    <p class="footer-community">
+      <strong>&#169; 2010–2012 The Symphony Community</strong>
+      <a href="http://getsymphony.com">International Site</a> · <a href="http://twitter.com/symphonycms">Twitter</a>
+    </p>
+
+    <!-- Developer links -->
+    <p class="footer-links">
+      <strong>Plan, Play and Practice</strong>
+      <a href="https://github.com/symphonycms/symphony-2/blob/master/README.markdown">Requirements</a> · <a href="https://github.com/symphonycms/symphony-2/blob/master/LICENCE">MIT Licence</a> · <a href="http://github.com/symphonycms">Github</a>
+    </p>
+
+    <!-- Factory artwork -->
+    <p class="footer-factory">
+      <em>Conducting sites since 2004</em>
+      <a href="http://getsymphony.com">Symphony Community</a>
+    </p>
+  </div>
+</footer>
+    </body>
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>A Symphony Workflow – SymphonyCMS</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link media="screen" href="/symphony-2/css/codemirror.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.docs.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="/symphony-2/js/jquery.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/modernizr.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/codemirror.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.grid.js"></script>
+    </head>
+    <body>
+        <aside id="network">
+
+  <!-- Main navigation -->
+  <header class="network-toolbar collapsed">
+    <div class="field">
+      <h1 class="network-logo column one">
+        <a href="/docs/about.xml">Symphony CMS</a>
+      </h1>
+      <nav class="network-nav column">
+        <a href="/docs/examples/community.xml">Community</a>
+        <a href="/docs/examples/documentation.xml"  class="active">Documentation</a>
+        <a href="/docs/examples/extensions.xml">Extensions</a>
+        <a href="/docs/examples/ninjas.xml">Ninjas</a>
+        <a href="/docs/examples/xpathr.xml">xPathr</a>
+      </nav>
+      <div id="user" class="network-user">
+        <a href="http://getsymphony.com/get-involved/member/Allen/">
+          <img src="img/user.png" width="35" height="35" alt="Allen Chang" />
+        </a>
+        <p>
+          <a href="http://getsymphony.com/get-involved/currently-online/" class="network-visitors">15</a>
+          <xsl:text> + </xsl:text>
+          <a class="network-username">Allen Chang</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- User profile -->
+  <div class="field network-profile">
+    <form>
+
+      <!-- Gravatar -->
+      <div class="network-gravatar column one">
+        <img src="img/user.png" width="174" height="174" alt="Allen Chang" />
+        <p>Change your avatar at <a href="http://gravatar.com">Gravatar</a>.</p>
+      </div>
+
+      <!-- Information -->
+      <fieldset class="column one large-two">
+        <label for="profile-username" class="restricted">Username</label>
+        <input id="profile-username" type="text" name="fields[username]" value="Allen" readonly="readonly" />
+        <label for="profile-name">Name</label>
+        <input id="profile-name" type="text" name="fields[name]" value="Allen Chang" />
+        <label for="profile-email-address">Email (Private)</label>
+        <input id="profile-email-address" type="text" name="fields[email-address]" value="team@getsymphony.com" />
+        <label for="profile-city">Location</label>
+        <input id="profile-city" type="text" name="fields[location]" value="Symphony Land" />
+      </fieldset>
+      <fieldset class="column two small-one">
+        <label for="profile-website">Website</label>
+        <input id="profile-website" type="text" name="fields[website]" value="http://getsymphony.com" />
+        <label for="profile-bio">Bio</label>
+        <textarea rows="7" name="fields[bio]">Cras mattis consectetur purus sit amet fermentum.</textarea>
+        <div class="profile-controls">
+          <button id="submit-profile" class="button-save" type="submit" name="action[members-edit]">Save Profile</button>
+          <a class="button-cancel" href="../../member/Nils/">Cancel</a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Site switcher -->
+  <div class="field network-drawer">
+
+    <!-- Symphony ressources -->
+    <div class="column three medium-two">
+      <h2>About Symphony</h2>
+      <p>Symphony is an open source content management system for your websites and webapps. It makes complex things simple.</p>
+      <div class="get-symphony">
+        <a href="https://github.com/symphonycms/symphony-2">Get Symphony 2.3.0</a>
+        <a href="https://github.com/symphonycms/symphony-2" class="icon-fork">Fork<span class="medium-hide"> on Github</span></a>
+        <a href="https://github.com/symphonycms/symphony-2/archive/master.zip" class="icon-download"><span class="medium-hide">Download </span>ZIP</a>
+      </div>
+    </div>
+
+    <!-- Symphony in other languages -->
+    <div class="column one small-two">
+      <h2>Regions</h2>
+      <ul>
+        <li>
+          <a href="#">Germany</a>
+        </li>
+        <li>
+          <a href="#">Italy</a>
+        </li>
+        <li>
+          <a href="#">Romania</a>
+        </li>
+        <li>
+          <a href="#">United Kingdom</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Symphony ressources -->
+    <div class="column one">
+      <h2>Services</h2>
+      <ul>
+        <li>
+          <a href="#">Github</a>
+        </li>
+        <li>
+          <a href="#">Twitter</a>
+        </li>
+        <li>
+          <a href="#">Vimeo</a>
+        </li>
+        <li>
+          <a href="#">Flickr</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+        <div id="site">
+            <header class="site-header centered">
+    <h1>
+        <span>Symphony</span> Documentation
+    </h1>
+    <nav>
+        <a href="about.xml">About</a>
+        <a href="layouts.xml">Layouts</a>
+        <a href="snippets.xml">Snippets</a>
+        <a href="styles.xml">Styles</a>
+        <a href="scripts.xml">Scripts</a>
+        <a href="examples.xml">Examples</a>
+    </nav>
+</header>
+
+            <div class="field">
+  <div class="column sidebar infobox">
+    
+      <h3>Articles</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/articles/field-extension.html"
+              >Field Extension</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/getting-git-for-symphony-development.html"
+              >Getting Git for Symphony Development</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/combining-symphony-with-nginx.html"
+              >Combining Symphony with Nginx</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Book</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/book/symphony-book.html"
+              >Symphony Start to Finish</a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-01.html"
+                      >Why You Need Symphony</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-02.html"
+                      >Symphony in Action</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-03.html"
+                      >Getting Started</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-04.html"
+                      >Symphony Anatomy</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-05.html"
+                      >Content</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-06.html"
+                      >Front-end</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-07.html"
+                      >Data Flow</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-08.html"
+                      >Templating</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-09.html"
+                      >System Management</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-10.html"
+                      >Planning Symphony Projects</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-11.html"
+                      >Adaptive Techniques</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Concepts</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/concepts/xslt-transformation.html"
+              >XSLT Transformation</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Guides</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/guides/javascript-styleguide.html"
+              >JavaScript Style Guide</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Tutorials</h3>
+      <ul class="sidebar-links">
+        
+      </ul>
+    
+      <h3>Working</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow.html"
+               class="active">A Symphony Workflow</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow-command-list.html"
+              >A Symphony Workflow - Terminal Command List</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/installing-on-mac-osx.html"
+              >Installing Symphony on your Mac (OS X >= 10.5)</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-view-on-static-pages.html"
+              >A view on static pages</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/understanding-xslt.html"
+              >Understanding XSLT</a>
+            
+          </li>
+        
+      </ul>
+    
+  </div>
+  <div class="column content">
+      <h2>META</h2>
+
+<ul>
+<li>Doc Version: 1</li>
+<li>Author: John Porter</li>
+<li>Applies to: 2.x</li>
+<li>Based on: 2.x</li>
+<li><a href="">Production URL</a></li>
+</ul>
+
+<h1>A Symphony Workflow</h1>
+
+<p>This article is based on solid git techniques, taking heed of advice learned from Symphony community members, many many tips on the web, and flicking through the pages of <a href="http://oreilly.com/catalog/9780596520137/">O&#39;Reilly&#39;s Version Control with git</a>.</p>
+
+<p>The core aim of this article, is to get a good Symphony development and deployment environment using git as the basis for the organisation, and have it written down for reference.</p>
+
+<h2>Before you start, be aware:</h2>
+
+<p><em>This article assumes you will be developing Symphony projects, and storing them under *</em>private** remote repos. Due to some of the techniques described in this article, <strong>sensitive information</strong> relating to your your <strong>install and database</strong> will be stored in the git repo. If you decide to store your project under public remote repos <strong>this information will be publicly available</strong>. I hold no responsibility for you doing this publicly. You have been warned!*</p>
+
+<h2>Planning a Symphony Workflow</h2>
+
+<p>So, where to begin and what to do. We need to outline a few things first, so we don&#39;t miss anything in the setup. I know from experience that having to backtrack and retrospectively do project-wide setup can go horribly wrong, and there have been many times I&#39;ve scrapped a repo and started again (usually down to submodule headaches, and my own oversights). Luckily, I&#39;m a sole developer. Just try doing that when there are two or more of you, and you could end up on the losing side of a git battle, and we don&#39;t want to fall out with fellow developers.</p>
+
+<h3>Keeping branches separate</h3>
+
+<p>We need to Keep the Symphony, Development and Master branches separate. This is key to a hassle free working life, and can make it very easy to do separate work on mainline development, bug-fixing, and urgent quick-fix development all on the same source code. It will allow you to make use of the really useful <code>git stash</code> command and temporary <code>git branch</code>ing.</p>
+
+<p>The best git branching model explanation I&#39;ve seen, and advocate at my employers agency is &#39;<a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful git branching model, by Vincent Driessen</a>&#39;. I highly recommend reading this article, whether you adopt it or not as I won&#39;t go in to detail here, and it will give you a good understanding of Git branches.</p>
+
+<p>We will begin with three branches <code>master</code>, <code>develop</code> and <code>symphony</code> to separate out our main actions. More will be added as and when you need them, following the branching model.</p>
+
+<blockquote>
+<p>Hang on, symphony isn&#39;t on the branching model!</p>
+</blockquote>
+
+<p>No, it&#39;s not. As we&#39;re using Symphony as a codebase of sorts, which gets updated often, we need a separate branch that&#39;s not in the model to pull our updates into; This way, we can test for any merge conflicts separately from our development, therefore keeping Symphony core development separate to that of our site.</p>
+
+<h3>Apply your remotes early</h3>
+
+<p>This makes sure that before development starts, you have all your sources/targets in place. It should really only be your repo and the Symphony repo to start with.</p>
+
+<p>If you&#39;re planning to deploy the site to git enabled web-servers, there will be another remote or two to add, but this is beyond the scope of this article. Maybe in the future, filed under &#39;Seriously advanced Git&#39;.</p>
+
+<h3>Extensions and Libraries Submodules</h3>
+
+<p>With a Symphony project, you&#39;re inevitably going to use submodules for extensions, and libraries of code too. This can be a pain to do if you don&#39;t plan it properly first. With submodules being quite a new feature in the life-cycle of Git, they are still buggy in their implementation, and the issues haven&#39;t even been fully discussed yet, let alone ironed out, especially when it comes to removal/deletion. So proper planning can be a lifesaver.</p>
+
+<p>List the extensions, code libraries and submodules that you know about and intend to use for the project. Adding these later isn&#39;t a problem, but start a list, including the remote paths for them. It&#39;s better to copy and paste during setup than to have to keep going and finding them. Later additions can be added, to keep a record of outsourced code.</p>
+
+<h4>Extensions Planning</h4>
+
+<p>When it comes to extensions, it&#39;s very useful to make your list like the following, so you can use my wonderful method of automatically adding them all at once. The list needs to be a plain text csv document stored like the following:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git://github.com/symphonycms/export_ensemble.git,extensions/export_ensemble
+git://github.com/symphonycms/markdown.git,extensions/markdown
+git://github.com/symphonycms/maintenance_mode.git,extensions/maintenance_mode
+git://github.com/symphonycms/selectbox_link_field.git,extensions/selectbox_link_field
+git://github.com/symphonycms/jit_image_manipulation.git,extensions/jit_image_manipulation
+git://github.com/symphonycms/profiledevkit.git,extensions/profiledevkit
+git://github.com/symphonycms/debugdevkit.git,extensions/debugdevkit
+git://github.com/symphonycms/xssfilter.git,extensions/xssfilter
+</code></pre></div>
+<p>Notice how there is no space after the comma? It needs to be that way if you intend to automatically add them all.</p>
+
+<p><em>The above list is the extensions that ship with Symphony for display purposes, so you won&#39;t need to list these, but your list should follow suit.</em></p>
+
+<p>The first item is the git link to the extension&#39;s repo. You will need to use read-only links here, don&#39;t use write access links as these can cause issues for developers who don&#39;t have write access to the extension (If you want to add write access you can do this by manually cd-ing into the directory and altering the submodule&#39;s git repo, although this can cause headaches down the line). The second item is the path to the etension, from the root of your repo. If you save it in this format, you will be pleasantly surprised later on</p>
+
+<h4>Libraries Planning</h4>
+
+<p>You&#39;re inevitably going to use code libraries at some point in your project too. Libraries are such things as jQuery, jQuery plug-ins etc. Making a list of ones you think you&#39;ll need will help in the future, but don&#39;t worry about it as these things will more than likely not be known until later in your project.</p>
+
+<h2>Flex your terminal fingers</h2>
+
+<p>And we shall begin...</p>
+
+<p><em>This example project is called <code>mywebsite</code>. You should replace these references with something more meaningful to your project.</em></p>
+
+<p>You may notice through this process that we aren&#39;t doing any git <code>clone</code>s. Cloning a repo is ideal for development on that code-base, but that isn&#39;t what we want to do here. We are starting a new project that uses an existing code-base as a kick-off point, not a duplicate of it, that&#39;s why we need to do a little more work in setting it up. It will save you overhead and confusion later on, trust me...</p>
+
+<h3>Setting Up</h3>
+
+<p>Firstly, we need to set up the project folder.</p>
+
+<p><em>In Terminal, make the folders then initialise the git repo:</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">mkdir mywebsite
+cd mywebsite
+git init
+</code></pre></div>
+<p>Once this is done, we can start to add our remotes.</p>
+
+<h3>Git Remotes</h3>
+
+<p>We will need to apply at least our two main remotes for the project. One for the Symphony official Github repo, and the other for your project&#39;s remote repo.</p>
+
+<p>For Symphony, we need to use git options to limit what we use from the repo. This will enable us to not overload our project with excess information that we will never use, i.e. all of the Symphony version tags and other branches.</p>
+
+<p>The options we use are:</p>
+
+<ul>
+<li><p><code>--no-tags</code> which will make sure we never pull the tag list down. You just have to ask yourself:</p>
+
+<blockquote>
+<p>What happens when I want to tag my site as 2.0 or 2.1, when that version tag already exists in Symphony?</p>
+</blockquote>
+
+<p>Exactly. Symphony&#39;s <code>master</code> branch is the most recent version of the code, and that is what you will want to develop on top of.</p></li>
+<li><p><code>-t master</code> which will only deal with the master branch for our repo. (Some of you may notice that this is tracking the two branches together, but we will change this later.)</p></li>
+</ul>
+
+<p><em>In Terminal, add the git remotes</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git remote add --no-tags -t master symphonycms git:github.com/symphonycms/symphony-2.git
+git remote add mywebsite git@github.com:myusername/mywebsite.git
+</code></pre></div>
+<p>Our second remote makes use of the <code>ssh</code> style git protocol to give us write access to the repository, where <code>myusername</code> is the username you have on Github. Feel free to host your project elsewhere, changing the details as required. If you choose to host it on Github, remember to use a private repo, as explained earlier.</p>
+
+<h3>Branching Our Project</h3>
+
+<p>We need to set up our branches next, but just before that, we have to give our project some default content to work with. We have to <code>fetch</code> the Symphony repo into the project. With this step, we can make sure we don&#39;t copy the entire history of the project and bloat our own project.</p>
+
+<p><em>In Terminal, fetch the Symphony repo</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git fetch symphonycms master
+</code></pre></div>
+<p>Once done, we can start branching. We should specify the start point for best practice. <em>It isn&#39;t required, but getting into the habit will benefit us in the long run.</em> Our start point will be the code we just pulled, which resides in the <code>FETCH_HEAD</code>. Because we havent done anything yt, we have no default <code>master</code> branch, so we need to create that too. We do that by merging the <code>FETCH_HEAD</code> to our current location</p>
+
+<p><em>In Terminal, create the required branches</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git merge FETCH_HEAD
+git branch symphony FETCH_HEAD
+git branch develop FETCH_HEAD
+</code></pre></div>
+<p>All is good so far. Now we have our three branches.</p>
+
+<h3>Remote Tracking</h3>
+
+<p>Remote tracking makes it easier for us to <code>push</code> and <code>pull</code> from our remotes, without having to remember which branches on our remotes we are working with. When you end up having lots of branches for different features/bug-fixes/developers, things can get very confusing when you have to switch between them for simultaneous development and management of your project.</p>
+
+<p>First off, we need to <code>push</code> to our site&#39;s remote to give us something to track to, for all of our project branches (including the Symphony branch). If we skip this step, git will give us an error when setting up tracking, saying that the branches don&#39;t exist on the remote.</p>
+
+<p><em>In Terminal, push to our remote</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git push --all mywebsite
+</code></pre></div>
+<p>Now we can commence tracking our remotes</p>
+
+<p><em>In Terminal, apply tracking for our branches</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git branch --set-upstream master mywebsite/master
+git branch --set-upstream develop mywebsite/develop
+git branch --set-upstream symphony symphonycms/master
+</code></pre></div>
+<p>An upstream basically tells git that the branches are linked to each other, and lets git give us useful information when committing changes, like how many commits we are ahead of the remote, or whether the remote has received more commits than we have locally. This information can become vital when dealing with multiple developers, but is very useful when you&#39;re developing on your own too.</p>
+
+<p>It also allows us to omit the repo and branch name to <code>push</code> to, so dependent on which branch we are developing on we can use</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git push
+</code></pre></div>
+<p>instead of</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git push mywebsite master
+</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git push mywebsite develop
+</code></pre></div>
+<p>So, that&#39;s the setup complete, now all we need to do is checkout our development branch, and get on with it.</p>
+
+<p><em>In Terminal, checkout the <code>develop</code> branch</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git checkout develop
+</code></pre></div>
+<h3>Adding Extension Submodules</h3>
+
+<p>Adding submodules is rather easy. Just make sure you get it right, as removing mistakes <em>isn&#39;t</em> easy. It can be really annoyingly confusing (until you read Removing Submodules later on).</p>
+
+<p>To add a Symphony extension, you need to know the repo&#39;s path and the extension&#39;s directory folder name. Irrespective of the fact that some extension developers don&#39;t use the generally accepted method of naming a repo, we will have to manually write out the extensions path to add it anyway, so we can rectify these inconsistencies.</p>
+
+<p>If you have made the list as mentioned in &#39;Planning A Symphony Workflow&#39;, then you can just copy and paste the required text.</p>
+
+<p><em>In Terminal, from the root of your repo, add an extension like so:</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git submodule add git://github.com/developer/extension.git extensions/extension
+</code></pre></div>
+<p>The <code>git://</code> path is the path to the developer&#39;s repo, and the second path is where we would like the extension to be added within the <code>/extensions</code> folder. You really need to get these paths right because once the submodule is added, it can&#39;t be changed other than updating the contents.</p>
+
+<h4>Auto Adding Extension Submodules</h4>
+
+<p>Because we will invariably want to use lots of the really cool extensions that are available to Symphony, adding them one by one at the beginning of the project is going to make you pull your hair out in desperation of finding a better way of doing it, well, look no further! I asked for help on StackOverflow and I got it, so now I will share this with you all.</p>
+
+<p>The first thing you will need is the list of extensions you should have made during the &#39;Planning A Symphony Workflow]&#39; section. We will need this to automate the extension adding. Thoroughly check this list to make sure that there are no mistakes, as the automation process isn&#39;t foolproof by any means, and will just keep on trucking past mistakes.</p>
+
+<p><em>In a text editor of your choice, write this code out</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">#!/bin/bash
+filename=&quot;$1&quot;
+while IFS=&quot;,&quot; read one two
+do
+git submodule add &quot;$one&quot; &quot;$two&quot;
+done &lt; &quot;$filename&quot;
+git submodule update --init
+</code></pre></div>
+<p>What&#39;s that? Doesn&#39;t make any sense to you? No, me neither, but it works. Thanks go to <code>ghostdog74</code> on stackoverflow.com for writing this for me. I&#39;m no bash-er and would never have come up with this.</p>
+
+<p>Once you have this script, save it as <code>git-auto-submod.sh</code>, somewhere that you can access it via your shell.</p>
+
+<p>On my Mac, I have it saved under <code>/usr/local/bin</code> which is in my path. You will need to give it Execute permissions to use it too.</p>
+
+<p>OK. Ready? Grab the path to the list you made earlier.</p>
+
+<p><em>In Terminal, from the root of your repo, run the script</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git-auto-submod.sh path/to/extensions.csv
+</code></pre></div>
+<p>This will automatically add every extension you have listed in the csv file. Magical eh?</p>
+
+<h4>Removing Submodules</h4>
+
+<p>Submodules can be a nightmare and the bain of a git user, although as a feature, they&#39;re quite cool! Until you need to remove them, that is.</p>
+
+<p>There isn&#39;t as of yet a magical command to do this, why it&#39;s been left out I don&#39;t really know, but it is doable, it just takes a little work.</p>
+
+<ul>
+<li>  Find the relevant line in your <code>.gitmodules</code> file and remove it, then save the file.</li>
+<li>  Find the relevant section in your <code>.git/config</code> file and remove it, then save the file.</li>
+</ul>
+
+<p><em>In Terminal, from the root of your repo, remove a cached submodule</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git rm --cached path_to_submodule
+git commit -m &#39;your message here&#39;
+</code></pre></div>
+<p>Not so hard now was it?</p>
+
+<h3>Rowan&#39;s Marvelous Multiple Manifest&#39;s</h3>
+
+<p>One problem that has been encountered by many with Symphony is how to keep separate configurations for separate servers. There is discussion among the working groups to add this functionality in to the config file, but until that happens, we should use Rowan Lewis&#39; method of adding multiple manifest&#39;s.</p>
+
+<p><em>**Warning:</em>* this is the bit the disclaimer was talking about. <code>manifest/config.php</code> is where your database details are stored and will be tracked by git using the method outlined here. If you add this to git control and save it publicly, everyone and their grandmother (techno-gran) will have your database!*</p>
+
+<p><em>The following has been taken from <a href="http://rowanlewis.com/using-git-and-symphony-cms">Rowan&#39;s article</a>, and updated to fit this article&#39;s writing style.</em></p>
+
+<p>Rowan talks about just two manifest folders, one for each server in the workflow, however my own workflow uses three servers (dev, staging, production) so I will be writing for three.</p>
+
+<h4>Create the Manifest folder</h4>
+
+<p>Firstly, as we haven&#39;t installed Symphony yet, we need to create the manifest folder ourselves.</p>
+
+<p><em>In Terminal, at the root of your repo, create some folders</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">mkdir manifest manifest/cache manifest/logs manifest/tmp
+</code></pre></div>
+<p>We will need to add some git ignore code to these now to ensure that the contents are hidden from Git</p>
+
+<p><em>In Terminal, create some ignore files</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">touch manifest/cache/.gitignore manifest/logs/.gitignore manifest/tmp/.gitignore
+</code></pre></div>
+<p>These files need to be edited now to contain the following lines. You can use your personal editor of choice.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">*
+!.gitignore
+</code></pre></div>
+<p><em>In Terminal, do the following</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">echo &quot;*&quot; &gt;&gt; manifest/cache/.gitignore
+echo &quot;*&quot; &gt;&gt; manifest/logs/.gitignore
+echo &quot;*&quot; &gt;&gt; manifest/tmp/.gitignore
+echo &quot;!.gitignore&quot; &gt;&gt; manifest/cache/.gitignore
+echo &quot;!.gitignore&quot; &gt;&gt; manifest/logs/.gitignore
+echo &quot;!.gitignore&quot; &gt;&gt; manifest/tmp/.gitignore
+</code></pre></div>
+<p>This tells git to ignore every file except for the ignore file itself, which is handy as git won’t try and merge temp files, cache files or logs.</p>
+
+<p>Now, we will use this manifest folder to create our live and development manifests.</p>
+
+<h4>A Manifest For Each Server</h4>
+
+<p>As we&#39;re writing about a three server workflow, we will need to duplicate this manifest folder for each server in our workflow.</p>
+
+<p><em>In Terminal, copy the manifest folder, appending the name of the server to the end</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">cp -R manifest manifest.dev
+cp -R manifest manifest.stage
+mv manifest manifest.prod
+</code></pre></div>
+<p>That last command just renames the <code>manifest</code> folder to our production copy. It&#39;s easier than copying three times and deleting one.</p>
+
+<p>If we were to install Symphony at this stage, it would create itself a new <code>manifest</code> folder, and ignore the hard (easy really) work we&#39;ve just done, so we need to let Symphony know that there is a manifest folder already there. We do this by creating a link to the relevant <code>manifest.*</code> folder we&#39;ve created.</p>
+
+<p><em>In Terminal, create a symbolic link</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ln -s manifest.dev manifest
+</code></pre></div>
+<p>Easy as that. Now we need to let Git see that we have three extra folders to track.</p>
+
+<blockquote>
+<p>Hang on, only three? What about the link we just created?</p>
+</blockquote>
+
+<p>Good question. Because of the nature of the <code>manifest</code> folder for Symphony, we never track it&#39;s content as it can get very heavy with temp files, cache files etc, and constantly merging them with each commit will be tedious, especially when they are only relevant to the current install of Symphony.</p>
+
+<p>Symphony uses the <code>.gitignore</code> file at it&#39;s root to ignore the <code>manifest</code> <em>folder</em>, but our <em>symbolic link</em> will not be ignored as standard. We want our other <code>manifest</code> folders to be tracked by Git, so that when we deploy to a server, we can create a symbolic link there too, and have our config file ready and waiting to work. So, to ignore the <code>manifest</code> sym-link, edit your root .gitignore file, and add <code>manifest</code>. Like so</p>
+
+<p><em>In Terminal, add to <code>.gitignore</code></em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">echo &quot;manifest&quot; &gt;&gt; .gitignore
+</code></pre></div>
+<p><em>In Terminal, track the <code>manifest</code> folders and commit them</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git add manifest.*
+git commit -m &#39;Added manifest folders&#39;
+git push mywebsite
+</code></pre></div>
+<p>When we install Symphony on our dev server now, it will create all the relevant files under the <code>manifest.dev</code> folder as we sym-linked to it. A config file will be created too, and this is the only file you will need to copy into each other <code>manifest</code> folder. When you are ready to push to another server, all you will need to do is copy the config.php file and change the database section to match you servers database details.</p>
+
+<p>And that&#39;s it for this article. Please have a look at the articles available for installing Symphony and good luck with your projet!</p>
+
+  </div>
+</div>
+
+        </div>
+
+        <footer id="footer">
+  <div class="field">
+
+    <!-- Community -->
+    <p class="footer-community">
+      <strong>&#169; 2010–2012 The Symphony Community</strong>
+      <a href="http://getsymphony.com">International Site</a> · <a href="http://twitter.com/symphonycms">Twitter</a>
+    </p>
+
+    <!-- Developer links -->
+    <p class="footer-links">
+      <strong>Plan, Play and Practice</strong>
+      <a href="https://github.com/symphonycms/symphony-2/blob/master/README.markdown">Requirements</a> · <a href="https://github.com/symphonycms/symphony-2/blob/master/LICENCE">MIT Licence</a> · <a href="http://github.com/symphonycms">Github</a>
+    </p>
+
+    <!-- Factory artwork -->
+    <p class="footer-factory">
+      <em>Conducting sites since 2004</em>
+      <a href="http://getsymphony.com">Symphony Community</a>
+    </p>
+  </div>
+</footer>
+    </body>
+</html>

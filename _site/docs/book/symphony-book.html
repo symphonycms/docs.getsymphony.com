@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>Symphony Start to Finish – SymphonyCMS</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link media="screen" href="/symphony-2/css/codemirror.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.docs.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="/symphony-2/js/jquery.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/modernizr.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/codemirror.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.grid.js"></script>
+    </head>
+    <body>
+        <aside id="network">
+
+  <!-- Main navigation -->
+  <header class="network-toolbar collapsed">
+    <div class="field">
+      <h1 class="network-logo column one">
+        <a href="/docs/about.xml">Symphony CMS</a>
+      </h1>
+      <nav class="network-nav column">
+        <a href="/docs/examples/community.xml">Community</a>
+        <a href="/docs/examples/documentation.xml"  class="active">Documentation</a>
+        <a href="/docs/examples/extensions.xml">Extensions</a>
+        <a href="/docs/examples/ninjas.xml">Ninjas</a>
+        <a href="/docs/examples/xpathr.xml">xPathr</a>
+      </nav>
+      <div id="user" class="network-user">
+        <a href="http://getsymphony.com/get-involved/member/Allen/">
+          <img src="img/user.png" width="35" height="35" alt="Allen Chang" />
+        </a>
+        <p>
+          <a href="http://getsymphony.com/get-involved/currently-online/" class="network-visitors">15</a>
+          <xsl:text> + </xsl:text>
+          <a class="network-username">Allen Chang</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- User profile -->
+  <div class="field network-profile">
+    <form>
+
+      <!-- Gravatar -->
+      <div class="network-gravatar column one">
+        <img src="img/user.png" width="174" height="174" alt="Allen Chang" />
+        <p>Change your avatar at <a href="http://gravatar.com">Gravatar</a>.</p>
+      </div>
+
+      <!-- Information -->
+      <fieldset class="column one large-two">
+        <label for="profile-username" class="restricted">Username</label>
+        <input id="profile-username" type="text" name="fields[username]" value="Allen" readonly="readonly" />
+        <label for="profile-name">Name</label>
+        <input id="profile-name" type="text" name="fields[name]" value="Allen Chang" />
+        <label for="profile-email-address">Email (Private)</label>
+        <input id="profile-email-address" type="text" name="fields[email-address]" value="team@getsymphony.com" />
+        <label for="profile-city">Location</label>
+        <input id="profile-city" type="text" name="fields[location]" value="Symphony Land" />
+      </fieldset>
+      <fieldset class="column two small-one">
+        <label for="profile-website">Website</label>
+        <input id="profile-website" type="text" name="fields[website]" value="http://getsymphony.com" />
+        <label for="profile-bio">Bio</label>
+        <textarea rows="7" name="fields[bio]">Cras mattis consectetur purus sit amet fermentum.</textarea>
+        <div class="profile-controls">
+          <button id="submit-profile" class="button-save" type="submit" name="action[members-edit]">Save Profile</button>
+          <a class="button-cancel" href="../../member/Nils/">Cancel</a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Site switcher -->
+  <div class="field network-drawer">
+
+    <!-- Symphony ressources -->
+    <div class="column three medium-two">
+      <h2>About Symphony</h2>
+      <p>Symphony is an open source content management system for your websites and webapps. It makes complex things simple.</p>
+      <div class="get-symphony">
+        <a href="https://github.com/symphonycms/symphony-2">Get Symphony 2.3.0</a>
+        <a href="https://github.com/symphonycms/symphony-2" class="icon-fork">Fork<span class="medium-hide"> on Github</span></a>
+        <a href="https://github.com/symphonycms/symphony-2/archive/master.zip" class="icon-download"><span class="medium-hide">Download </span>ZIP</a>
+      </div>
+    </div>
+
+    <!-- Symphony in other languages -->
+    <div class="column one small-two">
+      <h2>Regions</h2>
+      <ul>
+        <li>
+          <a href="#">Germany</a>
+        </li>
+        <li>
+          <a href="#">Italy</a>
+        </li>
+        <li>
+          <a href="#">Romania</a>
+        </li>
+        <li>
+          <a href="#">United Kingdom</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Symphony ressources -->
+    <div class="column one">
+      <h2>Services</h2>
+      <ul>
+        <li>
+          <a href="#">Github</a>
+        </li>
+        <li>
+          <a href="#">Twitter</a>
+        </li>
+        <li>
+          <a href="#">Vimeo</a>
+        </li>
+        <li>
+          <a href="#">Flickr</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+        <div id="site">
+            <header class="site-header centered">
+    <h1>
+        <span>Symphony</span> Documentation
+    </h1>
+    <nav>
+        <a href="about.xml">About</a>
+        <a href="layouts.xml">Layouts</a>
+        <a href="snippets.xml">Snippets</a>
+        <a href="styles.xml">Styles</a>
+        <a href="scripts.xml">Scripts</a>
+        <a href="examples.xml">Examples</a>
+    </nav>
+</header>
+
+            <div class="field">
+  <div class="column sidebar infobox">
+    
+      <h3>Articles</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/articles/field-extension.html"
+              >Field Extension</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/getting-git-for-symphony-development.html"
+              >Getting Git for Symphony Development</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/combining-symphony-with-nginx.html"
+              >Combining Symphony with Nginx</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Book</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/book/symphony-book.html"
+               class="active">Symphony Start to Finish</a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-01.html"
+                      >Why You Need Symphony</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-02.html"
+                      >Symphony in Action</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-03.html"
+                      >Getting Started</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-04.html"
+                      >Symphony Anatomy</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-05.html"
+                      >Content</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-06.html"
+                      >Front-end</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-07.html"
+                      >Data Flow</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-08.html"
+                      >Templating</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-09.html"
+                      >System Management</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-10.html"
+                      >Planning Symphony Projects</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-11.html"
+                      >Adaptive Techniques</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Concepts</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/concepts/xslt-transformation.html"
+              >XSLT Transformation</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Guides</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/guides/javascript-styleguide.html"
+              >JavaScript Style Guide</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Tutorials</h3>
+      <ul class="sidebar-links">
+        
+      </ul>
+    
+      <h3>Working</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow.html"
+              >A Symphony Workflow</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow-command-list.html"
+              >A Symphony Workflow - Terminal Command List</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/installing-on-mac-osx.html"
+              >Installing Symphony on your Mac (OS X >= 10.5)</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-view-on-static-pages.html"
+              >A view on static pages</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/understanding-xslt.html"
+              >Understanding XSLT</a>
+            
+          </li>
+        
+      </ul>
+    
+  </div>
+  <div class="column content">
+      <h1>Symphony Start to Finish</h1>
+
+<p>Craig Zheng&#39;s <a href="http://book.symphony-cms.com/">Symphony book project was cancelled</a>.</p>
+
+<blockquote>
+<h2>Project Cancelled</h2>
+
+<p>After nine months and ten chapters, Wrox decided to cancel this book project in June 2011.
+Symphony Start to Finish was to be the first comprehensive guide to building websites and web applications with Symphony. It was meant to cover the next major version of the platform, but after Symphony lost its only full-time developer, progress on that version was delayed significantly, and in the end Wrox was unable to accommodate the extended timeline.</p>
+
+<h3>What Now?</h3>
+
+<p>The considerable work put into the manuscript will be incorporated into Symphony&#39;s free online documentation.</p>
+</blockquote>
+
+<p>Thank you for generously donating your book to the community, Craig.</p>
+
+<p>Now, the <a href="https://github.com/symphonycms/wg/tree/master/book/txt">Symphony book is free to read on GitHub</a>. Keep in mind that the manuscript is not finished and was a work-in-progress that refers to Symphony 3.0 (which never was released beyond the beta, which was really an alpha) and Crane (there were plans, which were scrapped, to rename Symphony to avoid confusion with the Symfony PHP framework). There is still a lot of valuable information to be gleaned from Craig&#39;s work, and now it&#39;s up to the community to rework it to align this content with the latest Symphony release. Feel free to fork, update and send pull requests.</p>
+
+<h2>Chapters</h2>
+
+<ul>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/book-contents.md">Contents</a></li>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/chapter-1.md">Chapter 1. Why You Need Symphony</a></li>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/chapter-2.md">Chapter 2. Symphony in Action</a></li>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/chapter-3.md">Chapter 3. Getting Started</a></li>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/chapter-4.md">Chapter 4. Symphony Anatomy</a></li>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/chapter-5.md">Chapter 5. Content</a></li>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/chapter-6.md">Chapter 6. Front-end</a></li>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/chapter-7.md">Chapter 7. Data Flow</a></li>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/chapter-8.md">Chapter 8. Templating</a></li>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/chapter-9.md">Chapter 9. System Management</a></li>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/chapter-10.md">Chapter 10. Planning Symphony Projects</a></li>
+<li><a href="https://github.com/symphonycms/wg/tree/master/book/chapter-11.md">Chapter 11. Adaptive Techniques</a></li>
+</ul>
+
+<p>The <a href="https://github.com/symphonycms/wg/tree/master/book/chapter-8.md">Chapter 8</a> is a particularly good read for anyone who is just getting started with XSLT.</p>
+
+  </div>
+</div>
+
+        </div>
+
+        <footer id="footer">
+  <div class="field">
+
+    <!-- Community -->
+    <p class="footer-community">
+      <strong>&#169; 2010–2012 The Symphony Community</strong>
+      <a href="http://getsymphony.com">International Site</a> · <a href="http://twitter.com/symphonycms">Twitter</a>
+    </p>
+
+    <!-- Developer links -->
+    <p class="footer-links">
+      <strong>Plan, Play and Practice</strong>
+      <a href="https://github.com/symphonycms/symphony-2/blob/master/README.markdown">Requirements</a> · <a href="https://github.com/symphonycms/symphony-2/blob/master/LICENCE">MIT Licence</a> · <a href="http://github.com/symphonycms">Github</a>
+    </p>
+
+    <!-- Factory artwork -->
+    <p class="footer-factory">
+      <em>Conducting sites since 2004</em>
+      <a href="http://getsymphony.com">Symphony Community</a>
+    </p>
+  </div>
+</footer>
+    </body>
+</html>

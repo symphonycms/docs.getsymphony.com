@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>Content – SymphonyCMS</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link media="screen" href="/symphony-2/css/codemirror.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.docs.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="/symphony-2/js/jquery.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/modernizr.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/codemirror.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.grid.js"></script>
+    </head>
+    <body>
+        <aside id="network">
+
+  <!-- Main navigation -->
+  <header class="network-toolbar collapsed">
+    <div class="field">
+      <h1 class="network-logo column one">
+        <a href="/docs/about.xml">Symphony CMS</a>
+      </h1>
+      <nav class="network-nav column">
+        <a href="/docs/examples/community.xml">Community</a>
+        <a href="/docs/examples/documentation.xml"  class="active">Documentation</a>
+        <a href="/docs/examples/extensions.xml">Extensions</a>
+        <a href="/docs/examples/ninjas.xml">Ninjas</a>
+        <a href="/docs/examples/xpathr.xml">xPathr</a>
+      </nav>
+      <div id="user" class="network-user">
+        <a href="http://getsymphony.com/get-involved/member/Allen/">
+          <img src="img/user.png" width="35" height="35" alt="Allen Chang" />
+        </a>
+        <p>
+          <a href="http://getsymphony.com/get-involved/currently-online/" class="network-visitors">15</a>
+          <xsl:text> + </xsl:text>
+          <a class="network-username">Allen Chang</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- User profile -->
+  <div class="field network-profile">
+    <form>
+
+      <!-- Gravatar -->
+      <div class="network-gravatar column one">
+        <img src="img/user.png" width="174" height="174" alt="Allen Chang" />
+        <p>Change your avatar at <a href="http://gravatar.com">Gravatar</a>.</p>
+      </div>
+
+      <!-- Information -->
+      <fieldset class="column one large-two">
+        <label for="profile-username" class="restricted">Username</label>
+        <input id="profile-username" type="text" name="fields[username]" value="Allen" readonly="readonly" />
+        <label for="profile-name">Name</label>
+        <input id="profile-name" type="text" name="fields[name]" value="Allen Chang" />
+        <label for="profile-email-address">Email (Private)</label>
+        <input id="profile-email-address" type="text" name="fields[email-address]" value="team@getsymphony.com" />
+        <label for="profile-city">Location</label>
+        <input id="profile-city" type="text" name="fields[location]" value="Symphony Land" />
+      </fieldset>
+      <fieldset class="column two small-one">
+        <label for="profile-website">Website</label>
+        <input id="profile-website" type="text" name="fields[website]" value="http://getsymphony.com" />
+        <label for="profile-bio">Bio</label>
+        <textarea rows="7" name="fields[bio]">Cras mattis consectetur purus sit amet fermentum.</textarea>
+        <div class="profile-controls">
+          <button id="submit-profile" class="button-save" type="submit" name="action[members-edit]">Save Profile</button>
+          <a class="button-cancel" href="../../member/Nils/">Cancel</a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Site switcher -->
+  <div class="field network-drawer">
+
+    <!-- Symphony ressources -->
+    <div class="column three medium-two">
+      <h2>About Symphony</h2>
+      <p>Symphony is an open source content management system for your websites and webapps. It makes complex things simple.</p>
+      <div class="get-symphony">
+        <a href="https://github.com/symphonycms/symphony-2">Get Symphony 2.3.0</a>
+        <a href="https://github.com/symphonycms/symphony-2" class="icon-fork">Fork<span class="medium-hide"> on Github</span></a>
+        <a href="https://github.com/symphonycms/symphony-2/archive/master.zip" class="icon-download"><span class="medium-hide">Download </span>ZIP</a>
+      </div>
+    </div>
+
+    <!-- Symphony in other languages -->
+    <div class="column one small-two">
+      <h2>Regions</h2>
+      <ul>
+        <li>
+          <a href="#">Germany</a>
+        </li>
+        <li>
+          <a href="#">Italy</a>
+        </li>
+        <li>
+          <a href="#">Romania</a>
+        </li>
+        <li>
+          <a href="#">United Kingdom</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Symphony ressources -->
+    <div class="column one">
+      <h2>Services</h2>
+      <ul>
+        <li>
+          <a href="#">Github</a>
+        </li>
+        <li>
+          <a href="#">Twitter</a>
+        </li>
+        <li>
+          <a href="#">Vimeo</a>
+        </li>
+        <li>
+          <a href="#">Flickr</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+        <div id="site">
+            <header class="site-header centered">
+    <h1>
+        <span>Symphony</span> Documentation
+    </h1>
+    <nav>
+        <a href="about.xml">About</a>
+        <a href="layouts.xml">Layouts</a>
+        <a href="snippets.xml">Snippets</a>
+        <a href="styles.xml">Styles</a>
+        <a href="scripts.xml">Scripts</a>
+        <a href="examples.xml">Examples</a>
+    </nav>
+</header>
+
+            <div class="field">
+  <div class="column sidebar infobox">
+    
+      <h3>Articles</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/articles/field-extension.html"
+              >Field Extension</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/getting-git-for-symphony-development.html"
+              >Getting Git for Symphony Development</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/combining-symphony-with-nginx.html"
+              >Combining Symphony with Nginx</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Book</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/book/symphony-book.html"
+              >Symphony Start to Finish</a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-01.html"
+                      >Why You Need Symphony</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-02.html"
+                      >Symphony in Action</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-03.html"
+                      >Getting Started</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-04.html"
+                      >Symphony Anatomy</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-05.html"
+                       class="active">Content</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-06.html"
+                      >Front-end</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-07.html"
+                      >Data Flow</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-08.html"
+                      >Templating</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-09.html"
+                      >System Management</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-10.html"
+                      >Planning Symphony Projects</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-11.html"
+                      >Adaptive Techniques</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Concepts</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/concepts/xslt-transformation.html"
+              >XSLT Transformation</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Guides</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/guides/javascript-styleguide.html"
+              >JavaScript Style Guide</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Tutorials</h3>
+      <ul class="sidebar-links">
+        
+      </ul>
+    
+      <h3>Working</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow.html"
+              >A Symphony Workflow</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow-command-list.html"
+              >A Symphony Workflow - Terminal Command List</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/installing-on-mac-osx.html"
+              >Installing Symphony on your Mac (OS X >= 10.5)</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-view-on-static-pages.html"
+              >A view on static pages</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/understanding-xslt.html"
+              >Understanding XSLT</a>
+            
+          </li>
+        
+      </ul>
+    
+  </div>
+  <div class="column content">
+      <h1>Chapter 5: Content</h1>
+
+<h4>What&#39;s In This Chapter</h4>
+
+<ul>
+<li>Introducing our first Symphony project</li>
+<li>About content modeling</li>
+<li>Understanding content in Symphony</li>
+<li>Working with content in Symphony</li>
+</ul>
+
+<p>Let&#39;s build a website, shall we?</p>
+
+<p>Over the course of the next few chapters, we&#39;re going to whip up a simple but functional blog. We’ll proceed slowly, building the site one layer at a time so that along the way we can stop to elaborate on important concepts and tasks as they arise. That means you’ll still have to stomach my long-winded explanations, but at least they’ll be broken up into smaller doses (and you’ll get to do some fun web building in between).</p>
+
+<p>The first thing you’ll need to do is tell Symphony what kinds of content you want to manage. And though you probably already have a pretty good idea of what you expect to find in a blog (things like posts and comments, for instance), there&#39;s more to it than just naming them. You have to figure out what they&#39;re going to look like, how they&#39;ll behave, and how you want the system to handle them. The process of answering these sorts of questions is called “content modeling,” and it shapes the very foundation of a content-driven website.</p>
+
+<p>So we’ll start by talking a little bit about the general practice of content modeling—what it entails, how it works, and what you&#39;ll need to look out for. Then we&#39;ll formally introduce you to all of the elements that make up Symphony&#39;s content layer, and as we begin building your blog, you&#39;ll see firsthand what it takes to model and manage content in Symphony. By the time we finish the chapter, you&#39;ll be comfortable defining content and working with the content layer on your own, and your new blog will have a rock solid foundation.</p>
+
+<p>Let&#39;s start with a teaser exercise.</p>
+
+<ol>
+<li>Point your browser to Symphony&#39;s admin interface.</li>
+<li>Wink coyly at the screen and whisper, “Hey there, sexy.” (What? I did say &quot;teaser&quot;).</li>
+<li><p>Navigate to Blueprints &gt; Sections, and click the green “Create New” button. You&#39;ll see a page that looks like Figure 5-1.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 5-1  [f0501.png]`
+</code></pre></div></li>
+<li><p>Under &quot;Essentials,&quot; enter Blog Posts as the name and Content as the navigation group (don&#39;t worry, I&#39;ll explain this later).</p></li>
+<li><p>To the right, under &quot;Fields,&quot; you’ll see the section fields tool. Click the “Add Field” button. A drawer will open displaying a set of field types. Click “Text”</p></li>
+<li><p>A panel will appear for configuring your new field (Figure 5-2). Just enter the Title as the name, and select &quot;Single Line&quot; in the size dropdown. Leave the remaining items untouched.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 5-2  [f0502.png]
+</code></pre></div></li>
+<li><p>Click “Text” again to add another text field to your section. This time, enter Body as the name, and in the size dropdown, choose “Large Box.” Leave the remaining items untouched.</p></li>
+<li><p>Click “Create Section.”</p></li>
+</ol>
+
+<p>Well done. You’ve just created your first section, essentially telling Symphony that you want to manage a type of content called “Blog Posts,” and that each of its entries should have a title and a body.</p>
+
+<p>At this point, you could actually already begin creating blog posts in the system. See for yourself:</p>
+
+<ol>
+<li>In the navigation menu, under &quot;Content,&quot; click &quot;Blog Posts.&quot;</li>
+<li>You&#39;ll see an empty table, because we&#39;ve not yet created any entries. Click the green &quot;Create New&quot; button.</li>
+<li><p>You&#39;ll see the entry editor for your new section (Figure 5-3). Go ahead and fill in the form with some sample info.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 5-3  [0503.png]
+</code></pre></div></li>
+<li><p>Save the entry, and navigate back to Content &gt; Blog Posts. You should see the entry you just created listed there.</p></li>
+</ol>
+
+<p>Easy, huh? Now, I’m sure you’ve got all kinds of great ideas on how we can make these blog posts more interesting, but for now let&#39;s hold off until you&#39;ve got a firmer grasp on how all of this actually works.</p>
+
+<h2>What is Content Modeling?</h2>
+
+<p>When a system gives you the freedom to dream up your own kinds of content, it needs to know what you want from that content—how you want it to behave, how you want it treated. And it needs to be told in terms that it can use and understand. You have to create a representation of that content for the system, a model, using the system&#39;s own tools and idioms.</p>
+
+<p>Take a spreadsheet, for example. You can put whatever you like into a spreadsheet—shop inventory, household chores, contact lists—but it&#39;s all got to be organized into rows, columns, and cells. These are the basic elements of a spreadsheet, and they determine how its data can be entered, sorted, graphed, and so on.</p>
+
+<p>So let’s say, for instance, that you’re a nutritionist. You want to create a spreadsheet for your clients to help them get a clearer idea of what they’re consuming. It will list all of the foods they eat on a regular basis, and you want them to be able to sort that list to see, for example, which foods have the most calories, or sugar, or provide them most calcium. So you decide that you’ll be entering food items, one per row, and that you’ll add columns for each nutritional fact you want to capture. And just like that, you’ve modeled some content.</p>
+
+<p>For our purposes, then, content modeling comprises three basic tasks:</p>
+
+<ol>
+<li>identifying the types of content you want to manage</li>
+<li>defining the data you want to capture for each</li>
+<li>representing this information in the system</li>
+</ol>
+
+<p>The idea is fairly simple, but it actually does take a bit of knowledge and forethought. In your nutritionist&#39;s spreadsheet, for example, you had to already understand how spreadsheet applications work, and you needed to put some time into figuring out what information you wanted to store about each food.</p>
+
+<p>And that was a very simplistic approach. It could easily get more challenging. What if you wanted to organize foods by type? Would you add that as a column? Make separate spreadsheets? And then what if a food could belong to more than one type? Or have different characteristics depending on where it&#39;s from or how it’s cooked?</p>
+
+<p>Nuances like these make it critical that you understand what you want to be able to achieve with your content and how exactly the system is going to treat it once you&#39;ve created it.</p>
+
+<h2>Understanding Content in Symphony</h2>
+
+<p>Thankfully, as you saw in the previous chapter, Symphony&#39;s content layer is pretty straightforward.</p>
+
+<p>The various kinds of things you want to manage, be they blog posts, products, photos, food items, or whatever, are sections. The bits of information you want to capture in each section—a blog post’s title, a product’s serial number—are fields. Your data will come in many different shapes and sizes, so field types give you lots of choices for how to handle it. And each individual content item—each blog post, for example—is an entry.</p>
+
+<p>This granular approach means you can combine these various pieces in any way you like. You can decide not only what kinds of content to manage and what data to capture but also how the data gets captured and stored, how it can be interacted with, and so on. This is important because each bit of your data is going to be meaningful in its own, specific way, and you don’t want to treat it all the same.</p>
+
+<p>So what do you need to know in order to plan your blog’s content effectively? Let’s break it down piece by piece:</p>
+
+<h3>Sections</h3>
+
+<p>First up are sections, the fundamental building blocks of a Symphony website.</p>
+
+<p>Sections define the content you can manage. Creating a section and adding fields to it enables you to start producing content entries. The section, and the fields it contains, define what the entries will look like and how and where they’ll be managed.</p>
+
+<p>Sections define your publishing interfaces. For each section, Symphony creates an area in the admin interface for managing its entries. There’s an entries index, or a table view for browsing and managing them in bulk, and an entry editor for creating and updating individual entries. Sections are added to the navigation menu so you can access these interfaces (unless you choose to hide the section).</p>
+
+<p>Though Symphony creates each section’s entry editor view automatically, the section itself defines how it will be structured (we’ll see how below). Obviously, the fields contained in a section determine the form elements that you see (Figure 5-4), but you can configure the layout and organization of these elements.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 5-4  [f0504.png]
+</code></pre></div>
+<p>Sections organize your content. All entries in the system are naturally grouped by section. Later on, when you need to fetch content entries or process data submissions from the front end, you&#39;ll do so by section.</p>
+
+<p>You can view and manage the sections you’ve created at Blueprints &gt; Sections.</p>
+
+<h3>Fields</h3>
+
+<p>Fields do a lot of the heavy lifting for sections. It’s fields that give a section its shape, store its data, and determine its output.</p>
+
+<p>Fields capture discrete bits of data. When you’re creating an entry, you’re not just dumping its content into some abstract container. Every entry is made up of one or more fields, and it’s the fields that capture the actual data, piece by piece.</p>
+
+<p>Fields validate and store data. Each field is responsible for storing the content it’s captured. This means that individual fields can use their own rules to validate, transform, and save their data.</p>
+
+<p>Fields output your data for templating. When your entries are passed to the front end, it’s the fields that are responsible for handling and outputting their own data.</p>
+
+<p>Because fields are the primary data handlers, they&#39;re used throughout the system for fetching, filtering, sorting, and outputting content.</p>
+
+<p>Once you add a field to a section, you can configure how that individual field will handle all of these tasks—how and where it should be displayed in the entry editor, what rules it should use to validate its input, if it should be displayed in the entry index, and so on.</p>
+
+<h3>Field Types</h3>
+
+<p>The actual options you get when you’re configuring a field, and the way it captures, stores, and handles its data, are determined by its type.</p>
+
+<p>Field types define how fields capture data. A text field, for example, gives you either a text input or a textarea, depending on its size. A select box field gives you a dropdown menu. A checkbox field gives you… wait for it… a checkbox. There are field types that give you more advanced form elements too: calendar date pickers, maps, sliders, autocomplete inputs, and more.</p>
+
+<p>Field types define how fields validate and store their data. The number field type will only accept digits, for example. The map location field stores the chosen locations as coordinates. The date field type accepts textual date strings and stores them as timestamps.</p>
+
+<p>Field types determine how a field&#39;s data is output. The title field in our Blog Posts section, for example, being a text field, would output its content like this: <title handle="my-first-entry">My First Entry</title>. A date field, on the other hand, would give us something more appropriate for the kind of content it’s meant to capture: <date time="10:52" weekday="5">2010-12-21</date>.</p>
+
+<p>Field types are provided by extensions. This is one of the primary reasons that Symphony is so flexible. Instead of limiting you to a handful of common field types like text, date, select box, checkbox, and so on, any number of specialized field types can provide whatever functionality you might need. We’ll talk more about working with extensions in Chapter 9.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>Field types also determine how a field can be filtered. Each field type has its own filter rules, so while text fields can be tested against phrases, for instance, date fields can be tested relative to other dates (e.g. ‘earlier than’ or ‘later than’). We’ll discuss filtering in much more detail in Chapter 7.</p>
+</blockquote>
+
+<h3>Relationships</h3>
+
+<p>Very often, the various kinds of content we’re modeling for a website are somehow related to one another. The blog we’re building, for example, should support commenting, and each entry in the Comments section will need to be linked to a specific Blog Post entry.</p>
+
+<p>Content relationships can make websites and web applications tremendously robust, allowing you to organize and browse entries via their relationship to other entries.</p>
+
+<p>Relationships in Symphony are managed via fields. There are a handful of specialized field types that can be used to create and manage relationships. Adding one of these fields to a section will enable you to create relationships between entries in that section and entries in whatever target section you choose.</p>
+
+<p>[This part of the system is still being designed, so the remainder of this section will have to be filled in once it’s complete]</p>
+
+<h3>Planning Our Blog</h3>
+
+<p>Armed with this knowledge, let’s map out a content structure for our new blog website.</p>
+
+<p>What do we want to be able to manage? We’ve already set up a basic Blog Posts section. That one’s sort of a no-brainer. We know we’ll want visitors to be able to leave comments, so we’ll need a Comments section too. And let’s imagine that we want to organize our posts into a handful of predefined categories like “Work” and “Travel,” so we’ll add a Categories section. That should do it for now.</p>
+
+<p>We’ve already started modeling our Blog Posts, but obviously they’ll need much more than a title and body. If we’re aiming for a traditional blog view (posts listed in reverse chronological order), then we’ll need our posts to have a publish date. And if we want to be able to assign them to a category, we’ll need a category field that creates that relationship. Finally, let’s add a checkbox to denote whether the entry is published or not, this way we can have unpublished drafts. That wasn’t too difficult, was it?</p>
+
+<p>Comments are easy too. When visitors submit comments, we’ll want to capture their name, email address, and the comment itself. We’ll also want to record the date and time. A field pointing back to the associated blog post should round off this section.</p>
+
+<p>As for categories, let’s just say each category will have a name and a description. We won’t need much more than that.</p>
+
+<p>So here’s what our content structure looks like at the moment:</p>
+
+<ul>
+<li>Blog Posts</li>
+<li>Comments</li>
+<li>Categories</li>
+<li>Title</li>
+<li>Author</li>
+<li>Name</li>
+<li>Body</li>
+<li>Email</li>
+<li>Description</li>
+<li>Publish Date</li>
+<li>Comment</li>
+<li>Category</li>
+<li>Date</li>
+<li>Published</li>
+<li>Post</li>
+</ul>
+
+<p>Simple, but it will do the job. Now let’s go build it.</p>
+
+<h2>Working with Content in Symphony</h2>
+
+<p>The last section was all ideas and descriptions; this one is about doing. Here we’ll explore Symphony’s content layer in more detail while you go about creating your blog’s content structure.</p>
+
+<h3>Creating and Editing Sections</h3>
+
+<p>You already got a taste of sections during the teaser exercise at the beginning of the chapter. You’ll remember that to create a section, you’ll need to:</p>
+
+<ol>
+<li>Navigate to Blueprints &gt; Sections</li>
+<li>Click the green “Create New” button at the top right of the view.</li>
+</ol>
+
+<p>Aside from the field configuration and the layout (both of which we’ll cover below) there are only three things you need to define for each section, as you can see in Figure 5-5:
+Figure 5-5  [f0505.png]</p>
+
+<ul>
+<li>Name is how your section will be identified within the system. The convention is to use plural nouns, like “Products” or “Articles.”</li>
+<li>Navigation Group is used to organize your sections in the back-end navigation menu.</li>
+<li>Hide this Section... keeps the section out of the navigation menu altogether (although it can still be accessed directly)</li>
+</ul>
+
+<p>Let’s create our Comments and Categories sections now. Assuming you’re already looking at the section creation view:</p>
+
+<ol>
+<li>In “Name,” enter Comments</li>
+<li>In “Navigation Group,” enter Content (or click “Content” just beneath the input, which will populate it for you. Symphony will list all existing navigation groups here, for your convenience.)</li>
+<li>Click “Create Section”</li>
+<li>At the top of your screen, you’ll see a green notification bar with a message that begins “Section created at...” Click the “Create Another” link.</li>
+<li>In “Name,” enter Categories</li>
+<li>In “Navigation Group,” enter Content again (In the other projects at the end of this book, we’ll make much more use of navigation groups, but our blog is simple enough that we don’t really need to over-classify our sections.)</li>
+<li>Click “Create Section”</li>
+</ol>
+
+<p>Don’t worry that we’ve essentially just created empty shells without any fields in them. I wanted you to get a rough scaffold set up first, and I also wanted you to see firsthand that sections can be developed iteratively—that you can update sections at any time, even after they’ve been created and saved. You can try things, see if they work, and if not, go back and tweak them. This means that your Symphony sites are able to grow and evolve over time. We’ll see this principle in action many times, and in many places, over the course of the book.</p>
+
+<h3>Working with Fields</h3>
+
+<p>Of course, sections are kind of useless without fields in them, so let’s go ahead and get those sorted out.</p>
+
+<h4>Choosing Field Types</h4>
+
+<p>The first thing we’ll need to do for each section is decide which field type to use for each of the fields we’re planning on adding.</p>
+
+<p>As you saw above, field types determine a great deal about how your data is going to be handled by the system. You’ll have to take into account all of the things for which a field type is responsible:</p>
+
+<p>What kind of form element does it provide in the entry editor? Do you want your users to enter text directly, for example, or choose items from a dropdown?</p>
+
+<p>What validation options are available? Can you enforce that the value be a URL, for example, or an email address?</p>
+
+<p>Can you apply text formatters to the content? A WYSIWYG editor, for instance, or a syntax like Markdown?</p>
+
+<p>How will filtering and sorting be handled? Text fields, for example, won’t sort numbers correctly. Relationship fields actually store entry IDs and so filtering and sorting by those might not work as you’d expect.</p>
+
+<p>What will the field’s XML output look like?</p>
+
+<p>Quite a bit to keep in mind. And what’s more, once a field’s been added to a section, you can’t switch between types. So making informed choices at this stage is important. You won’t want to add too many content entries until you’re confident in your section structure, because swapping field types means removing the original field and losing all its data.</p>
+
+<p>All that may seem intimidating, but like many things in Symphony, a lot of this can be figured out with good old common sense. The system comes bundled with eight basic field types, most of which are self-explanatory. Dozens more are available as extensions, but for now we’ll just review the basic ones.</p>
+
+<p>For each field type listed below, I’ll outline:</p>
+
+<ul>
+<li>what form element it provides for capturing data in the entry editor</li>
+<li>how it stores its values</li>
+<li>whether/how it validates its input</li>
+<li>whether/how it can be used to filter entries</li>
+<li>whether/how it can be used to sort entries</li>
+<li>what some example output looks like</li>
+<li>whether/what special configuration options are available</li>
+</ul>
+
+<h4>Checkbox</h4>
+
+<ul>
+<li><strong>Form Element:</strong> checkbox</li>
+<li><strong>Stores:</strong> One of two values: “Yes” or “No”</li>
+<li><strong>Filter:</strong> by value</li>
+<li><strong>Example Output:</strong> <field-name>Yes</field-name></li>
+<li><strong>Configuration Options:</strong> whether field should be checked by default</li>
+</ul>
+
+<h4>Date</h4>
+
+<ul>
+<li><strong>Form Element:</strong> text input</li>
+<li><strong>Stores:</strong> timestamp</li>
+<li><strong>Validates:</strong> as date or timestamp</li>
+<li><strong>Filter:</strong> by year, date, or timestamp</li>
+<li><strong>Sort:</strong> by date</li>
+<li><strong>Example Output:</strong> <field-name time=”12:21” weekday=”5”>2012-12-21</field-name></li>
+<li><strong>Configuration Options:</strong> whether to prepopulate with current date</li>
+</ul>
+
+<h4>Number</h4>
+
+<ul>
+<li><strong>Form Element:</strong> text input</li>
+<li><strong>Stores:</strong> number</li>
+<li><strong>Validates:</strong> as integer</li>
+<li><strong>Filter:</strong> by value</li>
+<li><strong>Sort:</strong> by value, numerically</li>
+<li><strong>Output:</strong> <field-name>0</field-name></li>
+</ul>
+
+<h4>Relationship</h4>
+
+<ul>
+<li>Form Element: select box</li>
+<li>Stores: an entry ID</li>
+<li>Validates: as entry ID from linked section</li>
+<li>Filter: by ID or value of linked field</li>
+<li>Example Output: <field-name>Value of linked field</field-name></li>
+<li>Configuration Options: what section and field to link to, what type of relationship to create</li>
+</ul>
+
+<h4>Select Box</h4>
+
+<ul>
+<li><strong>Form Element:</strong> select box</li>
+<li><strong>Stores:</strong> a textual value</li>
+<li><strong>Validates:</strong> as one or more values among preconfigured options</li>
+<li><strong>Filter:</strong> by textual value</li>
+<li><strong>Sort:</strong> by textual value</li>
+<li><strong>Example Output:</strong> <field-name><item>option 1</item></field-name></li>
+<li><strong>Configuration Options:</strong> what static/dynamic options to provide, whether to allow multiple options to be selected</li>
+</ul>
+
+<h4>Tag List</h4>
+
+<ul>
+<li><strong>Form Element:</strong> text input with suggestions list</li>
+<li><strong>Stores:</strong> a textual value</li>
+<li><strong>Validates:</strong> as comma-delimited values</li>
+<li><strong>Filter:</strong> by items’ textual value</li>
+<li><strong>Example Output:</strong> <field-name><item>Tag 1</item><item>Tag 2</item></field-name></li>
+<li><strong>Configuration Options:</strong> where to draw suggestions list from</li>
+</ul>
+
+<h4>Text</h4>
+
+<ul>
+<li><strong>Form Element:</strong> text input or textarea</li>
+<li><strong>Stores:</strong> a textual value</li>
+<li><strong>Validates:</strong> against any regular expression pattern (URL and email address are preset options)</li>
+<li><strong>Filter:</strong> by textual value or regular expression</li>
+<li><strong>Sort:</strong> by textual value</li>
+<li><strong>Example Output:</strong> <field-name handle=”sample-text”>Sample Text</field-name></li>
+<li><strong>Configuration Options:</strong> text formatters to apply, size of field</li>
+</ul>
+
+<h4>Upload</h4>
+
+<ul>
+<li><strong>Form Element:</strong> file upload</li>
+<li><strong>Stores:</strong> the file, at designated location, and the file name, path, and size</li>
+<li><strong>Validates:</strong> as file type (image and document are preset options)</li>
+<li><strong>Filter:</strong> by file name</li>
+<li><strong>Example Output:</strong> <field-name><file path=”/workspace/uploads” name=”hamburgler.png”><meta><type>image/png</type><size>44kb</size></meta></file></field-name></li>
+<li><strong>Configuration Options:</strong> upload location</li>
+</ul>
+
+<h4>User</h4>
+
+<ul>
+<li><strong>Form Element:</strong> select box</li>
+<li><strong>Stores:</strong> a user ID</li>
+<li><strong>Validates:</strong> as user ID</li>
+<li><strong>Filter:</strong> by user ID or user name</li>
+<li><strong>Sort:</strong> by user ID</li>
+<li><strong>Output:</strong> <field-name username=”user-name” id=”1”>Full Name</field-name></li>
+</ul>
+
+<p>That’s a lot of info, but all pretty straightforward, actually. We’ll be able to choose our field types without much deliberation at all. Our Blog Posts’ “title” and “body”, we know, are text fields. The “publish date,” clearly, will be a date field. “Published” is going to be a simple checkbox, because we only need to be able to mark entries as published or not published. And “category” has to be a relationship field pointing to Categories.</p>
+
+<p>For Comments, “author,” “email,” and “comment” will all be text fields. “Date” will be a date field, of course. And “Post” will be a relationship field pointing to Blog Posts.</p>
+
+<p>Categories will just have its two text fields, “Name” and “Description.”</p>
+
+<h3>Adding and Configuring Fields</h3>
+
+<p>Now that we’ve got our content model mapped out, the rest should be easy. You’re still looking at your empty Categories section, right?</p>
+
+<ol>
+<li> Under “Fields,” you’ll see the fields tool. Click the “Add Field” button.</li>
+<li> A drawer will appear containing a list of field types. Click “Text”</li>
+</ol>
+
+<p>As you’ve seen, whenever you add a field to a section, you’re presented with a configuration panel that allows you to specify options for that field’s appearance and behavior. Some of these options are common to all field types, and as we saw above, field types can also provide their own configuration options.</p>
+
+<p>Figure 5-6 highlights the options common to all field types.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 5-6  [f0506.png]
+</code></pre></div>
+<p>Name is the name used to reference the field internally. It’s what you’ll use when choosing the field for filtering, sorting, and output, and is used an as element name in the field’s XML output.</p>
+
+<p>Publish Label is optional, and is used when the text you need to display with the field’s form element is more complex or explicit. You might have a date field, for instance, whose label needs to read “Enter the date to publish this entry,” but you don’t want the system to use that unwieldy phrase everywhere.</p>
+
+<p>Show column tells the system whether to display the field’s value in the section’s entry index.</p>
+
+<p>Make this a required field tells the system whether to require that the field have a valid value before saving.</p>
+
+<p>The rest of the options you see above are specific to the text field type. We won’t get bogged down with all of that here, but you might want to take a quick glance at Appendix B for a description of the configuration options provided by each field type. For now, let’s finish configuring your Categories.</p>
+
+<p>First, configure the name field:</p>
+
+<ol>
+<li> Enter Name into the Name field</li>
+<li> In the Size dropdown, select “Single Line”</li>
+<li> Check the box next to Make this a required field</li>
+<li> Leave the rest of the options in their default state</li>
+</ol>
+
+<p>Now we’ll add the description field:</p>
+
+<ol>
+<li> Click “Text” again in the field types list to add another text field</li>
+<li> Enter Description into the Name field</li>
+<li> In the Size dropdown, select “Medium Box”</li>
+<li> Uncheck the box next to Show column</li>
+<li> Uncheck the box next to Output with handles</li>
+<li> Click “Save Changes”</li>
+</ol>
+
+<p>Let’s do the Comments section next:</p>
+
+<ol>
+<li> Go to Blueprints &gt; Sections (or in the notification bar that appeared at the top of your screen when you saved this section, click the “View all” link)</li>
+<li> Click “Comments” in the sections index</li>
+<li> In the fields tool, click “Add Field”</li>
+</ol>
+
+<p>We’ll start with the author field:</p>
+
+<ol>
+<li> Click “Text”</li>
+<li> Enter Author as the field’s name</li>
+<li> In the Size dropdown, select “Single Line”</li>
+<li> Check the box next to Make this a required field</li>
+</ol>
+
+<p>Now the email field:</p>
+
+<ol>
+<li> Click “Text” in the list of field types</li>
+<li> Enter Email as the field’s name</li>
+<li> In the Size dropdown, select “Single Line”</li>
+<li> Click the gray “email” link beneath Validation Rule. This will populate the Validation Rule with a regular expression pattern that matches email addresses.</li>
+<li> Check the box next to Make this a required field</li>
+</ol>
+
+<p>Now a field for the actual comment:</p>
+
+<ol>
+<li> Click “Text” to add another text field</li>
+<li> Enter Comment as the field’s name</li>
+<li> In the Size dropdown, select “Medium Box”</li>
+<li> In the Text Formatter dropdown, select “Markdown (with HTML Purifier)”. Because you’re allowing visitors to submit comments from the front end, we’ll want to make sure the input is cleaned up before we save it. Adding this text formatter to the field will take care of that, and will also allow commenters to add formatting to their comments using Markdown syntax.</li>
+<li> Uncheck the box next to Show column. Comments will be far too long to display in a table cell.</li>
+<li> Check the box next to Make this a required field. No use saving a comment if there’s no comment.</li>
+<li> Uncheck the box next to Output with handles.</li>
+</ol>
+
+<p>Lastly, add the date field:</p>
+
+<ol>
+<li> Click “Date” in the list of field types</li>
+<li> Enter Date as the field’s name</li>
+<li> Check the box next to Make this a Required field</li>
+</ol>
+
+<p>I know there’s one more field to add, but we’re going to take care of creating relationships a little later. For now, we’re all set.</p>
+
+<ol>
+<li> Click “Save Changes”</li>
+</ol>
+
+<p>Now let’s go back to our good old Blog Posts section and round it out:</p>
+
+<ol>
+<li> Go to Blueprints &gt; Sections, or use the “View all” link in the notification bar</li>
+<li> Click “Blog Posts” in the sections index</li>
+<li> Click “Add Field” in the fields tool</li>
+<li> Click “Date” in the list of field types</li>
+<li> Enter Publish Date as the field’s name</li>
+<li> Check the box next to Make this a Required field</li>
+</ol>
+
+<p>We’ll skip the category field for now, because we’re going to address relationships a bit later. So let’s finish off by adding the published field:</p>
+
+<ol>
+<li> Click “Checkbox” in the list of field types</li>
+<li> Enter Published as the field’s name</li>
+<li> Let’s add a more descriptive label for this field. In the Publish label input, enter Publish this post</li>
+<li> Click “Save Changes”</li>
+</ol>
+
+<h3>Reordering and Removing Fields</h3>
+
+<p>Let’s take a closer look at what the fields tool looks like once you’ve got a bunch of fields in it (Figure 5-7):</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 5-7  [f0507.png]
+</code></pre></div>
+<p>Each of the fields you’ve added is listed on the left side in a sort of “tab.” The tab contains the field’s name and field type so you can see at a glance what your section looks like.</p>
+
+<p>If you hover over these tabs with your mouse pointer, you’ll see a small delete button appear. This is how you remove a field from your section.</p>
+
+<p>To reorder fields, simply click the field tab and drag it up or down. Try reordering the fields in your Blog Posts section and saving your changes.</p>
+
+<p>Whichever field is listed first is treated by Symphony as the section’s primary field. This means it’s used when referencing an entry in the admin interface (for instance, in the entries index for that section, it’ll be the field that’s listed in the first column and linked to the entry). Restore the original order of the fields and save your changes again.</p>
+
+<p>One last trick to know about the fields tool: sometimes you need to see the configuration options for more than one field at a time. Try holding the Shift button while clicking on tabs. This allows you to select multiple fields, and when more than one field is selected, the configuration panels will stack on the side. This can come in handy when you want to quickly compare fields.</p>
+
+<h3>Designing Section Layouts</h3>
+
+<p>As you’ve seen, Symphony automatically creates interfaces that allow you to manage the content in your sections. One is the entries index, and we’ve already seen how you can use field configurations to define what gets displayed in that table.</p>
+
+<p>The other interface that Symphony creates for you is the entry editor. You know now that each field is responsible for rendering its own form element in the entry editor, and you’ve seen how field configurations allow you to define how these are labeled (and often set other options as well). Let’s take a quick glance at what your Blog Posts entry editor looks like with the new fields added:</p>
+
+<ol>
+<li> Go to Content &gt; Blog Posts</li>
+<li> Click “Create New”</li>
+</ol>
+
+<p>You should see something that looks like Figure 5-8:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 5-8  [f0508.png]
+</code></pre></div>
+<p>Simple, but not at all elegant or user-friendly. Thankfully, Symphony allows you to define how these form elements are organized and arranged, meaning you actually have quite a bit of control over the content publishing experience.</p>
+
+<p>Let&#39;s go back to our Blog Posts section so you can see what I mean:</p>
+
+<ol>
+<li> Go to Blueprints &gt; Sections</li>
+<li> Click on “Blog Posts” in the sections index</li>
+</ol>
+
+<p>You may not have noticed this, but whenever you create a section, a second tab appears in the section editor below the section name. Click on the Layout tab.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 5-9  [f0509.png]
+</code></pre></div>
+<p>This is the section layout tool (Figure 5-9). It enables you to define what a section&#39;s entry editor will look like—namely, the order and organization of its fields.</p>
+
+<p>You start by choosing a base column layout. If you click the “Choose Layout” button, you’ll see a drawer appear with the various column options. For our Blog Posts, we’ll stick with the default column setup, so go ahead and click the button again to close the drawer.</p>
+
+<h3>Working with Fieldsets</h3>
+
+<p>Within your chosen base layout, fields can be grouped into fieldsets. Each column contains a single fieldset by default, but you can easily add additional fieldsets using the “Add Fieldset” button.</p>
+
+<p>At the top of each fieldset, above the dotted line, you can enter a title for that fieldset. This is entirely optional, and by default fieldsets will have no titles, but they can be helpful for sections that have multiple groups of fields, and overall usually make your entry editor much more usable.</p>
+
+<p>Once you’ve chosen a base layout, you can begin organizing your fields. By default, Symphony just stacks your fields into a single fieldset in the first column. You should see all four of your Blog Posts’ fields there. let’s do a little rearranging:</p>
+
+<ol>
+<li> Click and hold the Publish Date field, and drag it into the right column.</li>
+<li> Click and hold the Published field, and drag it into the right column.</li>
+<li> In the left column, enter Content as the fieldset title (above the dotted line).</li>
+<li> In the right column, enter Info as the fieldset title.</li>
+<li> Save your changes.</li>
+</ol>
+
+<p>Now, if you go back to Content &gt; Blog Posts and click &quot;Create New,&quot; you&#39;ll see a more organized entry form (Figure 5-10).</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 5-10 [f0510.png]
+</code></pre></div>
+<p>Now, your Categories section is so simple that we don’t really need to look at its layout, but let’s do some fine-tuning in the Comments section. Even though comments are going to be submitted from the front end rather than here in the admin interface, there’s no harm in making it tidier.</p>
+
+<p>I’m actually going to leave this one to you. Using whatever column layout, fieldsets, and field arrangement you like, go ahead and reorganize your Comments layout. Take the time to experiment with various groupings and columns and see how they affect the entry editor for that section.</p>
+
+<p>Once you’re happy with what you’ve done, we’ll move on.</p>
+
+<h3>Tabs and Steps</h3>
+
+<p>For especially complex sections, with lots and lots of fields or unique workflow needs, it’s possible to split fields and fieldsets over multiple tabs or steps. Tabs simply allow you to spread your fields and fieldsets over multiple views, whereas steps enable the creation of so-called “wizard” interfaces where content must be entered in order, one step at a time.</p>
+
+<p>To split your fields over multiple tabs or steps...</p>
+
+<p>[This functionality hasn’t yet been implemented. Will need to revisit once development is further along.]</p>
+
+<h3>Creating Relationships</h3>
+
+<p>[This functionality hasn’t yet been implemented. Will need to revisit once development is further along.]</p>
+
+<h3>Managing Sections</h3>
+
+<p>Guess what? Your blog’s content structure is complete! And if I hadn’t spent so much time blathering about all the various concepts and options you encountered, it probably would’ve only taken you five or six minutes from beginning to end! The nice thing is, once you’re more familiar with all these nuances, you’ll be able to build a website’s content structure in the blink of an eye.</p>
+
+<p>I just want to review a few more helpful tidbits about managing sections before we move on.</p>
+
+<p>There are two ways to delete a section. The first is to go to the section editor and click the red “Delete” button. The second is to go to the sections index, click the section’s row (it’ll be highlighted blue when it’s selected), choose “Delete” from the “With selected” dropdown below the table, and click “Apply.” (This paradigm actually applies to pretty much everything in Symphony).</p>
+
+<p>The other thing to know is that everything you can accomplish in the admin interface—creating, editing, and deleting sections, adding and configuring fields, defining a section’s layout—all of this can also be achieved by directly editing the section file (though doing so isn’t recommended).</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>All of the configuration data that makes up a section, from its name and its field makeup to the layout of its entries, is stored in a physical XML file in your workspace (in the /workspace/sections/ folder). Here&#39;s a simplified example—the file for our Blog Posts section:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;section&gt;
+  &lt;name handle=&quot;blog-posts&quot;&gt;Blog Posts&lt;/name&gt;
+  ...
+  &lt;fields&gt;
+    &lt;field&gt;
+      ...
+      &lt;type&gt;textbox&lt;/type&gt;
+      &lt;element-name&gt;title&lt;/element-name&gt;
+      &lt;name&gt;Title&lt;/name&gt;
+      ...
+    &lt;/field&gt;
+    ...
+  &lt;/fields&gt;
+  &lt;layout&gt;
+    &lt;column&gt;
+      &lt;size&gt;large&lt;/size&gt;
+      &lt;fieldset&gt;
+        &lt;name&gt;Content&lt;/name&gt;
+        &lt;field&gt;title&lt;/field&gt;
+        &lt;field&gt;body&lt;/field&gt;
+      &lt;/fieldset&gt;
+    &lt;/column&gt;
+    &lt;column&gt;
+      &lt;size&gt;small&lt;/size&gt;
+      &lt;fieldset&gt;
+        &lt;name&gt;Info&lt;/name&gt;
+        &lt;field&gt;publish date&lt;/field&gt;
+        &lt;field&gt;published&lt;/field&gt;
+      &lt;/fieldset&gt;
+    &lt;/column&gt;
+  &lt;/layout&gt;
+&lt;/section&gt;
+</code></pre></div>
+<p>Having all of this information in a physical file will help you develop more efficiently. For starters, unlike tables in a database, files can be easily version-controlled. That means teams can develop content structures for their projects collaboratively, and iteratively, without worrying about stepping on each other’s toes. It also means that if you spend time developing a very finely-tuned section for one site, and then you find that you need to manage similar content in another site, all you need to do is copy the file over.</p>
+
+<h3>Synchronizing Sections</h3>
+
+<p>Whenever a section file is updated, the system will detect the changes and ask you to sync the section so your database can be brought up to date. This is an automated and painless process.</p>
+
+<p>[This functionality hasn’t yet been fully implemented. Will need to revisit once development is further along.]</p>
+
+<h3>Managing Entries</h3>
+
+<p>The last thing we need to discuss in this chapter is how to manage entries. You’ve already seen how entries are created and edited. And by now, I hope you’re becoming familiar with Symphony’s common user interface paradigms (the indexes, editors, action buttons, and so on). So most of this should be easy to figure out on your own, but I’ll just highlight a few especially helpful things.</p>
+
+<p>You’ll probably find yourself needing to sort, browse, and search through entries on a regular basis. The entries index table for each section is sortable by whatever fields you choose to include in the table, so if you want to sort your Blog Posts by date, for instance, make sure to check “Show column” in that field’s configuration. By default, entries are sorted in order of creation, newest to oldest. The tables are paginated, of course, and the number of items per page can be adjusted in the system configuration (which we’ll discuss in Chapter 9).</p>
+
+<p>There’s also a filtering mechanism that allows you to run more precise searches on a section’s entries. [This functionality hasn’t yet been fully implemented. Will need to revisit once development is further along.]</p>
+
+<p>Deleting entries works exactly like deleting sections. You can do so either from the entry editor itself, or from the entries index (using the “With selected” dropdown).</p>
+
+<p>This “With selected” dropdown—or bulk actions menu—can also offer other options. Certain field types allow their values to be toggled via this menu, which means that, depending on how you’ve modeled a section, you’ll usually have some options for updating field values in multiple entries at once. To see it in action, first add a few additional test entries to your Blog Posts section. Once you’ve got two or three entries:</p>
+
+<ol>
+<li>Navigate back to the Blog Posts index (Content &gt; Blog Posts)</li>
+<li>Click on one or more rows to select those entries</li>
+<li>Click on the “With Selected” dropdown</li>
+</ol>
+
+<p>You’ll see that the checkbox field allows its value to be toggled here, so you can publish or unpublish lots of Blog Posts at once. Select box is another field type that allows its value to be set via the bulk actions menu. This functionality is often very useful in situations where you need to enforce moderation or publishing workflows—for example, marking entries as approved or published, or changing their status.</p>
+
+<h2>Summary</h2>
+
+<p>We’ve covered quite a lot in this chapter. We started by introducing you to the practice of content modeling, so that you’d understand what goes into defining a website’s content structure. We then reviewed in more detail the elements that make up Symphony’s content layer—sections, fields, field types, and entries.</p>
+
+<p>Once you were familiar with the basic architecture and concepts, we went about setting up a content structure for your blog. Along the way, you learned how to work with each of these elements in turn, from basic section creation to advanced field configuration and entry management.</p>
+
+<p>There always more to learn, of course. Appendix B outlines in painstaking detail everything you need to know about common field types, and you should study that closely. On top of that, ever more can be found online in the official documentation (http://symphony-cms.com/learn/). This is a great start, though, and by now you should feel pretty comfortable working in Symphony’s content layer on your own.</p>
+
+<p>Let’s move on to the front end.</p>
+
+  </div>
+</div>
+
+        </div>
+
+        <footer id="footer">
+  <div class="field">
+
+    <!-- Community -->
+    <p class="footer-community">
+      <strong>&#169; 2010–2012 The Symphony Community</strong>
+      <a href="http://getsymphony.com">International Site</a> · <a href="http://twitter.com/symphonycms">Twitter</a>
+    </p>
+
+    <!-- Developer links -->
+    <p class="footer-links">
+      <strong>Plan, Play and Practice</strong>
+      <a href="https://github.com/symphonycms/symphony-2/blob/master/README.markdown">Requirements</a> · <a href="https://github.com/symphonycms/symphony-2/blob/master/LICENCE">MIT Licence</a> · <a href="http://github.com/symphonycms">Github</a>
+    </p>
+
+    <!-- Factory artwork -->
+    <p class="footer-factory">
+      <em>Conducting sites since 2004</em>
+      <a href="http://getsymphony.com">Symphony Community</a>
+    </p>
+  </div>
+</footer>
+    </body>
+</html>

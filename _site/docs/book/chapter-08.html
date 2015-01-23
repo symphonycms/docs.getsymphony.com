@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>Templating – SymphonyCMS</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link media="screen" href="/symphony-2/css/codemirror.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.docs.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="/symphony-2/js/jquery.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/modernizr.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/codemirror.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.grid.js"></script>
+    </head>
+    <body>
+        <aside id="network">
+
+  <!-- Main navigation -->
+  <header class="network-toolbar collapsed">
+    <div class="field">
+      <h1 class="network-logo column one">
+        <a href="/docs/about.xml">Symphony CMS</a>
+      </h1>
+      <nav class="network-nav column">
+        <a href="/docs/examples/community.xml">Community</a>
+        <a href="/docs/examples/documentation.xml"  class="active">Documentation</a>
+        <a href="/docs/examples/extensions.xml">Extensions</a>
+        <a href="/docs/examples/ninjas.xml">Ninjas</a>
+        <a href="/docs/examples/xpathr.xml">xPathr</a>
+      </nav>
+      <div id="user" class="network-user">
+        <a href="http://getsymphony.com/get-involved/member/Allen/">
+          <img src="img/user.png" width="35" height="35" alt="Allen Chang" />
+        </a>
+        <p>
+          <a href="http://getsymphony.com/get-involved/currently-online/" class="network-visitors">15</a>
+          <xsl:text> + </xsl:text>
+          <a class="network-username">Allen Chang</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- User profile -->
+  <div class="field network-profile">
+    <form>
+
+      <!-- Gravatar -->
+      <div class="network-gravatar column one">
+        <img src="img/user.png" width="174" height="174" alt="Allen Chang" />
+        <p>Change your avatar at <a href="http://gravatar.com">Gravatar</a>.</p>
+      </div>
+
+      <!-- Information -->
+      <fieldset class="column one large-two">
+        <label for="profile-username" class="restricted">Username</label>
+        <input id="profile-username" type="text" name="fields[username]" value="Allen" readonly="readonly" />
+        <label for="profile-name">Name</label>
+        <input id="profile-name" type="text" name="fields[name]" value="Allen Chang" />
+        <label for="profile-email-address">Email (Private)</label>
+        <input id="profile-email-address" type="text" name="fields[email-address]" value="team@getsymphony.com" />
+        <label for="profile-city">Location</label>
+        <input id="profile-city" type="text" name="fields[location]" value="Symphony Land" />
+      </fieldset>
+      <fieldset class="column two small-one">
+        <label for="profile-website">Website</label>
+        <input id="profile-website" type="text" name="fields[website]" value="http://getsymphony.com" />
+        <label for="profile-bio">Bio</label>
+        <textarea rows="7" name="fields[bio]">Cras mattis consectetur purus sit amet fermentum.</textarea>
+        <div class="profile-controls">
+          <button id="submit-profile" class="button-save" type="submit" name="action[members-edit]">Save Profile</button>
+          <a class="button-cancel" href="../../member/Nils/">Cancel</a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Site switcher -->
+  <div class="field network-drawer">
+
+    <!-- Symphony ressources -->
+    <div class="column three medium-two">
+      <h2>About Symphony</h2>
+      <p>Symphony is an open source content management system for your websites and webapps. It makes complex things simple.</p>
+      <div class="get-symphony">
+        <a href="https://github.com/symphonycms/symphony-2">Get Symphony 2.3.0</a>
+        <a href="https://github.com/symphonycms/symphony-2" class="icon-fork">Fork<span class="medium-hide"> on Github</span></a>
+        <a href="https://github.com/symphonycms/symphony-2/archive/master.zip" class="icon-download"><span class="medium-hide">Download </span>ZIP</a>
+      </div>
+    </div>
+
+    <!-- Symphony in other languages -->
+    <div class="column one small-two">
+      <h2>Regions</h2>
+      <ul>
+        <li>
+          <a href="#">Germany</a>
+        </li>
+        <li>
+          <a href="#">Italy</a>
+        </li>
+        <li>
+          <a href="#">Romania</a>
+        </li>
+        <li>
+          <a href="#">United Kingdom</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Symphony ressources -->
+    <div class="column one">
+      <h2>Services</h2>
+      <ul>
+        <li>
+          <a href="#">Github</a>
+        </li>
+        <li>
+          <a href="#">Twitter</a>
+        </li>
+        <li>
+          <a href="#">Vimeo</a>
+        </li>
+        <li>
+          <a href="#">Flickr</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+        <div id="site">
+            <header class="site-header centered">
+    <h1>
+        <span>Symphony</span> Documentation
+    </h1>
+    <nav>
+        <a href="about.xml">About</a>
+        <a href="layouts.xml">Layouts</a>
+        <a href="snippets.xml">Snippets</a>
+        <a href="styles.xml">Styles</a>
+        <a href="scripts.xml">Scripts</a>
+        <a href="examples.xml">Examples</a>
+    </nav>
+</header>
+
+            <div class="field">
+  <div class="column sidebar infobox">
+    
+      <h3>Articles</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/articles/field-extension.html"
+              >Field Extension</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/getting-git-for-symphony-development.html"
+              >Getting Git for Symphony Development</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/combining-symphony-with-nginx.html"
+              >Combining Symphony with Nginx</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Book</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/book/symphony-book.html"
+              >Symphony Start to Finish</a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-01.html"
+                      >Why You Need Symphony</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-02.html"
+                      >Symphony in Action</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-03.html"
+                      >Getting Started</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-04.html"
+                      >Symphony Anatomy</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-05.html"
+                      >Content</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-06.html"
+                      >Front-end</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-07.html"
+                      >Data Flow</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-08.html"
+                       class="active">Templating</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-09.html"
+                      >System Management</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-10.html"
+                      >Planning Symphony Projects</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-11.html"
+                      >Adaptive Techniques</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Concepts</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/concepts/xslt-transformation.html"
+              >XSLT Transformation</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Guides</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/guides/javascript-styleguide.html"
+              >JavaScript Style Guide</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Tutorials</h3>
+      <ul class="sidebar-links">
+        
+      </ul>
+    
+      <h3>Working</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow.html"
+              >A Symphony Workflow</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow-command-list.html"
+              >A Symphony Workflow - Terminal Command List</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/installing-on-mac-osx.html"
+              >Installing Symphony on your Mac (OS X >= 10.5)</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-view-on-static-pages.html"
+              >A view on static pages</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/understanding-xslt.html"
+              >Understanding XSLT</a>
+            
+          </li>
+        
+      </ul>
+    
+  </div>
+  <div class="column content">
+      <h1>Chapter 8: Templating</h1>
+
+<h2>What’s in This Chapter</h2>
+
+<ul>
+<li>Understanding Templating in Symphony</li>
+<li>An Introduction to XSLT</li>
+<li>Working with View Templates and XSLT Utilities</li>
+</ul>
+
+<p>This is it. There’s only one thing standing between you and your first fully-functioning Symphony website. Your content’s been sculpted. Your front end is in place and is fielding requests. Data is flowing. All that remains is to give your blog a face, to turn it into something that people can actually use.</p>
+
+<p>In this chapter, you’ll learn how to template a Symphony website—in other words, how to define the output that will be returned to your visitors. Most often, you’ll be outputting HTML pages, but not always. You can also output Atom feeds, JSON documents, raw XML, or pretty much any other text-based format you can imagine. For the sake of your modest blog project, though, we’ll stick to plain old XHTML (XML-flavored HTML), at least for now.</p>
+
+<p>This chapter’s going to be a little more challenging than the previous few. Although Symphony’s templating layer is structurally very simple, conceptually it’s different than systems you may have encountered elsewhere. On top of that, it’s powered by XSLT, which is a language unto itself (and one you may know nothing about). But just because it’s going to be challenging doesn’t mean it can’t be fun. In fact, if I do my job well, you’ll leave this chapter excited about XSLT and eager to learn more.</p>
+
+<p>We’ll start by talking about that conceptual difference, then, in order to explain the unique approach that Symphony takes to templating. After that, I’ll outline the components involved in Symphony’s templating layer (which should be easy—there are only two), and then we’ll dive right into XSLT itself. That’s a book-length topic in its own right, but I’d like to teach you enough that you feel comfortable following along with the remainder of this book. A lot of Symphony’s punch comes straight from this wonderful templating language. Once we’ve gotten through all that, we’ll finish up by writing the templates that will give your new blog a face, even if it’s a fairly plain one.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>Until now, I’ve tried to avoid making too many assumptions about how much web development experience you have. This is the exception. I need to be able to trust that you know at least the basics of HTML. If you don’t, I worry that this chapter might be a bit overwhelming for you.</p>
+</blockquote>
+
+<p>If you’re not confident in your HTML knowledge or think you could use a refresher (or if you’ve never even heard of HTML and at first glance figured it was a leftist political party in Honduras), then it’s probably a good idea to set this book aside for a day and read through a quick introduction to HTML. The folks at <code>http://htmldog.com</code> have an excellent HTML Beginner tutorial.</p>
+
+<p>Before we get started exploring Symphony’s templating layer, though, let’s try a sample exercise to get your feet wet.</p>
+
+<ol>
+<li>Go to Framework &gt; Views</li>
+<li>Click &quot;Home&quot; to edit your Home view</li>
+<li><p>You’ll see two tabs in the view editor, &quot;Configuration&quot; and &quot;Template&quot; (Figure 8-1)</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 8-1  [f0801.png]
+</code></pre></div></li>
+<li><p>Click &quot;Template&quot;</p>
+
+<p>The view template editor is fairly simple (Figure 8-2). It contains a large textarea for your template code, and a list of available XSLT utilities (more on those later).</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 8-2  [f0802.png]
+</code></pre></div>
+<p>By default, Symphony generates a simple starter template for each new view—just a placeholder that outputs an XHTML page with some basic info about the view and its data. Don’t panic if any of the code scares you. By the end of this chapter, you’ll be comfortable with all of it.</p>
+
+<p>The starter template looks like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+
+ &lt;xsl:output method=&quot;xml&quot;
+   doctype-public=&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+   doctype-system=&quot;http://www.w3.org/TR/xhtml1/DTD/ xhtml1-strict.dtd&quot;
+   omit-xml-declaration=&quot;yes&quot;
+   encoding=&quot;UTF-8&quot;
+   indent=&quot;yes&quot; /&gt;
+
+ &lt;xsl:template match=&quot;/&quot;&gt;
+   &lt;html&gt;
+     &lt;head&gt;
+       &lt;title&gt;&lt;xsl:value-of select=&quot;context/website/name&quot;/&gt;&lt;/title&gt;
+     &lt;/head&gt;
+     &lt;body&gt;
+       &lt;h1&gt;&lt;xsl:value-of select=&quot;context/view/title&quot;/&gt;&lt;/h1&gt;
+     &lt;/body&gt;
+   &lt;/html&gt;
+ &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</code></pre></div>
+<p>On the whole the syntax should feel vaguely familiar, and if you’ve got a keen eye you’ll notice some HTML in there. For now, we’re just going to make some very simple changes to this template so it will output the entry titles being returned by your Recent Posts data source.</p></li>
+<li><p>Just below the line containing <code>&lt;h1&gt;&lt;xsl:value-of select=&quot;data/context/view/title&quot;/&gt;&lt;/h1&gt;</code>, enter:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;h2&gt;Recent Posts&lt;/h2&gt;
+&lt;ul&gt;
+ &lt;xsl:apply-templates select=&quot;recent-posts/entry&quot;/&gt;
+&lt;/ul&gt;
+</code></pre></div>
+<blockquote>
+<h6>Translation</h6>
+
+<p>&quot;Output a second-level header (<code>h2</code>) element containing the text Recent Posts, followed by an unordered list (<code>ul</code>) element. Inside the unordered list, I want you to apply templates to the entry items being returned by my Recent Posts data source.&quot;</p>
+</blockquote></li>
+<li><p>Now, after <code>&lt;/xsl:template&gt;</code> and before <code>&lt;/xsl:stylesheet&gt;</code>, enter:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;recent-posts/entry&quot;&gt;
+  &lt;li&gt;
+    &lt;xsl:value-of select=&quot;title&quot;/&gt;
+  &lt;/li&gt;
+&lt;/xsl:template&gt;
+</code></pre></div>
+<blockquote>
+<h6>Translation</h6>
+
+<p>&quot;Here’s the template I want you to use for those entry items. Just create a list item (<code>li</code>) element and inside it output the entry’s title.&quot;</p>
+
+<p>Your final template should look like this (I’ve emphasized the bits I asked you to add):</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+
+  &lt;xsl:output method=&quot;xml&quot;
+    doctype-public=&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+    doctype-system=&quot;http://www.w3.org/TR/xhtml1/DTD/ xhtml1-strict.dtd&quot;
+    omit-xml-declaration=&quot;yes&quot;
+    encoding=&quot;UTF-8&quot;
+    indent=&quot;yes&quot; /&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;&lt;xsl:value-of select=&quot;context/website/name&quot;/&gt;&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;&lt;xsl:value-of select=&quot;context/view/title&quot;/&gt;&lt;/h1&gt;
+        &lt;h2&gt;Recent Posts&lt;/h2&gt;
+        &lt;ul&gt;
+          &lt;xsl:apply-templates select=&quot;recent-posts/entry&quot;/&gt;
+        &lt;/ul&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;recent-posts/entry&quot;&gt;
+    &lt;li&gt;
+      &lt;xsl:value-of select=&quot;title&quot;/&gt;
+    &lt;/li&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</code></pre></div></li>
+<li><p>Click &quot;Save Changes&quot;</p></li>
+</ol>
+
+<p>If you visit your Home view now, you should see something like Figure 8-3.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 8-3  [f0803.png]
+</code></pre></div>
+<p>It’s pretty barebones at the moment, I’ll admit, but it’s something. The content that you modeled and created yourself back in Chapter 5 has finally found its way to your adoring public.</p>
+
+<p>Now, if you’ve never seen XML or XSLT before, that exercise might have been a little intimidating. Don’t worry. Like me, it’s actually far simpler than it looks. Before we get into figuring out how to crack all that code, though, let’s review exactly how templating works in Symphony.</p>
+
+<h2>What is Templating?</h2>
+
+<p>Loosely speaking, templating is how a web application prepares the output that it will render to its users. There are lots of different kinds of web templating systems out there, each with its own virtues (and shortcomings), but the majority of them can probably be said to take one of two approaches:</p>
+
+<ul>
+<li>The first, which we&#39;ll call &quot;parsed output,&quot; allows you to write your output directly (in HTML template files, for instance), adding in dynamic bits via specialized tags or bits of procedural code. The system then parses the template, evaluates the dynamic bits, and outputs the result.</li>
+<li>The other approach, which we&#39;ll call &quot;programmed output,&quot; allows you to write code that will generate the output you&#39;re after using the system&#39;s native programming language.</li>
+</ul>
+
+<p>Of course, this is an oversimplification, and there are certainly exceptions, but in my experience these do seem to be the dominant paradigms. If you&#39;ve done any web development before, chances are you&#39;re familiar with one or both of them.</p>
+
+<p>The parsed output approach has the benefit of being fairly simple and easier for beginners to grasp. If you already know how to write HTML, for example, you can can just whip up your templates as normal and then drop in a few copied-and-pasted tags where necessary.</p>
+
+<p>The programmed output approach, on the other hand, is very powerful, because you can lean on the full capabilities of a robust programming language like PHP, Python, or Ruby. If you know the language well, you can do pretty much anything you want in the course of generating your output.</p>
+
+<p>Both can and have been used to great effect, but they usually have significant drawbacks too. Parsed output, for example, tends to be very limited, both in terms of the data you can access and what you’re able to do with it. These systems often rely on a narrowly-defined custom syntax or set of functions that’s fairly shallow and not useful in other contexts.</p>
+
+<p>Programmed output, on the other hand, has a pretty high barrier of entry for designers and other non-programmers. More importantly, though, it subjects you to the procedural constraints of languages that aren’t really designed for templating. These kinds of systems can easily get messy because often there is no clear distinction between the presentation logic and, well, everything else.</p>
+
+<p>Whichever approach they take, the vast majority of web templating systems make it difficult or impossible to intelligently organize and reuse code, and they nearly always leave their dirty little fingerprints all over your output. As a result, in many systems, templating on the whole can often feel like an afterthought—something pieced together and tacked onto a system just to allow its content to be turned into HTML and decorated.</p>
+
+<p>Symphony’s approach doesn’t really fall on this spectrum. It’s a radically different tack, one you might call &quot;transformed output.&quot; With it, you craft a standalone system of stylesheets with rules for turning the raw data delivered by the system into some sort of digestible format. So rather than having you write output laced with procedural code, or procedural code laced with output, Symphony&#39;s templating system is an entirely self-contained layer, powered by a language that was designed just for templating (XSLT).</p>
+
+<p>This can be a little disorienting if you&#39;re accustomed to other kinds of systems, and it isn&#39;t without its own drawbacks. For starters, XSLT can involve a bigger learning curve than simple tag-based template syntaxes, and it&#39;s more verbose (although some people like that about it). There are also things that XSLT can&#39;t do as easily as a full-fledged programming language can.</p>
+
+<p>That said, though, the benefits of a transformed output approach far outweigh these minor gripes. First of all, you have complete, unfettered access to all the raw data you need to craft your presentation. Also, as I said above, the templating layer is completely self-contained, which means it’s clean and lean, and the system can’t interfere with your output in any way. This self-containment also means that your code can be organized elegantly and reused. Finally, and perhaps most importantly, you get all the benefits of a dedicated, open templating language in XSLT. We’ll talk about what those benefits are in a moment.</p>
+
+<p>So what does Symphony’s implementation of this approach look like?</p>
+
+<h2>Understanding Templating in Symphony</h2>
+
+<p>As you’ve seen, when someone visits your Symphony site&#39;s front end, a view handles their request and goes on to build the XML data that will power the view and its interactions. But this isn&#39;t what gets delivered to your visitor. Instead, it’s left entirely up to the templating layer to transform that raw data into some sort of usable output.</p>
+
+<p>The templating layer is made up of <em>view templates</em> and <em>XSLT utilities</em>. Every view has an accompanying view template that it uses to transform its source XML. XSLT utilities are more generic and can be included in these transformations at will. Figure 8-4 illustrates the templating process:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 8-4  [f0804.png]
+</code></pre></div>
+<p>Both view templates and XSLT utilities are simply vanilla XSLT stylesheets. No custom syntax or special processing required. So in order to understand how Symphony’s templating system works, you just need to understand how XSLT works.</p>
+
+<p>To help you get there, I&#39;m going to whisk you through a basic introduction to XSLT at neck-breaking speed. I hope you’re wearing a helmet. (Not because you need protection, though. It’s just funny to imagine you reading this book with a helmet on.)</p>
+
+<p>Ok, ready?</p>
+
+<h2>Understanding XSLT</h2>
+
+<p>XSLT is the keystone in a trio of languages developed to transform and format XML. Collectively, those languages are known as XSL, or Extensible Stylesheet Language.</p>
+
+<p>Each member of the XSL family has a specific role:</p>
+
+<ul>
+<li>XSLT, or XSL Transformations, is used to transform XML data into other kinds of output.</li>
+<li>XPath, or XML Path Language, is used to identify nodes in an XML document for transformation or formatting.</li>
+<li>XSL-FO, or XSL Formatting Objects, is a presentational language used for formatting XML data, usually for print.</li>
+</ul>
+
+<p>In the Symphony context, we only need to talk about the first two. XSL-FO can be useful for things like PDF-generation, but that sort of thing is a bit advanced for this book.</p>
+
+<p>Though the usage of XSLT as a web templating language is not exactly commonplace, there are lots of factors that make it ideal for this exact purpose. Here’s a handful of them:</p>
+
+<ul>
+<li><strong>It’s an XML technology.</strong> This means native handling of every web feed, every XHTML page, every RDF format, and nearly every API that exists on the web.</li>
+<li><strong>It’s an open standard.</strong> Maintained by the world’s web standards body (W3C), XSLT is widely-used, widely-supported, and well-documented. You won’t have trouble finding resources or getting answers, and once you’ve learned XSLT it can be helpful anywhere XML is used (which is pretty much everywhere).</li>
+<li><strong>It’s content-driven.</strong> Everything you output is directly tied to the data you need to present, meaning your presentation can always be lean and semantic.</li>
+<li><strong>It’s rule-based.</strong> Rules are much more powerful than mixtures of markup and procedural code. They are distinct and self-contained, but can also have complex relationships and interdependencies.</li>
+<li><strong>It’s flexible.</strong> XSLT can output nearly any text-based format there is, even ones that haven’t been invented yet.</li>
+<li><strong>It’s a complete templating language.</strong> With XSLT you can craft an organized, coherent presentation system rather than cobbling pages together out of snippets and tags using languages like PHP.</li>
+</ul>
+
+<p>In short, XSLT is what one might call &quot;awesomecake,&quot; and after reading about all the ways it can make your life easier, there’s a good chance you’re standing up doing fist pumps right now. With your helmet on. Which is fantastic.</p>
+
+<p>So here’s how it all works...</p>
+
+<p>XSLT defines sets of instructions that are used to transform source XML and create some kind of output (Figure 8-5).</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 8-5  [f0805.png]
+</code></pre></div>
+<p>Let’s look at a few very simplistic examples of this process to give you an idea of what I mean. Just try to follow along as best you can, but don’t panic if anything confuses you—we’ll go through it all in more detail below.</p>
+
+<p>Imagine that you have the following XML content:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;book&gt;
+  &lt;title&gt;Symphony Start to Finish&lt;/title&gt;
+  &lt;author&gt;Craig Zheng&lt;/author&gt;
+&lt;/book&gt;
+</code></pre></div>
+<p>We’ll assume you don’t need to do anything fancy with it—you just want to output the book’s title. In your XSLT stylesheet, the first thing you’d do is write a template rule that matches that book element:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;book&quot;&gt;
+  … do stuff …
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>Now anything you put <em>inside</em> this template will be used to generate output when that element gets processed. Since you just want to spit out the book’s title, you’d write:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;book&quot;&gt;
+  &lt;xsl:value-of select=&quot;title&quot;/&gt;
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>That template, applied to the XML above, would just output the text from the title element:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Symphony Start to Finish
+</code></pre></div>
+<p>And if you wanted to output XML or HTML, you would do something like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;book&quot;&gt;
+  &lt;h1&gt;&lt;xsl:value-of select=&quot;title&quot;/&gt;&lt;/h1&gt;
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>That transformation would get you this output:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;h1&gt;Symphony Start to Finish&lt;/h1&gt;
+</code></pre></div>
+<p>Not too bad so far, right? Before we get into the nitty gritty details of the language, let’s step back and review what’s actually going on during an XSLT transformation.</p>
+
+<h2>How Transformations Work</h2>
+
+<p>Imagine you’re my personal assistant (I’m liking this example already). I have several stacks of unorganized books, and I want you to help me create a catalog. So I ask you to sift through the books, one by one, and do the following:</p>
+
+<ul>
+<li>Enter each book’s details—title, author, publisher, year, and subject—into a row in a spreadsheet</li>
+<li>Scan the cover and save the resulting image to my hard drive</li>
+</ul>
+
+<p>What I’ve done is I’ve asked you to process a bunch of content, and I’ve given you some instructions telling you what to do for each item you come across. When you’re finished, I’ll have a nifty spreadsheet and a stack of cover images.</p>
+
+<p>This is more or less how XSLT works. A processor starts with some XML content, and as it parses that content, it uses instructions from an XSLT stylesheet to generate some other sort of output.</p>
+
+<p>When you write XSLT stylesheets, then, you’re essentially creating systems of rules and instructions.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>If you’re familiar with other programming languages, this might take some getting used to. Many common programming languages are <em>imperative</em>—they issue lots of commands, one after the other. And as you saw above, lots of web developers are accustomed to systems that rely on imperative languages for templating—they might even begin to think about building output as a series of commands: <em>First include the head, then loop through entries, then include this other snippet...</em></p>
+
+<p>XSLT, on the other hand, is a <em>declarative</em> language. Instead of issuing commands, it simply states what should be done in a given context. It’s rather similar to CSS in that way. Neither language describes a sequence of events or functions. They just say, &quot;Hey, when you come across this element, this is how you should style/transform it.&quot;</p>
+
+<p>Templating with this kind of rule-based language takes a different sort of mindset, but it’s actually a much more powerful and flexible approach. A list of commands can only be followed, but rules can have scope and interdependencies, they can cascade, they can override one another.</p>
+
+<p>You might not fully understand what I mean here, and as I said above, this is really a book-length topic of its own. My hope is just that by the end of this book you’ll have seen enough of XSLT’s power as a web templating language that you’ll want to go and spend a little bit of time learning it in earnest.</p>
+</blockquote>
+
+<p>Now that you’ve gotten an overview, let’s walk through what’s happening during one of these transformations. I’ll begin by explaining how an XSLT processor sees and interprets its source XML. Then we’ll talk about how a stylesheet’s instructions are applied and what they can do. We’ll finish up with a brief review of stylesheet structure and organization.</p>
+
+<h3>Parsing XML</h3>
+
+<p>The first thing the processor does during a transformation is load the source XML. It needs to parse all of the data into a document tree—a hierarchy of identifiable bits called nodes—so that the stylesheet can work with it. Let’s look at how XML data is broken down.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>We’ll stick to the basics here—if you want a detailed history of the language or a thorough breakdown, there are much better places to get it than this. We’re just going to concern ourselves with what you need to know in order to grasp the fundamentals of XSLT.</p>
+</blockquote>
+
+<p>XML is a markup language, which basically means that you use it to describe content in some way. For example, look at this text:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Amazon
+</code></pre></div>
+<p>That could be any of a half-dozen things—the internet company, the rainforest, the mythical tribe of female warriors. So let’s use XML to mark it up:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;river&gt;Amazon&lt;/river&gt;
+</code></pre></div>
+<p>Ok, now the text has got some meaning attached to it. You’re no longer just looking at some ambiguous word but at a meaningful XML element.</p>
+
+<p>At its very simplest, XML is made up of elements like this—just various things that exist in the universe of a particular XML document. A menu, for example, might have elements like dish and beverage, while a real estate listing might have elements like house or apartment.</p>
+
+<p>Elements are identified by <em>tags</em>. In the example above, <river> and </river> are the tags. One opens the element, the other closes it—anything in between is the element’s content. Elements can have textual content, as above, or can contain child elements, like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;river&gt;
+  &lt;name&gt;Amazon&lt;/name&gt;
+&lt;/river&gt;
+</code></pre></div>
+<p>If an element hasn’t got any content at all, the opening tag can simply close itself:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;river /&gt;
+</code></pre></div>
+<p>Elements can also have <em>attributes</em>—key-value pairs that store additional information for the element:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;river continent=&quot;South America&quot; miles=&quot;4200&quot;&gt;Amazon&lt;/river&gt;
+</code></pre></div>
+<p>Taken all together, the basic ingredients of XML syntax are pretty straightforward:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;element-name attribute=&quot;value&quot;&gt;text content&lt;/element-name&gt;
+</code></pre></div>
+<p>Each of them—elements, attributes, and text—is a different kind of <em>node</em> that can be identified and processed during an XSLT transformation.</p>
+
+<p>Now, if you’ve ever written any HTML in your life, all of this should look pretty familiar. If not, I’m fairly certain you won’t have any trouble catching on. After all, the syntax, by definition, is descriptive. Let’s imagine what a house might look like, for example, if we described it with XML:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;house color=&quot;yellow&quot; square-feet=&quot;2560&quot; style=&quot;colonial&quot;&gt;
+   &lt;room square-feet=&quot;420&quot; type=&quot;kitchen&quot;/&gt;
+   &lt;room square-feet=&quot;660&quot; type=&quot;bedroom&quot;/&gt;
+   ...
+&lt;/house&gt;
+</code></pre></div>
+<p>Not too difficult, right? We’ve got a house element with a few descriptive attributes and a couple of room elements for children.</p>
+
+<p>Now let’s look at a snippet of the XML that your Recent Posts data source is providing to your Home view:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;recent-posts&gt;
+  &lt;entry id=&quot;2&quot;&gt;
+    &lt;title handle=&quot;my-second-post&quot;&gt;My Second Post&lt;/title&gt;
+    &lt;category handle=&quot;journal&quot;&gt;Journal&lt;/category&gt;
+    &lt;publish-date&gt;2011-01-21&lt;/publish-date&gt;
+  &lt;/entry&gt;
+  &lt;entry id=&quot;1&quot;&gt;
+    &lt;title handle=&quot;my-first-post&quot;&gt;My First Post&lt;/title&gt;
+    &lt;category handle=&quot;journal&quot;&gt;Journal&lt;/category&gt;
+    &lt;publish-date&gt;2011-01-19&lt;/publish-date&gt;
+  &lt;/entry&gt;
+&lt;/recent-posts&gt;
+</code></pre></div>
+<p>If you can parse the above and identify the two entries and the various nodes that comprise them, then congratulations... you’re already conversant in XML! (You must have a really fantastic teacher.) And you’ll be glad to know that XSLT is itself an XML format, which means you already have a basic understanding of its syntax!</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>This is all simplified, of course. There are lots of little rules and wrinkles that you’ll have to learn. For instance, XML is a very strict language and most use cases require it to be <em>well-formed</em>—meaning elements must be nested properly, closed properly, contain only valid characters, and so on. But we’ll cover most of those rules as we go along. No need to get bogged down right now.</p>
+</blockquote>
+
+<p>So, as I was saying above, once the XSLT processor loads an XML source document, it begins stepping through its nodes, one by one. Let’s look at the XML for your Home view to see how this works. You can see the source for yourself at <code>http://example.com/?debug</code>, but I’ll paste a sample here for reference:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;data&gt;
+  &lt;context&gt;
+    &lt;view&gt;
+      &lt;title&gt;Home&lt;/title&gt;
+      &lt;handle&gt;home&lt;/handle&gt;
+      &lt;path&gt;/&lt;/path&gt;
+      &lt;current-url&gt;http://example.com/&lt;/current-url&gt;
+    &lt;/view&gt;
+    &lt;system&gt;
+      &lt;site-name&gt;Tales of a Highway Bandit Hacker&lt;/site-name&gt;
+      &lt;site-url&gt;http://example.com&lt;/site-url&gt;
+      &lt;admin-url&gt; http://example.com/symphony&lt;/admin-url&gt;
+      &lt;symphony-version&gt;3.0&lt;/symphony-version&gt;
+    &lt;/system&gt;
+    &lt;date&gt;
+      &lt;today&gt;2011-01-25&lt;/today&gt;
+      &lt;current-time&gt;19:03&lt;/current-time&gt;
+      &lt;this-year&gt;2011&lt;/this-year&gt;
+      &lt;this-month&gt;01&lt;/this-month&gt;
+      &lt;this-day&gt;25&lt;/this-day&gt;
+      &lt;timezone&gt;America/New_York&lt;/timezone&gt;
+    &lt;/date&gt;
+    ...
+  &lt;/context&gt;
+  &lt;recent-posts section=&quot;blog-posts&quot;&gt;
+    &lt;entry id=&quot;2&quot;&gt;
+      &lt;title mode=&quot;formatted&quot; handle=&quot;my-second-entry&quot;&gt;My Second entry&lt;/title&gt;
+      &lt;body mode=&quot;formatted&quot;&gt;is flavored like potato.&lt;/body&gt;
+      &lt;publish-date time=&quot;15:38&quot; weekday=&quot;6&quot;&gt;2011-02-12&lt;/publish-date&gt;
+      &lt;category handle=&quot;journal&quot;&gt;Journal&lt;/category&gt;
+    &lt;/entry&gt;
+    &lt;entry id=&quot;1&quot;&gt;
+      &lt;title mode=&quot;formatted&quot; handle=&quot;my-first-entry&quot;&gt;My First Entry&lt;/title&gt;
+      &lt;body mode=&quot;formatted&quot;&gt;Is flavored like awesomesauce&lt;/body&gt;
+      &lt;publish-date time=&quot;15:38&quot; weekday=&quot;3&quot;&gt;2011-01-12&lt;/publish-date&gt;
+      &lt;category handle=&quot;journal&quot;&gt;Journal&lt;/category&gt;
+    &lt;/entry&gt;
+  &lt;/recent-posts&gt;
+&lt;/data&gt;
+</code></pre></div>
+<p>The processor starts at the root (or document) node, which is a node that contains the entire source tree. It then processes the top-most element (in this case, <code>data</code>), and begins working through its children one by one. First up would be the context element—the processor would crawl down through each of its descendants (<code>view</code>, <code>title</code>, <code>handle</code>, <code>path</code>… <code>system</code>, <code>site-name</code>, and so on). Then it would proceed to the <code>data</code> element and crawl through <em>its</em> descendants, and <em>their</em> attributes and contents.</p>
+
+<p>As it’s stepping through XML like this, the processor checks the stylesheet for any instructions that it should apply to a particular node in order to generate output.</p>
+
+<p>Let’s talk about how those instructions work.</p>
+
+<h3>Templates</h3>
+
+<p>Templates are where all of the action happens, as you saw in some of the simple examples above. They are the real meat of an XSLT stylesheet, and they define most of what happens during a transformation—building output, specifying logic, routing the processor, and so on.</p>
+
+<p>There are two types of templates, <em>template rules</em> (sometimes called &quot;matching templates&quot;) and <em>named templates</em>. Both are defined using <code>xsl:template</code> elements. The stylesheet you’re using to transform the XML above has two templates in it:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;/&quot;&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;&lt;xsl:value-of select=&quot;data/context/website/name&quot;/&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;&lt;xsl:value-of select=&quot;data/context/view/title&quot;/&gt;&lt;/h1&gt;
+      &lt;h2&gt;Recent Posts&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;xsl:apply-templates select=&quot;data/recent-posts/entry&quot;/&gt;
+      &lt;/ul&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match=&quot;recent-posts/entry&quot;&gt;
+  &lt;li&gt;
+    &lt;xsl:value-of select=&quot;title&quot;/&gt;
+  &lt;/li&gt;
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>Both of these are template rules—they specify the nodes to which they should be applied using a pattern in their match attribute (more on those patterns in a moment). When the processor reaches nodes that match the pattern, it follows the instructions provided by the template. Template rules can have more than one match pattern (they’re separated by the pipe character, <code>|</code>), meaning the same template can be used to process different node-sets.</p>
+
+<p>The other kind of template, the named template, isn’t matched to the source tree but rather is invoked explicitly. We’ll discuss these more in depth a bit later.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>If you’re accustomed to writing CSS rules, which have a selector and then a set of declarations, template rules are sort of an analogous structure. The match attribute contains the &quot;selector,&quot; and then the template contains details about how the selected node is to be handled:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">   &lt;xsl:template match=&quot;recent-posts/entry&quot;&gt;
+     … do stuff …
+   &lt;/xsl:template&gt;
+</code></pre></div></blockquote>
+
+<p>Template rules are matched to source nodes using XPath patterns. Let’s look at the two that are used in the stylesheet above:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/
+</code></pre></div>
+<p>and</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">recent-posts/entry
+</code></pre></div>
+<p>Each of these patterns is used to match the template to a particular node or node-set in the source XML. The first matches the root node; the second matches entry elements that are children of a recent-posts element.</p>
+
+<p>A great deal of what templates do depends on being able to select or match nodes in the source tree like this, so let’s take a quick detour into the world of XPath so you can get a sense of how these expressions work.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>The debug devkit actually allows you to test XPath expressions live on your source XML. If you go to <code>http://example.com/?debug</code>, you’ll see an XPath expression bar (it’s got <code>//*</code> in it by default). Any XPath expression you type into that bar will highlight the matching node or nodes in the source XML. It’s a tremendously helpful tool for learning XPath. As we walk through the various kinds of XPath expressions in this section, feel free to test them out. You can also experiment with expressions of your own to get a sense of what works and what doesn’t.</p>
+</blockquote>
+
+<h4>XPath: A Crash Course</h4>
+
+<p>XPath is designed specifically to enable you to identify nodes or node-sets in an XML tree. There are several types of nodes, as you’ve seen: the root node, element nodes, attribute nodes, and text nodes (along with a few others that aren’t really important for us at the moment).</p>
+
+<p>XSLT transformations rely on XPath extensively, because you have to identify nodes in the source tree in all kinds of contexts—when you’re defining template rules, when you’re grabbing and manipulating source content, when you’re giving instructions to the processor, and so on.</p>
+
+<p>Thankfully, XPath provides a very powerful and versatile syntax for building all kinds of expressions. Expressions allow you to pinpoint nodes based on their location, their node type, and even their contents and values.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p><em>Patterns</em>, like the ones you saw above, are a subset of XPath expressions that are used in specific contexts (like template match attributes). While expressions as a whole are written to target particular nodes in a source tree, patterns allow you to specify conditions that you want nodes to meet in order to be considered a match. The difference is subtle, but it can be important. You’ll see why in a moment.</p>
+</blockquote>
+
+<h5>Selecting Nodes by Location</h5>
+
+<p>The simplest kind of expression is a path expression, which is used to select nodes based on where they are in the tree. These will look familiar to you because they work very much like filesystem paths and URLs.</p>
+
+<p>If you look back at your home view’s XML, for example, you could select the current date with the following expression:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/context/date/today
+</code></pre></div>
+<p>Easy enough, right? Each bit is the name of an element, and each slash indicates a level in the hierarchy.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<h4>Path Expressions and Context</h4>
+
+<p>When you’re describing locations like this, context becomes an important factor.</p>
+
+<p><em>Patterns</em> are not evaluated relative to any context because they’re just general conditions that nodes need to match. So something like <code>match=&quot;entry&quot;</code> will apply to <em>any</em> entry element in the entire source tree, and <code>match=&quot;recent-posts/entry&quot;</code> will apply to all entry elements that are a child of a recent-posts element.</p>
+
+<p>Expressions in general, though, are evaluated relative to the node being processed. So if you have a template rule that matches <code>/context/date</code>, any XPath you use inside that template has to be relative to the date element. Path expressions like <code>entry</code> and <code>recent-posts/entry</code> wouldn’t work because those elements don’t exist inside the date element.</p>
+
+<p>When you’re dealing with relative paths like this, you have to be able to move around the source tree. XPath makes this possible with <em>axes</em> (this is an advanced topic, so I’ll just give you the highlights and you can read up on your own). There are 13 axes, among them <code>parent::</code>, <code>ancestor::</code>, <code>descendent::</code>, <code>following::</code>, and so on. Each allows you to navigate through the source tree in a different way.</p>
+
+<p>The default axis in XPath is <code>child::</code> (meaning entry is the same as <code>child::entry</code>). The other axes enable you to select nodes that are not children or direct descendents of the current context node.</p>
+
+<p>Many axes have shorthand equivalents, so <code>../context</code> is the same as <code>parent::context</code> (just like in a file system), and <code>//entry</code> is the same as <code>descendent-or-self::entry</code> (it’ll look for entry elements at any depth from the context node).</p>
+
+<p>Aside from using axes, the other way to sidestep the current node’s context is to make an expression root-relative by preceding it with a forward slash: <code>/context</code>. You can then build your expression to target a node based on its location from the root.</p>
+</blockquote>
+
+<p>These path expressions should be pretty intuitive, and I’m sure you’ll pick them up quickly, so I’ll leave it at that for now.</p>
+
+<h5>Selecting Nodes by Type</h5>
+
+<p>The expressions we’ve seen so far only match element nodes. You can select attribute nodes and text nodes just as easily, though. To target an attribute node, you just prepend <code>@</code> before its name: <code>@id</code>. In a path expression, an element’s attributes go at the same level in the hierarchy as its children:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">//entry/@id
+</code></pre></div>
+<p>There are also times when you don’t want to select an entire element, only its text content. In that case, you’d use text() to specifically target the text node:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/context/view/title/text()
+</code></pre></div>
+<h5>Selecting Nodes by Condition</h5>
+
+<p>You can also select nodes based on various conditions. Let’s say, for instance, that you only want to select the Recent Posts entry element whose id attribute is 2:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/data/recent-posts/entry[@id = ‘2’]
+</code></pre></div>
+<p>Or you only want to select the last entry in the source:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">//entry[last()]
+</code></pre></div>
+<p>The part of the expression that appears in brackets is called a predicate. Predicates allow you to specify additional conditions for selecting a node. The predicate doesn’t always have to come at the end of the expression, either:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/data/recent-posts/entry[@id = 2]/title/@handle
+</code></pre></div>
+<p>Cool, huh?</p>
+
+<p>There’s a lot more to XPath than this—the <code>*</code> wildcard, for instance, and functions like <code>position()</code>, <code>count()</code>, and <code>substring()</code>, but we’ll continue to flesh that stuff out over the rest of the book. This should be enough for now.</p>
+
+<p>If you’ve done much web development, hopefully XPath syntax feels sort of natural to you. It’s actually not unlike many other selector languages, and the very popular jQuery framework actually supports some XPath syntax itself. If you’re confused, though, you might want to read up a bit on your own before we get into more advanced XSLT techniques in later chapters.</p>
+
+<p>Anyway, now that you’ve gotten a rundown of XPath syntax, let’s get back to the task at hand—explaining the role that templates play in an XSLT transformation.</p>
+
+<h4>What Templates Can Do</h4>
+
+<p>A processor takes nearly all of its instructions from templates, so they’ve got to be able to do everything from establishing the structure of an output document and defining processing logic to grabbing, manipulating, and outputting data.</p>
+
+<h5>Control Processor Flow</h5>
+
+<p>One of the most important things a template can do is organize output and control processor flow during a transformation. You see this at work in your Home view template.</p>
+
+<p>You’ll recall that, above, I said that an XSLT processor steps through a source tree node by node. That’s its default behavior. XSLT also specifies a default template (used when it can’t find a matching template for the node it’s processing). The default template essentially just spits out any text content it finds.</p>
+
+<p>If those are both default behaviors, why isn’t all the text in your Home view’s source XML just dumped out onto the page?</p>
+
+<p>The key is that, when the processor does find a template to apply, it defers to the template to tell it what to do. So that first template rule in your stylesheet, the one that matches the root node (<code>match=&quot;/&quot;</code>), effectively seizes control of the entire transformation from the outset. If you were to write an empty template rule matching the root node:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;/&quot;&gt;
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>the processor would simply stop there and output nothing at all. It wouldn’t step through any of remaining nodes unless you told it to.</p>
+
+<p>In your Home view template, then, the first template rule matches the root node and stops the processor from going about its normal business. Then it builds the overall structure for an XHTML page, and explicitly tells the processor where and how to proceed using the xsl:apply-templates element:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;/&quot;&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;&lt;xsl:value-of select=&quot;data/context/website/name&quot;/&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;&lt;xsl:value-of select=&quot;data/context/view/title&quot;/&gt;&lt;/h1&gt;
+      &lt;h2&gt;Recent Posts&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;xsl:apply-templates select=&quot;data/recent-posts/entry&quot;/&gt;
+      &lt;/ul&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>If used without a <code>select</code> attribute (i.e. just <code>&lt;xsl:apply-templates/&gt;</code>), this element would just send the processor back on its merry way, to resume its normal processing flow. In the example above, though, you actually don’t want it crawling through all of the XML; you have a specific template you want it to apply in a very specific place, so you direct it to the nodes that match that template.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p><code>&lt;xsl:apply-templates&gt;</code> is only one way for a template to direct the processor. You can also iterate over nodes using <a href="xsl:for-each">xsl:for-each</a>. In fact, the stylesheet we’ve been talking about could’ve been written with only one template:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;/&quot;&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;&lt;xsl:value-of select=&quot;data/context/website/name&quot;/&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;&lt;xsl:value-of select=&quot;data/context/view/title&quot;/&gt;&lt;/h1&gt;
+      &lt;h2&gt;Recent Posts&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;xsl:for-each select=&quot;data/recent-posts/entry&quot;&gt;
+          &lt;li&gt;
+            &lt;xsl:value-of select=&quot;title&quot;/&gt;
+          &lt;/li&gt;
+        &lt;/xsl:for-each&gt;
+      &lt;/ul&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>This would produce the same output, but it’s generally not as flexible. In most cases, it’s better to handle different kinds of source content using discrete templates. This way, your code is easier to maintain and reuse (even if the structure of the source XML changes).</p>
+
+<p>This may seem like a roundabout way to achieve your desired output structure, but the point is that it’s content-centric and imminently modular. As you continue to learn and use XSLT, you’ll come to appreciate how powerful this system can be.</p>
+
+<h5>Write Output</h5>
+
+<p>As you’ve seen, templates are also responsible for building the output that will result from a transformation.</p>
+
+<p>One of the most basic things you can do in a template is to specify output directly. If you’re building an XML document, this output can come in the form of literal result elements. All this means is that you actually just put the elements you want in your output directly into the template. This is what you’ve done in the example above—the <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;ul&gt;</code>, and so on… all of these are literal result elements.</p>
+
+<p>You can also write plain text content or build nodes for your output explicitly using instructions like xsl:element, xsl:attribute, and xsl:text, but we won’t get into that right now since your output is all fairly simple. You’ll see these in action in some of the later chapters.</p>
+
+<h5>Get Source Data</h5>
+
+<p>Of course, a major reason for using XSLT in the first place is to work with the XML source document, and one of the things you’ll need to do most often in your templates is pull data from that source document to add to your output. There are a few very simple ways to do this.</p>
+
+<p>The first is using the <code>xsl:value-of</code> element, which you’ve already seen in action quite a bit. It requires a <code>select</code> attribute containing an XPath expression which points to a node (or set of nodes) in the source tree. It adds the text value of the selected node(s) to the output.</p>
+
+<p>The <code>xsl:copy-of</code> instruction works almost identically, but instead of adding just the text value, it adds a copy of the node itself.</p>
+
+<p>Let’s use a small snippet from your Home view’s XML to demonstrate the difference between the two:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;view&gt;
+  &lt;title&gt;Home&lt;/title&gt;
+  &lt;handle&gt;home&lt;/handle&gt;
+  &lt;path&gt;/&lt;/path&gt;
+  &lt;current-url&gt;http://example.com/&lt;/current-url&gt;
+&lt;/view&gt;
+</code></pre></div>
+<p>Using <code>&lt;xsl:value-of select=&quot;view/handle&quot;/&gt;</code> would just output home, but <code>&lt;xsl:copy-of select=&quot;view/handle&quot;/&gt;</code> would output <code>&lt;handle&gt;home&lt;/handle&gt;</code>.</p>
+
+<p>Make sense? Now, what happens if you want to include data from your source tree in an attribute of a literal result element in your output? You certainly cannot write something like:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;a href=&quot;&lt;xsl:value-of select=&quot;view/current-url&quot;/&gt;&quot;&gt;Home&lt;/a&gt;
+</code></pre></div>
+<p>That’s all kinds of broken, and you’d probably bring down the entire internet and wipe out a penguin colony if you tried it. You could use an xsl:attribute instruction, but that can be a pain for something so simple. Luckily, there’s another way to output source data in this scenario; it’s called the <em>attribute value template</em>. It allows you, in an attribute of a literal result element, to wrap an XPath expression in curly braces <code>{}</code>. The processor will then evaluate the expression, turn its value into a string, and add it to the output. So to build a link to the view above, you’d just do:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;a href=&quot;{view/current-url}&quot;&gt;Home&lt;/a&gt;
+</code></pre></div>
+<p>Attribute value templates can be mixed with literal text, too:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;a href=&quot;http://example.com{view/path}&quot;&gt;Home&lt;/a&gt;
+</code></pre></div>
+<p>There are other ways to grab source data, and lots things you can do with that data before you output it, but these fundamentals will suffice for now.</p>
+
+<h5>Other Advanced Mumbo-Jumbo</h5>
+
+<p>What you’ve seen so far are the basics, but XSLT and XPath can do much, much more. This is not the time or the place to try to go through all of the capabilities of each language, but I do want to give you a glimpse of the various kinds of things I’m leaving unsaid, for example:</p>
+
+<ul>
+<li>You can define and use variables and parameters. These can be local or global in scope and are able to store values or even entire node-sets.</li>
+<li>You can also create various kinds of conditional logic (using elements like xsl:if and xsl:choose)</li>
+<li>You can define advanced operations for the processor like the sorting of node-sets</li>
+<li>You can take advantage of XPath’s many functions, which allow you to manipulate strings, perform math operations, compare values, and more.</li>
+</ul>
+
+<p>For more examples of cool things you can do with XSLT templates, check out http://xsltea.com/.</p>
+
+<p>===</p>
+
+<p>So, to summarize what we’ve covered up to this point, templates contain instructions for the processor to follow. You can use templates to structure an output document, define processing logic, write output, grab and manipulate source data, and much more. They are pretty powerful things.</p>
+
+<p>A lot of their power, though, actually comes not from what they can do but from how they can be organized and applied.</p>
+
+<h4>How Templates are Organized</h4>
+
+<p>Every template is a modular, self-contained set of instructions that’s crafted to handle a specific kind of content. But matching them directly to source nodes isn’t the only way they can be used. Templates can also be grouped functionally into separate stylesheets, given varying levels of priority, invoked selectively and recursively, applied based on arbitrary modes, and used and reused over and over again.</p>
+
+<h5>Multiple Stylesheets</h5>
+
+<p>Because templates are usually content- or function-specific, it’s often helpful to group them into separate stylesheets based on what they do, what content they work with, or how they’re used. Imagine, for example, that you’ve got several templates that you use to help you format dates and date ranges. You could put those into a dedicated stylesheet and then import or include that stylesheet whenever you need to use those templates:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:import href=&quot;path-to-stylesheet.xsl&quot;/&gt;
+</code></pre></div>
+<p>Or:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:include href=&quot;path-to-stylesheet.xsl&quot;/&gt;
+</code></pre></div>
+<p>This is how Symphony’s XSLT utilities are pulled into a transformation by a view template. The view template can contain any instructions specific to that view, and everything else can be abstracted into XSLT utilities.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>There’s a subtle difference between including and importing, but you don’t need to worry about it at the moment. We’re going to discuss the subject in much more detail in Chapters 12 and 14.</p>
+</blockquote>
+
+<h5>Named Templates</h5>
+
+<p>As I mentioned earlier, in addition to matching source nodes, templates can also be called explicitly by name. Named templates are often used for specific tasks that can be helpful in multiple contexts—things like formatting dates, building lists, truncating strings, and so on.</p>
+
+<p>What makes named templates especially useful is that they can be passed parameters when they’re called. So you could have a generic template for truncating strings, for instance, and then you could call that template from any context and have it truncate some bit of text to a desired length:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:call-template name=&quot;truncate-string&quot;&gt;
+  &lt;xsl:with-param name=&quot;string&quot; select=&quot;path/to/content&quot;/&gt;
+  &lt;xsl:with-param name=&quot;length&quot; select=&quot;’250’&quot;/&gt;
+&lt;/xsl:call-template&gt;
+</code></pre></div>
+<p>This allows you to keep the template itself generic enough to be applied to any string, in any context, and invoke it only as needed.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>Calling named templates with parameters is a common way to do recursive operations in XSLT.</p>
+</blockquote>
+
+<p>Priorities</p>
+
+<p>Because XSLT allows you to build a complex system of template rules and instructions, the system needs a way to decide what to do when the node it’s processing is matched by more than one template rule. There’s a lot that goes into this decision, but the primary method of defining which template will win out is with a <code>priority</code> attribute:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;entry&quot; priority=&quot;1&quot;&gt;
+  … do stuff …
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>The priority attribute can contain any real number, positive or negative. The template with the highest priority will be used.</p>
+
+<h5>Modes</h5>
+
+<p>We’ve already talked quite a bit about the ability to apply the same template to multiple nodes. Sometimes, though, you need to do the opposite—specify multiple ways or modes of processing the same content.</p>
+
+<p>XSLT makes this possible with a mode attribute. I’ll spare you the details for now, but you’ll see a useful example of modes in Chapter 12, when we abstract your HTML <code>&lt;head&gt;</code> into a common stylesheet while still allowing individual views to add CSS and JavaScript references to it.</p>
+
+<h4>Anatomy of a Stylesheet</h4>
+
+<p>So how does this all come together? Let’s take another look at your home view template and break it down:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+
+  &lt;xsl:output method=&quot;xml&quot;
+    doctype-public=&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+    doctype-system=&quot;http://www.w3.org/TR/xhtml1/DTD/ xhtml1-strict.dtd&quot;
+    omit-xml-declaration=&quot;yes&quot;
+    encoding=&quot;UTF-8&quot;
+    indent=&quot;yes&quot; /&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;&lt;xsl:value-of select=&quot;data/context/website/name&quot;/&gt;&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;&lt;xsl:value-of select=&quot;data/context/view/title&quot;/&gt;&lt;/h1&gt;
+        &lt;h2&gt;Recent Posts&lt;/h2&gt;
+        &lt;ul&gt;
+          &lt;xsl:apply-templates select=&quot;data/recent-posts/entry&quot;/&gt;
+        &lt;/ul&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;recent-posts/entry&quot;&gt;
+    &lt;li&gt;
+      &lt;xsl:value-of select=&quot;title&quot;/&gt;
+    &lt;/li&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</code></pre></div>
+<p>Because every XSLT stylesheet is also an XML document, they all begin with what is called an XML declaration—basically just a line identifying the file as XML. It looks like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+</code></pre></div>
+<p>All XML documents also have what’s called a root element. This is a single element that contains all the other elements in the document. The root element of every XSLT stylesheet is <code>&lt;xsl:stylesheet&gt;</code>.</p>
+
+<blockquote>
+<h6>Note</h6>
+
+<p>The xsl: you see in front of the element’s name is a namespace prefix. XML namespaces are a pretty advanced topic, and you don’t need to worry too much about them now, but the basic idea is actually quite simple.</p>
+</blockquote>
+
+<p>Because XML formats are allowed to define whatever elements they like, it’s possible for the same element names to be used in different contexts. Namespacing helps avoid confusion between formats, sort of like area codes in U.S. telephone numbers. Calling within an area code only requires a seven-digit number, but across the country lots and lots of people share the same seven-digit telephone number. Area codes are prefixes that allow people to communicate across different areas without confusion.</p>
+
+<p>Everything in an XSLT stylesheet, then, is contained within an element that looks like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+  … everything goes here …
+&lt;/xsl:stylesheet&gt;
+</code></pre></div>
+<blockquote>
+<h6>Note</h6>
+
+<p>You’ll notice that the root element has two attributes. The first declares the xsl namespace so that the processor knows how to interpret the elements it finds. The second declares the version of XSLT that you’re using.</p>
+</blockquote>
+
+<h5>Top-Level Elements</h5>
+
+<p>The elements that can be direct children of xsl:stylesheet are called top-level elements. There aren’t many of these—just a dozen in total—which means that XSLT stylesheets are actually pretty simple, structurally speaking.</p>
+
+<p>You’ve already seen the <code>xsl:import</code> and <code>xsl:include</code> elements. If you use those, they need to go before any other top-level elements. I also mentioned earlier that you could declare global parameters and variables (<code>xsl:param</code> and <code>xsl:variable</code>). And of course there’s <code>xsl:template</code>. Aside from those, there’s only one more important top-level element to talk about.</p>
+
+<p>Because XSLT can transform XML into any kind of text-based format, you need to be able to configure a transformation’s output. You can do this with a series of attributes in a top-level element called <code>xsl:output</code>. Have a look at the output element in your Home view template:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:output method=&quot;xml&quot;
+  doctype-public=&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+  doctype-system=&quot;http://www.w3.org/TR/xhtml1/DTD/ xhtml1-strict.dtd&quot;
+  omit-xml-declaration=&quot;yes&quot;
+  encoding=&quot;UTF-8&quot;
+  indent=&quot;yes&quot; /&gt;
+</code></pre></div>
+<p>An XSLT stylesheet can have one of the following three output methods: <code>xml</code>, <code>html</code>, or <code>text</code>. <code>xml</code> is used for all proper XML formats, html for normal HTML documents, and text for everything else.</p>
+
+<p>Your home view template’s output element begins by setting the output method as <code>xml</code> because it’s generating strict XHTML, and adds a couple of doctype attributes for the result document. It then specifies that it wants to omit the XML declaration that normally sits at the top of an XML document, and that its output should be encoded as UTF-8. Finally, it opts to have the output nicely indented. For your blog project, all of your view templates will use these same settings.</p>
+
+<p>Most of the remaining top-level elements are seldom-used in a Symphony context, so most of the stylesheets you’ll create will have a structure that looks more or less like Figure 8-6:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 8-6  [f0806.png]
+</code></pre></div>
+<p>Exhale. That concludes your whirlwind tour of XSLT. Hopefully you’ve begun to see how it can empower you to craft elegant, modular, content-driven presentation systems. But if you’re not impressed yet, just know that it gets a lot cooler than this. We’re barely scratching the surface here. The point of this walkthrough has just been to expose you to XSLT’s syntax and basic structures so that you have a point of reference as we begin reviewing the language’s fundamentals.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">[[deleted]]
+</code></pre></div>
+<p>Either way, you’ve learned enough that we can move on for now. I’m sure you’re itching to get your blog’s front end up and running, so let’s not dally any longer.</p>
+
+<h2>Working with View Templates and XSLT Utilities</h2>
+
+<p>View templates, as you saw earlier, are managed alongside the views they’re attached to, at Framework &gt; Views.</p>
+
+<p>XSLT Utilities can be managed at Framework &gt; XSLT Utilities.</p>
+
+<p>Of course, because they’re both XSLT stylesheets, they are available as physical files in your workspace. View templates are located in a view’s folder alongside its configuration file (so your Home view’s template is located at <code>workspace/views/home/home.xsl</code>). XSLT utilities are located in your workspace/xslt-utilities/ folder.</p>
+
+<h3>Writing a View Template</h3>
+
+<h4>Home View</h4>
+
+<p>We’ll start by writing a proper view template for your Home view. You can follow along using the view template editor, or you can just open the file directly using your favorite text editor (<code>workspace/views/home/home.xsl</code>).</p>
+
+<p>First things first, you’ll need to take a look at the source XML for the view (<code>http://example.com/?debug</code>). It should look something like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;data&gt;
+  &lt;context&gt;
+    &lt;view&gt;
+      &lt;title&gt;Home&lt;/title&gt;
+      &lt;handle&gt;home&lt;/handle&gt;
+      &lt;path&gt;/&lt;/path&gt;
+      &lt;current-url&gt;http://example.com/&lt;/current-url&gt;
+    &lt;/view&gt;
+    &lt;system&gt;
+      &lt;site-name&gt;Tales of a Highway Bandit Hacker&lt;/site-name&gt;
+      &lt;site-url&gt;http://example.com&lt;/site-url&gt;
+      &lt;admin-url&gt; http://example.com/symphony&lt;/admin-url&gt;
+      &lt;symphony-version&gt;3.0&lt;/symphony-version&gt;
+    &lt;/system&gt;
+    &lt;date&gt;
+      &lt;today&gt;2011-01-25&lt;/today&gt;
+      &lt;current-time&gt;19:03&lt;/current-time&gt;
+      &lt;this-year&gt;2011&lt;/this-year&gt;
+      &lt;this-month&gt;01&lt;/this-month&gt;
+      &lt;this-day&gt;25&lt;/this-day&gt;
+      &lt;timezone&gt;America/New_York&lt;/timezone&gt;
+    &lt;/date&gt;
+    ...
+  &lt;/context&gt;
+  &lt;recent-posts section=&quot;blog-posts&quot;&gt;
+    &lt;entry id=&quot;2&quot;&gt;
+      &lt;title mode=&quot;formatted&quot; handle=&quot;my-second-entry&quot;&gt;My Second entry&lt;/title&gt;
+      &lt;body mode=&quot;formatted&quot;&gt;&lt;p&gt;Something something something complete.&lt;/p&gt;&lt;/body&gt;
+      &lt;publish-date time=&quot;15:38&quot; weekday=&quot;6&quot;&gt;2011-02-12&lt;/publish-date&gt;
+      &lt;category handle=&quot;journal&quot;&gt;Journal&lt;/category&gt;
+    &lt;/entry&gt;
+    &lt;entry id=&quot;1&quot;&gt;
+      &lt;title mode=&quot;formatted&quot; handle=&quot;my-first-entry&quot;&gt;My First Entry&lt;/title&gt;
+      &lt;body mode=&quot;formatted&quot;&gt;&lt;p&gt;Something something something dark side.&lt;/p&gt;&lt;/body&gt;
+      &lt;publish-date time=&quot;15:38&quot; weekday=&quot;3&quot;&gt;2011-01-12&lt;/publish-date&gt;
+      &lt;category handle=&quot;journal&quot;&gt;Journal&lt;/category&gt;
+    &lt;/entry&gt;
+  &lt;/recent-posts&gt;
+&lt;/data&gt;
+</code></pre></div>
+<p>That’s all the data that’s available to you as you’re crafting your output. Now let’s think about your desired XHTML:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;The Name of Your Website&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;The Name of Your Website&lt;/h1&gt;
+    &lt;ul id=&quot;posts&quot;&gt;
+      &lt;li&gt;
+        &lt;h2&gt;&lt;a href=&quot;/category/my-second-entry&quot;&gt;My Second Entry&lt;/a&gt;&lt;/h2&gt;
+        &lt;p class=&quot;date&quot;&gt;2011-02-12&lt;/p&gt;
+        &lt;p&gt;Something something something complete.&lt;/p&gt;
+      &lt;/li&gt;
+      …
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>Pretty simple, and thankfully, the default template has gotten you much of the way there. It sets up a basic XHTML document, taking care of the output declaration and so on. Here’s what it looks like after we tweaked at the beginning of the chapter:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+
+  &lt;xsl:output method=&quot;xml&quot;
+    doctype-public=&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+    doctype-system=&quot;http://www.w3.org/TR/xhtml1/DTD/ xhtml1-strict.dtd&quot;
+    omit-xml-declaration=&quot;yes&quot;
+    encoding=&quot;UTF-8&quot;
+    indent=&quot;yes&quot; /&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;&lt;xsl:value-of select=&quot;context/website/name&quot;/&gt;&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;&lt;xsl:value-of select=&quot;context/view/title&quot;/&gt;&lt;/h1&gt;
+        &lt;h2&gt;Recent Posts&lt;/h2&gt;
+        &lt;ul&gt;
+          &lt;xsl:apply-templates select=&quot;recent-posts/entry&quot;/&gt;
+        &lt;/ul&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;recent-posts/entry&quot;&gt;
+    &lt;li&gt;
+      &lt;xsl:value-of select=&quot;title&quot;/&gt;
+    &lt;/li&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</code></pre></div>
+<p>As you can see, there’s not much that you need to do. In the root template (I’m going to adopt the convention of referring to template rules according the nodes they match), you’ll just replace the content of the <code>&lt;h1&gt;</code> with your site name, get rid of the &quot;Recent Posts&quot; <code>&lt;h2&gt;</code>, and add an id to the posts list. Let’s take care of all that now.</p>
+
+<ol>
+<li><p>In the <code>&lt;h1&gt;</code>, change the <code>select</code> attribute of the <code>value-of</code> element to <code>context/website/name</code>. So the line should read:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;h1&gt;&lt;xsl:value-of select=&quot;context/website/name&quot;/&gt;&lt;/h1&gt;
+</code></pre></div></li>
+<li><p>Delete the <code>&lt;h2&gt;Recent Posts&lt;/h2&gt;</code> line</p></li>
+<li><p>Add an id attribute to the <code>&lt;ul&gt;</code> element, so it looks like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;ul id=&quot;posts&quot;&gt;
+</code></pre></div></li>
+</ol>
+
+<p>Now the last thing you’ll need to do is beef up the list items that are being output by the recent posts entry template. Right now, they just contain title text, but as you can see in the desired output, you’re aiming for a linked title heading, a paragraph containing the date, and then the entry’s textual content.</p>
+
+<p>Building the title heading should be fairly easy. The <code>&lt;h2&gt;</code> and the <code>&lt;a&gt;</code> can be literal result elements. For the link’s content, we just need to use value-of to grab the title. The attribute is the only tricky bit. You’ll recall that individual posts will have URLs like posts/category/title. So you’ll have to piece together the anchor’s href attribute out of several different bits:</p>
+
+<ul>
+<li>The website’s base URL, which we can get from <code>/context/system/site-url</code></li>
+<li>The entry’s category: <code>category/@handle</code> (you want the URL-friendly version provided by the element’s handle)</li>
+<li>The entry’s title: <code>title/@handle</code></li>
+</ul>
+
+<p>You’ll notice a difference between the first expression and the latter two. Because this template matches <code>recent-posts/entry</code> nodes, we’re able to grab the category and title data directly, but for the base URL we need to jump outside that context, so we build a path relative to the root node.</p>
+
+<p>Piece it all together using attribute value templates (mixed with a bit of direct output), and you get:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;h2&gt;&lt;a href=&quot;{/context/system/site-url}/posts/{category/@handle}/{title/@handle}&quot;&gt;&lt;xsl:value-of select=&quot;title&quot;/&gt;&lt;/a&gt;&lt;/h2&gt;
+</code></pre></div>
+<p>Next you want to add a paragraph for the entry’s date. This bit’s pretty easy:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;p class=&quot;date&quot;&gt;&lt;xsl:value-of select=&quot;publish-date&quot;/&gt;&lt;/p&gt;
+</code></pre></div>
+<p>The date won’t be nicely formatted (it’ll look like <code>2011-02-05</code>), but we’ll cover that later in the book.</p>
+
+<p>Finally, you want to output the entry’s content. Because we’re capturing the content using Markdown formatting, it’ll be available as HTML, so you’ll want to use <code>xsl:copy-of</code> to make sure you get any HTML elements in the content.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:copy-of select=&quot;body/node()&quot;/&gt;
+</code></pre></div>
+<p>Why <code>body/node()</code> and not just <code>body</code>? If you used <code>&lt;xsl:copy-of select=&quot;body&quot;/&gt;</code>, you’d actually get the original <code>&lt;body&gt;</code> element in your output too. What you want is a copy of everything inside the <code>body</code> element, including any child elements. <code>node()</code> gets you exactly that.</p>
+
+<p>One last optional bit: if you want some basic styling for your blog, you can add the following stylesheet to your head:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;http://book.symphony-cms.com/workspace/uploads/blog.css&quot;/&gt;
+</code></pre></div>
+<p>That’ll make your site a bit more presentable for the time being. Here’s the final stylesheet:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+
+  &lt;xsl:output method=&quot;xml&quot;
+    doctype-public=&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+    doctype-system=&quot;http://www.w3.org/TR/xhtml1/DTD/ xhtml1-strict.dtd&quot;
+    omit-xml-declaration=&quot;yes&quot;
+    encoding=&quot;UTF-8&quot;
+    indent=&quot;yes&quot; /&gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;&lt;xsl:value-of select=&quot;context/website/name&quot;/&gt;&lt;/title&gt;
+        &lt;!-- Optional stylesheet line goes here --&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;&lt;xsl:value-of select=&quot;context/website/name&quot;/&gt;&lt;/h1&gt;
+        &lt;ul id=&quot;posts&quot;&gt;
+          &lt;xsl:apply-templates select=&quot;recent-posts/entry&quot;/&gt;
+        &lt;/ul&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match=&quot;recent-posts/entry&quot;&gt;
+    &lt;li&gt;
+      &lt;h2&gt;
+        &lt;a href=&quot;{/context/system/site-url}/posts/{category/@handle}/{title/@handle}&quot;&gt;
+          &lt;xsl:value-of select=&quot;title&quot;/&gt;
+        &lt;/a&gt;
+      &lt;/h2&gt;
+      &lt;p class=&quot;date&quot;&gt;&lt;xsl:value-of select=&quot;publish-date&quot;/&gt;&lt;/p&gt;
+      &lt;xsl:copy-of select=&quot;body/node()&quot;/&gt;
+    &lt;/li&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</code></pre></div>
+<p>Got it? Ok, save the template. Now if you visit your home view you should see the full posts being displayed (Figure 8-7). Don’t worry that there’s no navigation yet. We’ll get to that shortly.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Figure 8-7  [f0807.png]
+</code></pre></div>
+<h4>Post View</h4>
+
+<p>Now let’s get the Post view set up so those title links will actually point to something. To edit the Post view template, either go to Framework &gt; Views, click &quot;Post,&quot; and switch to the template tab, or open <code>/workspace/views/post/post.xsl</code> in your text editor. You’ll recognize the default template.</p>
+
+<p>Let’s start again by figuring out what the desired XHTML will be for your individual posts. As with everything else, we’ll keep it very simple for now:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;The Name of Your Website&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Title of the post&lt;/h1&gt;
+    &lt;p class=&quot;date&quot;&gt;2012-12-21&lt;/p&gt;
+    &lt;p&gt;All the content...&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>Have a peek at your source XML (<code>http://example/com/post/journal/my-first-entry?debug</code>). I won’t paste it here, but try to locate the bits of data you’re going to need—the post title, the date, the body content. Use the XPath tester to see if you can figure out the expressions that will point to them.</p>
+
+<p>The templates you’ll end up writing are dead simple:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;/&quot;&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;&lt;xsl:value-of select=&quot;context/website/name&quot;/&gt;&lt;/title&gt;
+      &lt;!-- Optional stylesheet line goes here --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;xsl:apply-templates select=&quot;individual-post/entry&quot;/&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match=&quot;individual-post/entry&quot;&gt;
+  &lt;h1&gt;&lt;xsl:value-of select=&quot;title&quot;/&gt;&lt;/h1&gt;
+  &lt;p class=&quot;date&quot;&gt;&lt;xsl:value-of select=&quot;publish-date&quot;/&gt;&lt;/p&gt;
+  &lt;xsl:copy-of select=&quot;body/node()&quot;/&gt;
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>Copy those two templates into your stylesheet (replacing the old one), and save it. If you go back to your Home view now, and click on a post title, you’ll be able to view your post.</p>
+
+<p>Archive View</p>
+
+<p>Last, but not least, let’s tackle the Archive view. Go to Framework &gt; Views and click &quot;Archive&quot; and then the template tab, or open <code>/workspace/views/archive/archive.xsl</code> in your text editor.</p>
+
+<p>Here’s the desired XHTML for your archive view:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;The Name of Your Website&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body id=&quot;archive&quot;&gt;
+    &lt;h1&gt;Archive&lt;/h1&gt;
+    &lt;h2&gt;2012&lt;/h2&gt;
+    &lt;h3&gt;December&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://example.com/posts/journal/my-second-entry&quot;&gt;My Second Entry&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<p>Pretty simple, as usual, but the XML here is going to be a little different. In the last chapter, when you created the Posts by Date data source, you opted to have the results grouped by date. So instead of just having a set of entry elements, then, your data source will have a slightly more complex hierarchy that looks something like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">...
+&lt;posts-by-date&gt;
+  &lt;year value=&quot;2012&quot;&gt;
+    &lt;month value=&quot;11&quot;&gt;
+      &lt;entry/&gt;
+    &lt;/month&gt;
+    &lt;month value=&quot;12&quot;&gt;
+      &lt;entry/&gt;
+    &lt;/month&gt;
+  &lt;/year&gt;
+&lt;/posts-by-date&gt;
+...
+</code></pre></div>
+<p>Your Archive view is set up to list entries either from a single month, or from an entire year, grouped by month. So this data structure plays right into your hands. You can have a template match the month elements, allowing you do render a separate heading and list for each month. Then another template can take care of the entry elements themselves. It’ll look like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">…
+&lt;xsl:template match=&quot;/&quot;&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;&lt;xsl:value-of select=&quot;context/website/name&quot;/&gt;&lt;/title&gt;
+      &lt;!-- Optional stylesheet line goes here --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;Archive&lt;/h1&gt;
+      &lt;h2&gt;&lt;xsl:value-of select=&quot;posts-by-date/year/@value&quot;/&gt;&lt;/h2&gt;
+      &lt;xsl:apply-templates select=&quot;posts-by-date/year/month&quot;/&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match=&quot;month&quot;&gt;
+  &lt;h3&gt;&lt;xsl:value-of select=&quot;@value&quot;/&gt;&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;xsl:apply-templates select=&quot;entry&quot;/&gt;
+  &lt;/ul&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match=&quot;posts-by-date//entry&quot;&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;{/context/website/url}/posts/{category/@handle}/{title/@handle}&quot;&gt;
+      &lt;xsl:value-of select=&quot;title&quot;/&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/xsl:template&gt;
+…
+</code></pre></div>
+<p>In the root template, you include two headings, one for the view’s name and one for the year. Then you apply templates to the month elements. The template for months includes a third heading (for now containing just the month’s number), and an unordered list for its entries. Inside the unordered list, it applies templates to its child entry elements. That third template, for entries, just outputs a list item and a link for each entry.</p>
+
+<p>Drop those three templates into your archive view stylesheet (replacing the default one), and save it. You should now have a pretty simple, but functional, archive view.</p>
+
+<h3>Writing an XSLT Utility</h3>
+
+<p>Now, you’ve got three basic views, but they’re missing navigation. We’ll take this opportunity to introduce you to XSLT utilities and to named templates.</p>
+
+<p>In many cases, you want your site’s navigation to be dynamic, so that your front-end can grow and adapt without you having to always manually change navigation items and so on. For now, though, we’re just going to stick with a static version.</p>
+
+<ol>
+<li>Go to Framework &gt; XSLT Utilities</li>
+<li><p>Click the green &quot;Create New&quot; button</p>
+
+<p>You’ll see that the XSLT utility editor looks just like the view template editor. The default stylesheet here is much more minimalist, though.</p></li>
+<li><p>In Name, enter <code>navigation.xsl</code></p></li>
+</ol>
+
+<p>The stylesheet you need is simple—one named template containing the output you’re looking for:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+
+&lt;xsl:template name=&quot;navigation&quot;&gt;
+  &lt;ul id=&quot;nav&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;{/context/website/url}/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{/context/website/url}/archive&quot;&gt;Archive&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</code></pre></div>
+<p>Enter this stylesheet into the editor and click &quot;Create XSLT utility.&quot;</p>
+
+<h3>Using XSLT Utilities</h3>
+
+<p>As you learned earlier, you can make this navigation template available to your view templates by importing the stylesheet.</p>
+
+<p>For each of the view templates you created above, go back and insert the following line before the xsl:output element:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:import href=&quot;navigation.xsl&quot;/&gt;
+</code></pre></div>
+<p>Then, just below each view template’s h1 element, add:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:call-template name=&quot;navigation&quot;/&gt;
+</code></pre></div>
+<p>Once you’ve updated and saved each of you view templates, you’ll see that each view on your front end includes a navigation menu now. That code is shared among all the views.</p>
+
+<p>Of course, there’s a lot more they could share, and a lot more we could do to organize your templates more efficiently, but you’ll get there. What’s important right now is that you’ve got a basic sense of how view templates and XSLT utilities can fit together.</p>
+
+<h2>Summary</h2>
+
+<p>Let’s take a walk down memory lane, all the way back to the beginning of this chapter when you were just sitting there, in your giant helmet, with no idea what XSLT was or how it worked. We’ve come a long way since then, huh?</p>
+
+<p>We talked about Symphony’s &quot;transformed output&quot; approach to templating, and about how it differs from the kinds of templating systems you may have seen in the past. You learned that Symphony’s templating layer is comprised of view templates and XSLT utilities, and powered by XSLT.</p>
+
+<p>After that, you learned what XSLT is and why it’s a great templating language for the web. You then got a crash course in XSLT and its accompanying technologies like XML and XPath. You learned about building XPath expressions, writing XSLT templates, and composing stylesheets.</p>
+
+<p>Finally, you wrote the templates that would make your new blog functional.</p>
+
+<p>As exciting as this is, I’m sure you’re looking at your blog and thinking, &quot;This is far from finished.&quot; Part 3 of the book is going to help you master all of the most important Symphony workflows, and as you do so you’ll continue to flesh out and improve your modest little blog.</p>
+
+<p>Before we move on to all that, though, we need to spend some time discussing issues of system management. How do you add users? How do you install extensions? Where can you set preferences? That’s what we’re going to discuss now.</p>
+
+  </div>
+</div>
+
+        </div>
+
+        <footer id="footer">
+  <div class="field">
+
+    <!-- Community -->
+    <p class="footer-community">
+      <strong>&#169; 2010–2012 The Symphony Community</strong>
+      <a href="http://getsymphony.com">International Site</a> · <a href="http://twitter.com/symphonycms">Twitter</a>
+    </p>
+
+    <!-- Developer links -->
+    <p class="footer-links">
+      <strong>Plan, Play and Practice</strong>
+      <a href="https://github.com/symphonycms/symphony-2/blob/master/README.markdown">Requirements</a> · <a href="https://github.com/symphonycms/symphony-2/blob/master/LICENCE">MIT Licence</a> · <a href="http://github.com/symphonycms">Github</a>
+    </p>
+
+    <!-- Factory artwork -->
+    <p class="footer-factory">
+      <em>Conducting sites since 2004</em>
+      <a href="http://getsymphony.com">Symphony Community</a>
+    </p>
+  </div>
+</footer>
+    </body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <title>A view on static pages – SymphonyCMS</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link media="screen" href="/symphony-2/css/codemirror.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.css" type="text/css" rel="stylesheet" />
+        <link media="screen" href="/symphony-2/css/factory.docs.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="/symphony-2/js/jquery.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/modernizr.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/codemirror.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.js"></script>
+        <script type="text/javascript" src="/symphony-2/js/factory.grid.js"></script>
+    </head>
+    <body>
+        <aside id="network">
+
+  <!-- Main navigation -->
+  <header class="network-toolbar collapsed">
+    <div class="field">
+      <h1 class="network-logo column one">
+        <a href="/docs/about.xml">Symphony CMS</a>
+      </h1>
+      <nav class="network-nav column">
+        <a href="/docs/examples/community.xml">Community</a>
+        <a href="/docs/examples/documentation.xml"  class="active">Documentation</a>
+        <a href="/docs/examples/extensions.xml">Extensions</a>
+        <a href="/docs/examples/ninjas.xml">Ninjas</a>
+        <a href="/docs/examples/xpathr.xml">xPathr</a>
+      </nav>
+      <div id="user" class="network-user">
+        <a href="http://getsymphony.com/get-involved/member/Allen/">
+          <img src="img/user.png" width="35" height="35" alt="Allen Chang" />
+        </a>
+        <p>
+          <a href="http://getsymphony.com/get-involved/currently-online/" class="network-visitors">15</a>
+          <xsl:text> + </xsl:text>
+          <a class="network-username">Allen Chang</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- User profile -->
+  <div class="field network-profile">
+    <form>
+
+      <!-- Gravatar -->
+      <div class="network-gravatar column one">
+        <img src="img/user.png" width="174" height="174" alt="Allen Chang" />
+        <p>Change your avatar at <a href="http://gravatar.com">Gravatar</a>.</p>
+      </div>
+
+      <!-- Information -->
+      <fieldset class="column one large-two">
+        <label for="profile-username" class="restricted">Username</label>
+        <input id="profile-username" type="text" name="fields[username]" value="Allen" readonly="readonly" />
+        <label for="profile-name">Name</label>
+        <input id="profile-name" type="text" name="fields[name]" value="Allen Chang" />
+        <label for="profile-email-address">Email (Private)</label>
+        <input id="profile-email-address" type="text" name="fields[email-address]" value="team@getsymphony.com" />
+        <label for="profile-city">Location</label>
+        <input id="profile-city" type="text" name="fields[location]" value="Symphony Land" />
+      </fieldset>
+      <fieldset class="column two small-one">
+        <label for="profile-website">Website</label>
+        <input id="profile-website" type="text" name="fields[website]" value="http://getsymphony.com" />
+        <label for="profile-bio">Bio</label>
+        <textarea rows="7" name="fields[bio]">Cras mattis consectetur purus sit amet fermentum.</textarea>
+        <div class="profile-controls">
+          <button id="submit-profile" class="button-save" type="submit" name="action[members-edit]">Save Profile</button>
+          <a class="button-cancel" href="../../member/Nils/">Cancel</a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Site switcher -->
+  <div class="field network-drawer">
+
+    <!-- Symphony ressources -->
+    <div class="column three medium-two">
+      <h2>About Symphony</h2>
+      <p>Symphony is an open source content management system for your websites and webapps. It makes complex things simple.</p>
+      <div class="get-symphony">
+        <a href="https://github.com/symphonycms/symphony-2">Get Symphony 2.3.0</a>
+        <a href="https://github.com/symphonycms/symphony-2" class="icon-fork">Fork<span class="medium-hide"> on Github</span></a>
+        <a href="https://github.com/symphonycms/symphony-2/archive/master.zip" class="icon-download"><span class="medium-hide">Download </span>ZIP</a>
+      </div>
+    </div>
+
+    <!-- Symphony in other languages -->
+    <div class="column one small-two">
+      <h2>Regions</h2>
+      <ul>
+        <li>
+          <a href="#">Germany</a>
+        </li>
+        <li>
+          <a href="#">Italy</a>
+        </li>
+        <li>
+          <a href="#">Romania</a>
+        </li>
+        <li>
+          <a href="#">United Kingdom</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Symphony ressources -->
+    <div class="column one">
+      <h2>Services</h2>
+      <ul>
+        <li>
+          <a href="#">Github</a>
+        </li>
+        <li>
+          <a href="#">Twitter</a>
+        </li>
+        <li>
+          <a href="#">Vimeo</a>
+        </li>
+        <li>
+          <a href="#">Flickr</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+        <div id="site">
+            <header class="site-header centered">
+    <h1>
+        <span>Symphony</span> Documentation
+    </h1>
+    <nav>
+        <a href="about.xml">About</a>
+        <a href="layouts.xml">Layouts</a>
+        <a href="snippets.xml">Snippets</a>
+        <a href="styles.xml">Styles</a>
+        <a href="scripts.xml">Scripts</a>
+        <a href="examples.xml">Examples</a>
+    </nav>
+</header>
+
+            <div class="field">
+  <div class="column sidebar infobox">
+    
+      <h3>Articles</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/articles/field-extension.html"
+              >Field Extension</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/getting-git-for-symphony-development.html"
+              >Getting Git for Symphony Development</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/articles/combining-symphony-with-nginx.html"
+              >Combining Symphony with Nginx</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Book</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/book/symphony-book.html"
+              >Symphony Start to Finish</a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-01.html"
+                      >Why You Need Symphony</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-02.html"
+                      >Symphony in Action</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-03.html"
+                      >Getting Started</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-04.html"
+                      >Symphony Anatomy</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-05.html"
+                      >Content</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-06.html"
+                      >Front-end</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-07.html"
+                      >Data Flow</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-08.html"
+                      >Templating</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-09.html"
+                      >System Management</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-10.html"
+                      >Planning Symphony Projects</a>
+                  </li>
+                
+                  <li>
+                    <a href="/symphony-2/docs/book/chapter-11.html"
+                      >Adaptive Techniques</a>
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Concepts</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/concepts/xslt-transformation.html"
+              >XSLT Transformation</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Guides</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/guides/javascript-styleguide.html"
+              >JavaScript Style Guide</a>
+            
+          </li>
+        
+      </ul>
+    
+      <h3>Tutorials</h3>
+      <ul class="sidebar-links">
+        
+      </ul>
+    
+      <h3>Working</h3>
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow.html"
+              >A Symphony Workflow</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-symphony-workflow-command-list.html"
+              >A Symphony Workflow - Terminal Command List</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/installing-on-mac-osx.html"
+              >Installing Symphony on your Mac (OS X >= 10.5)</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/a-view-on-static-pages.html"
+               class="active">A view on static pages</a>
+            
+          </li>
+        
+          <li>
+            <a href="/symphony-2/docs/working/understanding-xslt.html"
+              >Understanding XSLT</a>
+            
+          </li>
+        
+      </ul>
+    
+  </div>
+  <div class="column content">
+      <h2>META</h2>
+
+<ul>
+<li>Doc Version: 1</li>
+<li>Author: Giel Berkers</li>
+<li>Applies to: 2.x</li>
+<li>Based on: 2.x</li>
+<li><a href="">Production URL</a></li>
+</ul>
+
+<h1>A view on static pages</h1>
+
+<p>First of all: let me say that &quot;all roads lead to Rome&quot;, meaning that this article is a single view of a single person
+on how to combine static and dynamic content in Symphony. It summarizes the things I&#39;ve learned about this from when I
+started with Symphony until today.</p>
+
+<h2>First timers, beware!</h2>
+
+<p>A common feature of many content management systems is the ability to build a tree-like structure of pages. This allows you to create pages with a parent-child relationship, and define some basic content fields such as a title and body.</p>
+
+<p>First-time users of Symphony often try to mimic this with their first websites (I know I did!) For example, you might create a section called <em>Pages</em> and add some fields like <em>Title</em>, <em>Body</em> and <em>Parent</em> (<em>Parent</em> is a dynamic selectbox, with which you can select other entries of the Pages section to use as parent). Next, you&#39;d create a single page (called <em>Content</em> for example), with a parameter <em>handle</em> or <em>id</em> to get the right entry out of your Pages section. This might work, but it has some serious drawbacks:</p>
+
+<ul>
+<li>The URLs of your static pages will always end up like:
+
+<ul>
+<li>www.your-website.com/content/12/</li>
+<li>www.your-website.com/content/my-handle/</li>
+</ul></li>
+<li>You have to do some extra logic to create navigation, especially when you have mixed static and dynamic pages.</li>
+<li>If you want to hide a page from the navigation, you would have to add an extra field to your Pages section.</li>
+<li>If you have multiple navigations (such as a top menu, a utilities menu and a footer menu) this also requires some extra fields in your Pages section.</li>
+<li>It&#39;s particularly hard to make exceptions; for example:
+
+<ul>
+<li>If your client wants a different picture on each page you would have to add an extra field to the Pages section.</li>
+<li>If you want to change the order of the pages you would have to depend on an <a href="https://github.com/nickdunn/order_entries">extension</a>.</li>
+<li>... and you would have to deal with all this logic in your XSL template.</li>
+</ul></li>
+</ul>
+
+<h2>Forget pages, think content!</h2>
+
+<p>A page in Symphony is nothing more than a container for encapsulating content (data sources) and occasionally handling some logic (events).</p>
+
+<p>The best way to structure your site is in <strong>Blueprints &gt; Pages</strong>. This is fairly obvious for dynamic pages — you would create a unique page for a News section, and provide that with a parameter and the right data source to show the latest news items.</p>
+
+<p>But here&#39;s the trick: all pages should be added here, also static pages! So, if you have a site structure like:</p>
+
+<ul>
+<li>Home</li>
+<li>About us</li>
+<li>Our Vision</li>
+<li>Products</li>
+<li>News
+
+<ul>
+<li>Detail</li>
+</ul></li>
+<li>Contact</li>
+</ul>
+
+<p>You would need 7 pages, which result in 7 XSL documents:</p>
+
+<ul>
+<li>home.xsl</li>
+<li>about-us.xsl</li>
+<li>our-vision.xsl</li>
+<li>products.xsl</li>
+<li>news.xsl</li>
+<li>news-detail.xsl</li>
+<li>contact.xsl</li>
+</ul>
+
+<h2>But that would mean I would end up with a lot of XSL templates, which are mostly identical!</h2>
+
+<p>That&#39;s true. But that isn&#39;t a problem, is it? In fact, it&#39;s ideal! Think about all the features that come straight out of the box:</p>
+
+<ul>
+<li>You will have nice URLs.</li>
+<li>You can make use of Symphony&#39;s built-in page logic:
+
+<ul>
+<li>Use types to create smart navigation data sources.</li>
+<li>Have correct parent-child relationships.</li>
+<li>Set the order of the pages</li>
+</ul></li>
+<li>Exceptions are no longer hard to do, after all you have a seperate XSL template for each page!</li>
+</ul>
+
+<h2>What about the content?</h2>
+
+<p>Create a data source called &#39;Page Content&#39;. This can have your common fields like <em>title</em>, <em>body</em>, and one field provided by an extension: a <a href="https://github.com/symphonycms/pagesfield"><em>pages</em> field</a>. This allows you to link your entry to a page. Now when you create your data source, filter the pages field by <code>{$current-page}</code> to get the correct entry.</p>
+
+<p>The XSLT could look something like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;data&quot;&gt;
+    &lt;h1&gt;
+        &lt;xsl:value-of select=&quot;page-content/entry/title&quot; /&gt;
+    &lt;/h1&gt;
+    &lt;xsl:copy-of select=&quot;page-content/entry/content/*&quot; /&gt;
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>To fully support the DRY principle for code reuse, you could make a utility for static pages:</p>
+
+<p>Utility:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:template match=&quot;page-content&quot; mode=&quot;static&quot;&gt;
+    &lt;h1&gt;
+        &lt;xsl:value-of select=&quot;entry/title&quot; /&gt;
+    &lt;/h1&gt;
+    &lt;xsl:copy-of select=&quot;entry/content/*&quot; /&gt;
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>Page:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;xsl:import href=&quot;../utilities/static-content.xsl&quot; /&gt;
+&lt;xsl:template match=&quot;data&quot;&gt;
+    &lt;xsl:apply-templates select=&quot;page-content&quot; mode=&quot;static&quot; /&gt;
+&lt;/xsl:template&gt;
+</code></pre></div>
+<p>This makes it quite easy to manage your static content, and provides a simple way to handle exceptions.</p>
+
+<h2>Hold the phone! All of this means my client will not be able to add new pages by himself!</h2>
+
+<p>That&#39;s also true. But is adding pages really what your client wants? In my experience as a web developer, I&#39;ve found that 99% of my clients don&#39;t need to add new pages to their site on a regular basis. What they do add are:</p>
+
+<ul>
+<li>News items</li>
+<li>Projects</li>
+<li>Publications</li>
+<li>Downloads</li>
+<li>Links</li>
+<li>FAQs</li>
+<li>Pictures</li>
+</ul>
+
+<p>All these items will have their own section and their own page, resulting in URLs like:</p>
+
+<ul>
+<li>www.your-website.com/news/handle/</li>
+<li>www.your-website.com/projects/handle/</li>
+<li>www.your-website.com/publications/handle/</li>
+<li>www.your-website.com/downloads/category/</li>
+</ul>
+
+<p>Now if you look at <em>projects</em> or <em>publications</em>, it would appear that each project or publication would have its own page. But in reality, you only have one XSL template that deals with the logic. An even better approach is to add a detail sub-page; this keeps your XSL clean and reduces page rendering time spent on extraneous data sources that  will not be used. In the above example, the URLs would become:</p>
+
+<ul>
+<li>www.your-website.com/news/ <em>= news page, perhaps showing the latest 5 items.</em></li>
+<li>www.your-website.com/news/detail/handle/ <em>= a complete news item chosen by the visitor.</em></li>
+<li>www.your-website.com/projects/ <em>= projects homepage, showing all the projects with a picture and a short summary.</em></li>
+<li>www.your-website.com/projects/detail/handle/ <em>= the project detail page, showing the complete project.</em></li>
+</ul>
+
+<p>So you see, it&#39;s more a way of thinking. As I said before, all roads lead to Rome, and this is just one of many ways on how you could approach pages in Symphony. I hope this article has given you some insight on how to do this.</p>
+
+<p>Now, let&#39;s build some static pages, shall we?</p>
+
+  </div>
+</div>
+
+        </div>
+
+        <footer id="footer">
+  <div class="field">
+
+    <!-- Community -->
+    <p class="footer-community">
+      <strong>&#169; 2010–2012 The Symphony Community</strong>
+      <a href="http://getsymphony.com">International Site</a> · <a href="http://twitter.com/symphonycms">Twitter</a>
+    </p>
+
+    <!-- Developer links -->
+    <p class="footer-links">
+      <strong>Plan, Play and Practice</strong>
+      <a href="https://github.com/symphonycms/symphony-2/blob/master/README.markdown">Requirements</a> · <a href="https://github.com/symphonycms/symphony-2/blob/master/LICENCE">MIT Licence</a> · <a href="http://github.com/symphonycms">Github</a>
+    </p>
+
+    <!-- Factory artwork -->
+    <p class="footer-factory">
+      <em>Conducting sites since 2004</em>
+      <a href="http://getsymphony.com">Symphony Community</a>
+    </p>
+  </div>
+</footer>
+    </body>
+</html>
