@@ -448,7 +448,7 @@ table {
 
 .tiles {
 	border-bottom: 1px solid #B6B6B6;
-	margin-top: 2.7rem; /* to do: fix this – tiles should automatically fit to the grid */
+	margin-top: 2.7rem; /* to do: fix this – tiles should automatically fit to the grid */
 	margin-bottom: 8rem;
 	padding-left: 30px;
 	background-image: -webkit-linear-gradient(#B6B6B6 0.1rem, #fcfcfc 0.1rem);
@@ -1000,15 +1000,6 @@ a.button:hover,
 	height: auto;
 }
 
-#network:hover {
-	max-height: 60rem;
-	-webkit-transition: max-height 0.25s ease-in-out 0.5s;
-	-moz-transition: max-height 0.25s ease-in-out 0.5s;
-	-ms-transition: max-height 0.25s ease-in-out 0.5s;
-	-o-transition: max-height 0.25s ease-in-out 0.5s;
-	transition: max-height 0.25s ease-in-out 0.5s;
-}
-
 #network::after {
 	content: none;
 	display: block;
@@ -1091,7 +1082,7 @@ a.button:hover,
 
 #network .network-nav {
 	width: auto;
-	padding: 0.5rem 36px 0.5rem 0;
+	padding: 1rem 0;
 	position: relative;
 	line-height: 1.4rem;
 }
@@ -1112,17 +1103,22 @@ a.button:hover,
 	font-weight: 300;
 	float: left;
 	display: inline-block;
-	padding: 0.5rem 0;
 }
 
-#network .network-nav a:hover {
+#network .network-nav a:hover,
+#network .network-nav a.active {
 	color: #fff;
+}
+
+#network .network-nav a.active {
+	font-weight: 700;
 }
 
 #network .network-nav a:not(:last-of-type)::after {
 	content: "\00B7";
 	color: rgba(255, 255,255, 0.7);
 	margin: 0 0.5em;
+	font-weight: 300;
 }
 
 /* User */
@@ -1435,13 +1431,14 @@ a.button:hover,
 /* Get Symphony */
 
 #network .get-symphony {
-	background: #A00947;
-	margin: 0 0 0 -10px;
-	padding: 1rem 10px;
-	border-radius: 2px;
+	margin-right: 30px;
+	padding: 1rem 0;
 	font-weight: 300;
-	float: left;
-	width: 100%;
+	float: right;
+	width: auto;
+	position: relative;
+	line-height: 1.4rem;
+	font-size: 1.4rem;
 	-webkit-transition: background 0.2s ease-in-out;
 	-moz-transition: background 0.2s ease-in-out;
 	-ms-transition: background 0.2s ease-in-out;
@@ -1449,22 +1446,14 @@ a.button:hover,
 	transition: background 0.2s ease-in-out;
 }
 
-#network .get-symphony:hover {
-	background: #88083c;
-}
-
 #network .get-symphony a {
-	float: right;
-	border-left: 1px solid rgba(0, 0, 0, 0.15);
-	padding: 0.2rem 10px 0;
+	display: inline-block;
+	padding: 0 0 0 1.5rem;
+	color: rgba(255, 255,255, 0.7);
 }
 
-#network .get-symphony a:first-child {
-	font-size: 1.8rem;
-	border-left: none;
-	padding: 0;
+#network .get-symphony a:hover {
 	color: #fff;
-	float: left;
 }
 
 #network .get-symphony [class^=icon]::before {
