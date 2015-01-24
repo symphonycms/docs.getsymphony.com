@@ -280,6 +280,7 @@ table {
 	width: 794px;
 	margin-left: 0;
 	margin-right: 30px;
+	position: relative;
 }
 
 @media all and (max-width: 1059px) {
@@ -300,7 +301,7 @@ table {
 
 .column.content .edit-page-link {
 	position: absolute;
-	right: 30px;
+	right: 0;
 	top: 0;
 }
 

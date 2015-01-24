@@ -8,3 +8,22 @@ exclude:
 - README.md
 gems:
 - jekyll-redirect-from
+collections:
+  articles:
+    output: true
+    title: Articles
+  book:
+    output: true
+    title: Book
+  concepts:
+    output: true
+    title: Concepts
+  guides:
+    output: true
+    title: Guides
+  tutorials:
+    output: true
+    title: Tutorials
+  working:
+    output: true
+    title: Working

@@ -106,7 +106,7 @@
 				$('<link />', {
 					rel: 'stylesheet',
 					type: 'text/css',
-					href: 'css/factory.grid.css'
+					href: 'assets/css/factory.grid.css'
 				}).appendTo('head');
 			}
 		},
