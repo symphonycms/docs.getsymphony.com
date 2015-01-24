@@ -298,6 +298,12 @@ table {
 
 }
 
+.column.content .edit-page-link {
+	position: absolute;
+	right: 30px;
+	top: 0;
+}
+
 /* Columns by width */
 
 .one {
