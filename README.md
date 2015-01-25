@@ -1,9 +1,9 @@
 # SymphonyCMS Documentation
 
-This site is built using Jekyll. 
+This site is built using Jekyll and hosted in GitHub Pages, you can check it here:
 
-https://symphonycms.github.io/docs.getsymphony.com/
+[symphonycms.github.io/docs.getsymphony.com](https://symphonycms.github.io/docs.getsymphony.com/)
 
-## Contribute
+## How to Contribute
 
-TBP
+Please refer to the [Contribution](https://symphonycms.github.io/docs.getsymphony.com/) pages for further instructions.

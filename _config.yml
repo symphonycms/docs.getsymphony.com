@@ -6,5 +6,6 @@ markdown: redcarpet
 highlighter: pygments
 exclude:
 - README.md
+- CONTRIBUTING.md
 gems:
 - jekyll-redirect-from
