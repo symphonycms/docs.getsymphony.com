@@ -8,7 +8,7 @@
  * Please add your custom site styling in a separate file.
  */
 
-/*-----------------------------------------------------------------------------
+/*-----------------------------------------------------------------se------------
   General definitions:
 
   # Colours
@@ -1669,6 +1669,7 @@ a.button:hover,
   padding: 0;
   position: absolute;
   right: 0;
+  left: 0;
   top: 42px;
   background: #fbfdfb;
   border: 1px solid rgba(0, 0, 0, 0.25);
