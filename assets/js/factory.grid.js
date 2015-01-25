@@ -1,3 +1,5 @@
+---
+---
 /**
  * SYMPHONY FACTORY
  * A design framework for the Symphony Network
@@ -106,7 +108,7 @@
 				$('<link />', {
 					rel: 'stylesheet',
 					type: 'text/css',
-					href: 'assets/css/factory.grid.css'
+					href: '{{ site.baseurl }}/assets/css/factory.grid.css'
 				}).appendTo('head');
 			}
 		},
