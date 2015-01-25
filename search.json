@@ -1,0 +1,23 @@
+---
+---
+[
+    {% for doc in site.pages %}
+    {
+      "title"    : "{{ doc.title }}",
+      "href"     : "{{ site.baseurl }}{{ doc.url }}"
+    }
+    {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]
+{% comment %}[
+  {% for collection in site.collections %}
+    {% for doc in collection.docs %}
+      {
+        "title" : "{{ doc.title }}",
+        "href" : "{{ doc.url }}"
+      }
+    {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]{% endcomment %}
