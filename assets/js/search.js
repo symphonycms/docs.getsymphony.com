@@ -49,7 +49,7 @@
   }
 
   $input.keyup(function() {
-    if ($input.val() != '') {
+    if ($input.val().trim().length > 2) {
       $results.show();
     } else {
       $results.hide();
