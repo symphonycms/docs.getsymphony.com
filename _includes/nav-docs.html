@@ -1,18 +1,19 @@
-    {% assign pages = site.pages | sort:"weight"  %}
-    {% assign current_array = page.url | remove_first: "/" | split:"/" %}
-    {% assign current_section = current_array[0] %}
-        <h3>{{ current_section | replace: '-',' ' | capitalize }}</h3>
+{% assign pages = site.pages | sort:"weight"  %}
+{% assign current_array = page.url | remove_first: "/" | split:"/" %}
+{% assign current_section = current_array[0] %}
 
-    <ul>
-        {% for p in pages %}
-            {% assign this_array = p.url | remove_first: "/" | split:"/" %}
-            {% assign this_section = this_array[0] %}
-            {% if current_section == this_section %}
-                <li>
-                    <a {% if p.url == page.url %}class="active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">
-                        {{ p.title }}
-                    </a>
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+<h3>{{ current_section | replace: '-',' ' | capitalize }}</h3>
+
+<ul>
+  {% for p in pages %}
+    {% assign this_array = p.url | remove_first: "/" | split:"/" %}
+    {% assign this_section = this_array[0] %}
+    {% if current_section == this_section %}
+      <li>
+        <a {% if p.url == page.url %}class="active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">
+          {{ p.title }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

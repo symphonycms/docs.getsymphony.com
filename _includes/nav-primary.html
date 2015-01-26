@@ -2,7 +2,7 @@
 {% assign current_section = current_array[0] %}
 
 <nav>
-{% for section in site.data.nav_primary %}
-<a {% if section.id == current_section %}class="active"{% endif %} href="{{ site.baseurl }}/{{ section.id }}">{{section.title}}</a>
-{% endfor %}
+  {% for section in site.data.nav_primary %}
+    <a {% if section.id == current_section %}class="active"{% endif %} href="{{ site.baseurl }}/{{ section.id }}">{{section.title}}</a>
+  {% endfor %}
 </nav>
