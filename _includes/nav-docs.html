@@ -9,7 +9,7 @@
             {% assign this_section = this_array[0] %}
             {% if current_section == this_section %}
                 <li>
-                    <a {% if p.url == page.url %}class="active"{% endif %} href="{{ p.url }}">
+                    <a {% if p.url == page.url %}class="active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">
                         {{ p.title }}
                     </a>
                 </li>
