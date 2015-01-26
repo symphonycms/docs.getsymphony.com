@@ -3,6 +3,6 @@
 
 <nav>
 {% for section in site.data.nav_primary %}
-<a {% if section.id == current_section %}class="active"{% endif %} href="{{ site.baseurl }}{{ section.id }}">{{section.title}}</a>
+<a {% if section.id == current_section %}class="active"{% endif %} href="{{ site.baseurl }}/{{ section.id }}">{{section.title}}</a>
 {% endfor %}
 </nav>
