@@ -1,5 +1,4 @@
 ---
-layout: page
 title:  "Getting Started - index page"
 weight: 0
 ---

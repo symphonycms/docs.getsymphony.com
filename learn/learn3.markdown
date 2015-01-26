@@ -1,5 +1,4 @@
 ---
-layout: page
 title:  "Learn - part three"
 weight: 1
 ---

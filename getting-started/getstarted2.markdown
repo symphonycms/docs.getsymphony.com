@@ -1,5 +1,4 @@
 ---
-layout: page
 title:  "Get Started - part two"
 weight: -5
 ---
