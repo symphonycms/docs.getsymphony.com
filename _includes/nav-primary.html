@@ -1,0 +1,5 @@
+<nav>
+{% for section in site.data.nav_primary %}
+<a href="{{ section.id }}">{{section.title}}</a>
+{% endfor %}
+</nav>
