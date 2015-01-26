@@ -1,6 +1,7 @@
 ---
 title:  "Getting Started - index page"
 weight: 0
+description: "Symphony Factory offers a flexible layout system to build network sites that adapt to the visitor’s window or screen size. Starting with a fluid version, the design expands in three steps to a five column layout that can be individually filled with content blocks."
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
