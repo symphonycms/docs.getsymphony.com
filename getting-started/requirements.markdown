@@ -1,8 +1,5 @@
 ---
-<<<<<<< HEAD:getting-started/requirements.markdown
 title: "Requirements"
-=======
->>>>>>> 195aef2d3915a654adcc61640227468c3ac9a646:getting-started/requirements.markdown
 weight: 1
 description: "Symphony Factory offers a flexible layout system to build network sites that adapt to the visitor’s window or screen size. Starting with a fluid version, the design expands in three steps to a five column layout that can be individually filled with content blocks."
 ---
