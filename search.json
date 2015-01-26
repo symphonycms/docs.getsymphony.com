@@ -1,5 +1,5 @@
 ---
-template: none
+template: js
 ---
 [
     {% for doc in site.pages %}
