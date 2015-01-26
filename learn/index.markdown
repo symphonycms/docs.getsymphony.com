@@ -1,5 +1,4 @@
 ---
-layout: page
 title:  "Learn - index page"
 weight: 0
 ---
