@@ -1,0 +1,17 @@
+	{% assign pages = site.pages | sort:"weight"  %}
+	{% assign path_array = page.url | remove_first: "/" | split:"/" %}
+	{% assign current_section = path_array[1] %}
+		<h3>{{ current_section | replace: '-',' ' | capitalize }}</h3>
+
+	<ul>
+		{% for p in pages %}
+			{% assign this_section = p.url | remove_first: "/" | split:"/" | first %}
+	  		{% if current_section == this_section %}
+	    		<li>
+	      			<a {% if p.url == page.url %}class="active"{% endif %} href="{{ p.url }}">
+	        			{{ p.title }}
+	      			</a>
+	    		</li>
+	    	{% endif %}
+	  	{% endfor %}
+	</ul>
