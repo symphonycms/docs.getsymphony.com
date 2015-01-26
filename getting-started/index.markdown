@@ -1,5 +1,5 @@
 ---
-title:  "Getting Started - index page"
+title:  "Getting Started"
 weight: 0
 description: "Symphony Factory offers a flexible layout system to build network sites that adapt to the visitor’s window or screen size. Starting with a fluid version, the design expands in three steps to a five column layout that can be individually filled with content blocks."
 ---
