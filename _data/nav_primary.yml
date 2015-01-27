@@ -2,7 +2,9 @@
   title: Getting started
 - id: concepts
   title: Concepts
-- id: guides
-  title: Guides
-- id: development
-  title: Development
+- id: articles
+  title: Articles
+- id: tutorials
+  title: Tutorials
+- id: contributing
+  title: Contributing

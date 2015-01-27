@@ -1,8 +1,6 @@
 ---
-id: home
-title: Getting started
-layout: docs
-redirect_from: "docs/index.html"
+title: "Symphony CMS Documentation site"
+layout: landing
 ---
 
 ## Portasque desunt
