@@ -1,5 +1,5 @@
 ---
-title: ""
-weight: 0
+title: "Beyond the Basics"
+weight: 2
 description: ""
 ---

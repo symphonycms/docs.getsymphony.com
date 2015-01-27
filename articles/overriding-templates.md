@@ -1,5 +1,5 @@
 ---
-title: ""
-weight: 0
+title: "Overriding Templates"
+weight: 4
 description: ""
 ---
