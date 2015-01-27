@@ -1,4 +1,5 @@
 ---
+layout: none
 ---
 (function($){
   var searchJSON,

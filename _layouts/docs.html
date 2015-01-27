@@ -1,30 +1,28 @@
 ---
 layout: default
 ---
-
 <header class="site-header centered">
+
   <h1>
-    <span>Symphony</span>
+    <span>Symphony</span> Documentation
   </h1>
-  <!--
-  <nav>
-    <a href="{{ site.baseurl }}" {% if page.section == 'getting-started' %}class="active"{% endif %}>Getting started</a>
-  </nav>
-  -->
+  {% include nav-primary.html %}
   {% include search.html %}
+
 </header>
 
 <div class="field">
-  <header class="page-header">
-    <h1>{{ page.title }}</h1>
-    <a class="tools-right" href="https://github.com/symphonycms/docs.getsymphony.com/tree/gh-pages/{{ page.path }}" target="_blank">Edit on GitHub</a>
-  </header>
 
   <div class="column sidebar infobox">
     {% include nav-docs.html %}
   </div>
 
   <div class="column content">
+    <a class="tools-right" href="https://github.com/symphonycms/docs.getsymphony.com/tree/gh-pages/{{ page.path }}" target="_blank">Edit on GitHub</a>
+
+    <h2>{{ page.title }}</h2>
+    <p class="content-introduction">{{ page.description }}</p>
+
     {% if page.version %}
       <p class="note version-aware">This features a previous version of Symphony ({{ page.version }}). The concepts it demonstrates still apply to the current version, and we have noted any changes below that affect the tutorial.</p>
     {% endif %}

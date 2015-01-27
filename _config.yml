@@ -9,3 +9,10 @@ exclude:
 - CONTRIBUTING.md
 gems:
 - jekyll-redirect-from
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "docs"
