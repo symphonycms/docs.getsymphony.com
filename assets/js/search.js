@@ -1,3 +1,6 @@
+---
+layout: none
+---
 (function($){
   var searchJSON,
       $search = $(".search"),
