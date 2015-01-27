@@ -1,3 +1,5 @@
+---
+---
 [
     {% for doc in site.pages %}
     {
