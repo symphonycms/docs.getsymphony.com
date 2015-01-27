@@ -1,5 +1,3 @@
----
----
 (function($){
   var searchJSON,
       $search = $(".search"),
