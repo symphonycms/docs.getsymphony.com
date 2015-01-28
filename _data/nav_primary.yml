@@ -2,9 +2,9 @@
   title: Getting Started
 - id: concepts
   title: Concepts
-- id: articles
-  title: Articles
-- id: tutorials
-  title: Tutorials
-- id: contributing
-  title: Contributing
+- id: guides
+  title: Guides
+- id: community
+  title: Community
+- id: releases
+  title: Releases
