@@ -57,7 +57,7 @@ Now go to the section <a href="#run-the-installer">Running the Installer</a>.
 
     If you skip this step, Symphony will create a blank workspace environment for you during the installation.
 
-<aside class="note">
+<aside class="note content-annotation">
 ### Love Git? So Do We
 
 If you install Symphony via Git, it might be prudent to create a new branch for your website and keep the `master` branch tracking the Symphony repository. We have documentation on different workflows that use Git with Symphony to version-control your site.
@@ -99,8 +99,8 @@ To recursively chmod files only:
 
 Congratulations, you have a working Symphony installation. If you downloaded the example workspace, then you can [tour the workspace][tour]. Alternatively, you can try our [Hello World! with Symphony tutorial][hello-world] to learn how to create a basic site from a blank workspace.
 
-[tour]: example-workspace.html
-[hello-world]: /guides/tutorials/hello-world/
+[tour]: {{ site.baseurl }}/example-workspace.html
+[hello-world]: {{ site.baseurl }}/guides/tutorials/hello-world/
 
 ## Aaaah, It All Ended in Tears!
 
