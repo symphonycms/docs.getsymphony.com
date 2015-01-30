@@ -1,5 +1,6 @@
 ---
-title: ""
-weight: 0
+title: "Concepts"
+weight: -1
 description: ""
+layout: list
 ---
