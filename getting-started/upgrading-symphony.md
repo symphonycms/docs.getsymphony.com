@@ -1,6 +1,6 @@
 ---
 title: "Updating from an older version"
-weight: 1
+weight: 6
 description: ""
 ---
 

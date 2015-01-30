@@ -1,6 +1,6 @@
 ---
 title:  "Getting Started"
-weight: 0
+weight: 1
 description: "Outlines the server requirements, how to dowload Symphony, and how to install it."
 ---
 
@@ -18,7 +18,7 @@ This tutorial will walk you through how to install Symphony, either by downloadi
 ## Download from the Website
 
 Download [the ZIP archive for the current release][website] from the Symphony website. Extract the folders into your target directory on your server.
-<aside class="content-annotation note">
+<aside class="note">
 ### Optional: Install the Example Workspace
 
 The `workspace/` directory included in the release is optional. It contains an example workspace and a database installation file that, if included, runs as part of the installation and sets up some default sections, data sources, and pages to demonstrate how a blog-like website in Symphony might work. If you are just learning, then this could be very useful. However, if you want to start from scratch, **omit this folder** when you upload to your server. Symphony will create it for you later.</p>
@@ -59,7 +59,7 @@ Now go to the section <a href="#run-the-installer">Running the Installer</a>.
 
     If you skip this step, Symphony will create a blank workspace environment for you during the installation.
 
-<aside class="content-annotation note">
+<aside class="note">
 ### Love Git? So Do We
 
 If you install Symphony via Git, it might be prudent to create a new branch for your website and keep the `master` branch tracking the Symphony repository. We have documentation on different workflows that use Git with Symphony to version-control your site.
@@ -101,8 +101,11 @@ To recursively chmod files only:
 
 Congratulations, you have a working Symphony installation. If you downloaded the example workspace, then you can [tour the workspace][tour]. Alternatively, you can try our [Hello World! with Symphony tutorial][hello-world] to learn how to create a basic site from a blank workspace.
 
-[tour]: {{ site.baseurl }}/example-workspace.html
+You might also want to learn about [installing extensions][extend] to add more features to Symphony.
+
+[tour]: {{ site.baseurl }}/getting-started/example-workspace.html
 [hello-world]: {{ site.baseurl }}/guides/tutorials/hello-world/
+[extend]: {{ site.baseurl }}/getting-started/managing-extensions.html
 
 ## Aaaah, It All Ended in Tears!
 
