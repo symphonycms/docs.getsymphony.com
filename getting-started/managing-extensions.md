@@ -29,8 +29,8 @@ You can download multiple extensions at once and install them all in one action.
 
 Log into the Symphony backend, and go to the **System > Extensions** page. This page lists all of the extensions present in your `extensions` directory, installed or otherwise. You will receive an error if there are any directories present that do not contain a valid extension, or if the name of the directory does not match the extension.
 
-<a href="{{ site.baseurl }}/assets/img/screenshots/extensions_backend-2.6.0.png">
-  <img src="{{ site.baseurl }}/assets/img/screenshots/extensions_backend-2.6.0.png" alt="A screenshot of a section of the Extensions backend page, showing on installed extension and another that is not installed."/>
+<a href="{{ site.baseurl }}/assets/img/screenshots/2.6/extensions_backend.png">
+  <img src="{{ site.baseurl }}/assets/img/screenshots/2.6/extensions_backend.png" alt="A screenshot of a section of the Extensions backend page, showing on installed extension and another that is not installed."/>
 </a>
 
 Extensions that are disabled or not yet installed will be greyed out. You can see version information—which will also warn you if the extension is not compatible with your version—and links to the extension's GitHub repos and authors as well.
