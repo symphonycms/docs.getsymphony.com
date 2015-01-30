@@ -1,103 +1,40 @@
 ---
-title: "Field Types"
+title: "Fields"
 weight: 2
-description: "Field Types define the structure of fields and govern their behavior in capturing and outputting data. "
+description: "Fields give shape to sections and their entries by defining the data they capture."
 ---
 
 #### Overview
 
-Field Types are definitions governing the structure and behavior of fields in Symphony. They determine how <a rel="concept">fields</a> are rendered in the <a rel="concept">admin interface</a>, what types of data a field can accept, how that data is captured and stored, and how it is formatted and output for use on the front end. Symphony has eight core field types; additional field types are available as extensions.
+Fields are containers that capture and store discrete pieces of content. They give structure to <a rel="concept">sections</a> and their <a rel="concept">entries</a>, and are used throughout the system to organize content and to work atomically with data. <a rel="concept">Data sources</a>, for example, use fields to <a rel="concept" href="data-source-filters">filter</a>, sort, and group result entries, and to selectively output and structure their contents.
+
+A field’s <a rel="concept" href="field-types">type</a>—e.g. `textarea` or `date`—determines how it captures data (as a form input in the entry editor), what kinds of data it can store, and how that data is handled.
 
 #### Usage
 
-Field types determine the structure of a field's settings pane when it is added to a <a rel="concept" href="sections">section</a> in the <a rel="concept" href="sections#section-editor">section editor</a>.
+A section's fields are defined in the <a rel="concept" href="sections#section-editor">section editor</a> (`Blueprints > Sections > Create New` or `Blueprints > Sections > {Section Name}`). A field is represented in the section editor by its <strong>settings pane</strong>.
+
+Once added, fields can be edited, reordered, and deleted in place. It is important to note, however, that once a field has been added it cannot be changed from one field type to another. Sections and their field structures should be planned and tested carefully before entering much content.
 
 #### Details
 
-The are eight core field types in Symphony, and a ninth, Select Box Link, is provided by a default extension.
+Each field is an instance of a generic field type which defines its behavior and the structure of its settings pane. There are eight <a rel="concept" href="field-types#core-field-types">core field types</a> in Symphony, with additional field types available as <a rel="concept">extensions</a> (one of which—<a rel="concept" href="field-types#select-box-link">Select Box Link</a>—is included by default).
 
-##### Author
+##### Settings Pane
 
-The author field type is represented by a `select` input populated with system authors. Its settings pane provides the following options:
+The structure of a field’s settings pane will vary according to its field type, but nearly all fields share a few common settings:
 
-Setting | Description
----------- | --------------
-_Global settings_ | See <a rel="concept" href="fields#settings-pane">breakdown</a>.
-Allow multiple | Checkbox specifying whether to allow the selection of multiple authors.
-Select current | Checkbox specifying whether the author editing the entry should be selected by default.
+Setting | Description | Examples
+---------- | --------------- | -------------
+Label | How the field should be labeled in forms, interface elements, and XML output. | Title, Publish Date
+Placement | Where the field input should be displayed in the entry editor. | Main content, Sidebar
+Show column | Whether the field should be displayed as a column when viewing entry tables in the admin interface. | -
+Make this a required field | Whether the field should require a value in order for entry creation/editing to succeed. | -
 
-##### Checkbox
+#### The Big Picture
 
-The checkbox field type is represented by a basic `checkbox` input. Its settings pane provides the following options:
+Fields and field types determine both the format of a section’s entry editor and its data source output.
 
-Setting | Description
----------- | --------------
-_Global settings_ | See <a rel="concept" href="fields#settings-pane">breakdown</a>.
-Long Description | Text to be displayed alongside the checkbox in lieu of a label.
-Checked by default | Checkbox specifying whether the field should default to checked.
+Fields of certain types can be used to create relationships among sections (<a rel="concept" href="field-types#select-box-link">Select Box Link</a> is one example).
 
-##### Date
-
-The date field type is represented by a basic text input. The format expected by the field is determined by the configuration settings created during installation and found in /manifest.config.php. Its settings pane provides the following options:
-
-Setting | Description
----------- | --------------
-_Global settings_ | See <a rel="concept" href="fields#settings-pane">breakdown</a>.
-Pre-populate | Checkbox specifying whether the current date should be auto-entered into the field upon entry creation.
-
-##### File Upload
-
-The file upload field type is represented by a `file` input. Its settings pane provides the following options:
-
-Setting | Description
----------- | --------------
-_Global settings_ | See <a rel="concept" href="fields#settings-pane">breakdown</a>.
-Destination Directory | Where files uploaded with this field will be stored. Select input populated by a list of all the directories under workspace/. Directory must be writeable.
-Validation Rule | Regular expressions pattern used to validate the file name.
-
-##### Select Box
-
-The select box field type is represented by a `select` input that can be populated with static values, dynamic values, or both. Its settings pane provides the following options:
-
-Setting | Description
----------- | --------------
-_Global settings_ | See <a rel="concept" href="fields#settings-pane">breakdown</a>.
-Static Options | A comma-delimited list of values to include in the field's options.
-Dynamic Options | List of fields, organized by section, whose content can be used to populate this field's options.
-Allow multiple | Checkbox specifying whether or not to allow multiple items to be selected. 
-
-##### Select Box Link
-The Select Box Link field type is represented by a `select` input that is populated by entries in a linked section and creates a persistent relationship with the linked entry(ies). Its settings pane provides the following options:
-
-Setting | Description
----------- | --------------
-_Global settings_ | See <a rel="concept" href="fields#settings-pane">breakdown</a>.
-Options | List of fields, organized by section, whose content can be used to populate this field's options.
-Limit | How many of the most recent entries to show as options.
-Allow multiple | Checkbox specifying whether or not to allow multiple items to be selected. 
-
-##### Tag List
-The tag list field type is represented by a text input that accepts a comma-delimited list of values. It is followed by a dynamically-populated suggestion list. Its settings pane provides the following options:
-
-Setting | Description
----------- | --------------
-_Global settings_ | See <a rel="concept" href="fields#settings-pane">breakdown</a>.
-Suggestion List | Source of suggested items. Can be content from another field in the system, or values from this field from other entries in the section.
-Validation Rule | Regular expressions pattern used to validate the items.
-
-##### Textarea
-The textarea field type is represented by a `textarea` input that can apply text formatters to its content. Its settings pane provides the following options:
-
-Setting | Description
----------- | --------------
-_Global settings_ | See <a rel="concept" href="fields#settings-pane">breakdown</a>.
-Rows | Height of the textarea in rows.
-Text Formatter | <a rel="concept" href="text-formatters">Text formatter</a> to be applied to the field's content.
-
-##### Text Input
-The text input field type is represented by a basic `text` input. Its settings pane provides the following options:
-
-Setting | Description
----------- | --------------
-_Global settings_ | See <a rel="concept" href="fields#settings-pane">breakdown</a>.
-Validation Rule | Regular expressions pattern used to validate the input.
+Fields are used as an axis for <a rel="concept" href="data-source-filters">data source filtering</a> and sorting and to populate <a rel="concept">data source output parameters</a>.
