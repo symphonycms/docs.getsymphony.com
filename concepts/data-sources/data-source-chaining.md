@@ -1,6 +1,6 @@
 ---
 title: "Data Source Chaining"
-weight: 0
+weight: 4
 description: "Data Source Chaining enables a data source to be filtered using the results provided by another data source."
 ---
 

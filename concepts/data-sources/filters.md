@@ -1,6 +1,6 @@
 ---
 title: "Data Source Filters"
-weight: 0
+weight: 2
 description: "Data Source Filters can use parameters, advanced operators, regular expressions, and normal values to filter results."
 ---
 

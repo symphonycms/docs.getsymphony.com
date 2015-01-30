@@ -1,6 +1,6 @@
 ---
 title: "Output Parameters"
-weight: 2
+weight: 3
 description: "Data Source Output Parameters are set using the results from a data source and enable data source chaining."
 ---
 
