@@ -2,6 +2,9 @@
 title: "Overriding Templates"
 weight: 4
 description: "A technique to keep your XSLT modular for more complex websites."
+author: allen
+published: 2008-11-08
+modified: 2009-11-29
 ---
 
 For simple websites, master templates are usually quite a simple affair but when working on more complex websites, things can get messy quickly.

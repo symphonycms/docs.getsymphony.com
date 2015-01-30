@@ -2,6 +2,9 @@
 title: "Combining Different Template Methods"
 weight: 3
 description: "The art of combining different templates methods In XSLT."
+author: allen
+published: 2007-10-04
+modified: 2009-11-29
 ---
 
 > Seven years in Tibet taught Allen the true act of selflessness. He teaches the template unification technique with grace and humility. During Allen's 7 year training as a civilian monk at the Commercial Celestial Academy: Tibet Branch (CCATB), he learned the indispensible XSLT technique of unifying matching templates with named templates.

@@ -2,6 +2,9 @@
 title: "HTML Ninja Technique"
 weight: 6
 description: "When you get HTML in your XML, how do you modify the HTML markup before throwing it to the output? This article answers this problem by showing you the *HTML Ninja Technique*"
+author: allen
+published: 2009-05-27
+modified: 2009-09-17
 ---
 
 It has been known in the Symphony universe that when you want to output your content in XSLT, you do so with the `<xsl:copy-of>` instruction. For the most part, it serves the public well, but for those who crave power, fame and fortune would do well to learn the ninja technique I'm about to show you.

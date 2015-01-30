@@ -2,6 +2,9 @@
 title: "A guide to caching extensions"
 weight: 9
 description: "Have you ever profiled a Symphony page and raised an eyebrow at the number of database queries needed for a particularly meaty data source? Perhaps you have been linked to from a Slashdot (remember that?) and your server is melting. You need caching."
+author: nickdunn
+published: 2011-10-19
+modified: 2012-11-06
 ---
 
 

@@ -2,6 +2,9 @@
 title: "Beyond the Basics"
 weight: 2
 description: "Some tips and tricks for getting the most out of Symphony."
+author: czheng
+published: 2009-11-29
+modified: 2009-11-29
 ---
 
 #### Introduction

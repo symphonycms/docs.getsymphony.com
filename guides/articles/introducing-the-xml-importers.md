@@ -2,6 +2,9 @@
 title: "Introducing the XML Importers"
 weight: 5
 description: "The XML Importer extension is widely used to help users import XML content into their Symphony sections. But if your field returns anything other than simple XML, the chances are you're having to write more complex XPath to grab the import values. In this article I describe how you can implement the `prepareImportValue` method on your custom fields to ensure the XML Importer gets the values it needs."
+author: brendo
+published: 2012-04-12
+modified: 2012-11-06
 ---
 
 
