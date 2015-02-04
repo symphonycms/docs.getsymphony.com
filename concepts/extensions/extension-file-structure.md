@@ -1,24 +1,16 @@
 ---
 title: "Extension File Structure"
 weight: 3
-description: "The Extension File Structure enables Symphony to detect and load extension files automatically."
+description: "How Symphony detects and loads extensions automatically."
 ---
 
-#### Overview
+The Extension File Structure is a set of layout and naming conventions for [extensions]({{site.baseurl}}/concepts/extensions/) that enables them to be automatically detected and loaded by Symphony. You must follow these conventions when creating an extension.
 
-The Extension File Structure is a set of layout and naming conventions for <a rel="concept" href="extensions">extension</a> files that enables them to be automatically detected and loaded by Symphony.
+## Directory Structure
 
-#### Usage
+Extensions should be structured as follows. Note that the only required files are `extension.driver.php` and `extension.meta.xml`. The remaining directories and files can be included as needed.
 
-When creating an extension, simply follow the conventions outlined below.
-
-#### Details
-
-##### Overview
-
-Extensions should be structured as follows. Note that the only required file is extension.driver.php. The remaining directories and files can be included as needed.
-
-<pre><code>
+~~~
   yourextension/
     assets/
         sample.js
@@ -40,48 +32,49 @@ Extensions should be structured as follows. Note that the only required file is 
     text-formatters/
         formatter.sample.php
     extension.driver.php
-    license
-    README</code></pre>
+    LICENSE
+    README
+~~~
 
-##### assets/
+### assets/
 
-Though not actually used for auto-inclusion, placing CSS, JavaScript, and image files in an assets directory is a Symphony convention
+Though not actually used for auto-inclusion, placing CSS, JavaScript, and image files in an assets directory is a Symphony convention.
 
-##### content/
+### content/
 
-The files in the content directory are autoincluded and used to render back-end pages. The file content.sample.php would render a page at `/symphony/extension/yourextension/sample`. content.index.php is viewable at `/symphony/extension/yourextension`.
+The files in the `content` directory are autoincluded and used to render back-end pages. The file content.sample.php would render a page at `/symphony/extension/yourextension/sample`. content.index.php is viewable at `/symphony/extension/yourextension`.
 
-##### data-sources/
+### data-sources/
 
-Any <a rel="concept">data sources</a> to be provided by an extension must be placed here for auto-inclusion.
+Any [data sources]({{site.baseurl}}/concepts/data-sources/) to be provided by an extension must be placed here for auto-inclusion.
 
-##### events/
+### events/
 
-Any <a rel="concept">events</a> to be provided by an extension must be placed here for auto-inclusion.
+Any [events]({{site.baseurl}}/concepts/events/) to be provided by an extension must be placed here for auto-inclusion.
 
-##### fields/
+### fields/
 
-Any <a rel="concept">field types</a> to be provided by an extension must be placed here for auto-inclusion.
+Any [fields]({{site.baseurl}}/concepts/sections/fields.html) to be provided by an extension must be placed here for auto-inclusion.
 
-##### lang/
+### lang/
 
 Any localization dictionaries to be provided by an extension must be placed here for auto-inclusion.
 
-##### lib/
+### lib/
 
-Like the assets folder, the lib folder is not actually used for auto-inclusion but is conventionally used to store custom library files used by the extension.
+Like the `assets` folder, the `lib` folder is not actually used for auto-inclusion but is conventionally used to store custom library files used by the extension.
 
-##### text-formatters/
-Any text formatters to be provided by an extension must be placed here for auto-inclusion.
+### text-formatters/
+Any [text formatters]({{site.baseurl}}/concepts/sections/text-formatters.html) to be provided by an extension must be placed here for auto-inclusion.
 
-##### extension.driver.php
-The extension driver, used to initiate, enable, uninstall, and upgrade an extension and to subscribe to <a rel="concept">delegates</a>. This file is required.
+### extension.driver.php
+The extension driver, used to initiate, enable, uninstall, and upgrade an extension and to subscribe to [delegates]({{site.baseurl}}/concepts/extensions/delegates.html}}. This file is required.
 
-##### license or licence
-A text file detailing the license(s) used by the extension.
+### extension.meta.xml
+An XML file that follows the [Symphony Extension Metadata Schema](http://symphonyextensions.com/schemas/extension/1.0/) to provide information about the extension, its version history, and its release notes. Both Symphony itself and other APIs, like the one at [SymphonyExtensions.com], use this.
 
-##### README or README.markdown
-The extension's README file. Conventionally contains basic information (extension name, version, and release date), developer information (name, email, and website) and installation and usage notes.
+### LICENSE or LICENCE
+A text file detailing the license(s) used by the extension. Note that Symphony uses the [MIT License](https://github.com/symphonycms/symphony-2/blob/master/LICENCE), so it is recommended (but not required) that you use the same or a compatible license.
 
-#### The Big Picture
-The extension file structure is an important part of Symphony's **Extension API** (forthcoming).
+### README (or README.markdown, or README.md)
+The extension's README file. Conventionally contains basic information (extension name, version, and release date), developer information (name, email, and website) and installation and usage notes. Because most Symphony extensions live on GitHub, Markdown is the conventional way to format these files but is not a requirement.

@@ -67,6 +67,8 @@ If you installed your extensions as git submodules, then from your Symphony inst
         $ git pull origin master
 
     (You will likely need to checkout the `master` or equivalent branch because submodules, by default, point to a detached HEAD.)
+
+    Alternatively, you can run `git submodule update --remote extensions/extension_name`, which will pull the latest commit from the 'stable' branch that your submodule tracks.
 1. Go to the Extensions page in the backend, and follow the same step as above to update the extension in your database.
 1. If you are satisfied everything is well, then commit the submodule changes to your parent repo.
 
