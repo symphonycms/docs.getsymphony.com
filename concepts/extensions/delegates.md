@@ -10,17 +10,17 @@ Delegates are functions in Symphony's core that allow [extension][ext] developer
 
 Extensions can subscribe to delegates by declaring a `getSubscribedDelegates()` function in the [`extension.driver.php`][struct] file, like this:
 
-{% highlight php %}
-  public function getSubscribedDelegates()
-  {
-    return array(
-      array(
-        'page' => '/delegatepage/',
-        'delegate' => 'DelegateName',
-        'callback' => 'extensionFunction'
-      ),
-    );
-  }
+{% highlight php startinline %}
+public function getSubscribedDelegates()
+{
+  return array(
+    array(
+      'page' => '/delegatepage/',
+      'delegate' => 'DelegateName',
+      'callback' => 'extensionFunction'
+    ),
+  );
+}
 {% endhighlight %}
 
 <aside class="note">
