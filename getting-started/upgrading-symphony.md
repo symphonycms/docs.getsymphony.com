@@ -1,5 +1,6 @@
 ---
 title: "Updating from an older version"
+short_title: "Updating"
 weight: 6
 description: ""
 ---

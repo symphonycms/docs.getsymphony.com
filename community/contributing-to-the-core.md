@@ -1,5 +1,6 @@
 ---
-title: "Contributing to Symphony"
+title: "Contributing to Symphony: Core"
+short_title: Core Development
 weight: 0
 description: "Symphony is an open source product under the MIT license, meaning that we are very much open to contributions from our users and the wider community. Before you start, there's a couple of things you might like to know."
 ---

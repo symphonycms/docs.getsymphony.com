@@ -11,7 +11,11 @@
     {% if current_section == this_section and p.weight >= 0 %}
       <li>
         <a {% if p.url == page.url %}class="active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">
+        {% if include.mode == "description" or p.short_title == null %}
           {{ p.title }}
+        {% else %}
+          {{ p.short_title }}
+        {% endif %}
         </a>
         {% if include.mode == "description" %}
           <p>{{ p.description }}</p>

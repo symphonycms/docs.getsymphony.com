@@ -1,5 +1,6 @@
 ---
 title: "Contributing to Symphony: Extensions"
+short_title: Extension Development
 weight: 5
 description: "Give back to the community by making Symphony more awesome."
 ---
