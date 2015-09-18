@@ -10,7 +10,7 @@ This tutorial will walk you through how to install Symphony, either by downloadi
 
 - PHP 5.3 or above
 - PHP’s LibXML module, with the XSLT extension enabled (`--with-xsl`)
-- MySQL 5.0 or above
+- MySQL 5.5 or above
 - A webserver (known to be used with Apache, Litespeed, Nginx and Hiawatha)
 - Apache’s `mod_rewrite` module or equivalent
 - PHP’s built in `json` functions, which are enabled by default in PHP 5.2 and above; if they are missing, ensure PHP wasn’t compiled with `--disable-json`
