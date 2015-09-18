@@ -32,7 +32,7 @@ Now go to the section <a href="#run-the-installer">Running the Installer</a>.
 
 1. Clone the [Symphony Git repository](https://github.com/symphonycms/symphony-2/) to the desired location:
 
-        git clone git://github.com/symphonycms/symphony-2.git target-directory
+        git clone https://github.com/symphonycms/symphony-2.git target-directory
         cd target-directory
 
     (Replace `target-directory` with your chosen new directory name.)
@@ -55,7 +55,7 @@ Now go to the section <a href="#run-the-installer">Running the Installer</a>.
 
 1. _(Optional)_ If you would like to install the [example workspace](https://github.com/symphonycms/workspace), run:
 
-        git clone git://github.com/symphonycms/workspace.git
+        git clone https://github.com/symphonycms/workspace.git
 
     If you skip this step, Symphony will create a blank workspace environment for you during the installation.
 
